@@ -1,0 +1,261 @@
+{
+  "description": "Shared scalar beta learned by the Uniform-beta VEG arm, read from the best-accuracy checkpoint of every trained model. The per-run beta_stats in component_ablation.json samples beta after the final epoch instead and is not interchangeable.",
+  "n_models": 15,
+  "datasets": [
+    "mnist",
+    "fashionmnist",
+    "cifar10"
+  ],
+  "seeds": [
+    42,
+    123,
+    456,
+    789,
+    1000
+  ],
+  "parameter": "digits.routing_module.beta",
+  "checkpoint": "best accuracy",
+  "across_all_models": {
+    "mean": 1.5232303142547607,
+    "std": 0.3015348779459945,
+    "min": 0.6727762222290039,
+    "max": 1.7752025127410889,
+    "argmin": {
+      "dataset": "fashionmnist",
+      "seed": 456,
+      "beta": 0.6727762222290039,
+      "which": "min"
+    },
+    "argmax": {
+      "dataset": "cifar10",
+      "seed": 1000,
+      "beta": 1.7752025127410889,
+      "which": "max"
+    }
+  },
+  "per_dataset": {
+    "mnist": {
+      "mean": 1.4578635931015014,
+      "std": 0.26392293212405543,
+      "min": 1.155813217163086,
+      "max": 1.757996678352356
+    },
+    "fashionmnist": {
+      "mean": 1.3883201837539674,
+      "std": 0.4081545492251736,
+      "min": 0.6727762222290039,
+      "max": 1.6770621538162231
+    },
+    "cifar10": {
+      "mean": 1.7235071659088135,
+      "std": 0.06128277033837651,
+      "min": 1.626981496810913,
+      "max": 1.7752025127410889
+    }
+  },
+  "per_model": [
+    {
+      "dataset": "mnist",
+      "seed": 42,
+      "beta": 1.2150099277496338
+    },
+    {
+      "dataset": "mnist",
+      "seed": 123,
+      "beta": 1.515547275543213
+    },
+    {
+      "dataset": "mnist",
+      "seed": 456,
+      "beta": 1.757996678352356
+    },
+    {
+      "dataset": "mnist",
+      "seed": 789,
+      "beta": 1.6449508666992188
+    },
+    {
+      "dataset": "mnist",
+      "seed": 1000,
+      "beta": 1.155813217163086
+    },
+    {
+      "dataset": "fashionmnist",
+      "seed": 42,
+      "beta": 1.5971319675445557
+    },
+    {
+      "dataset": "fashionmnist",
+      "seed": 123,
+      "beta": 1.5398783683776855
+    },
+    {
+      "dataset": "fashionmnist",
+      "seed": 456,
+      "beta": 0.6727762222290039
+    },
+    {
+      "dataset": "fashionmnist",
+      "seed": 789,
+      "beta": 1.4547522068023682
+    },
+    {
+      "dataset": "fashionmnist",
+      "seed": 1000,
+      "beta": 1.6770621538162231
+    },
+    {
+      "dataset": "cifar10",
+      "seed": 42,
+      "beta": 1.7665988206863403
+    },
+    {
+      "dataset": "cifar10",
+      "seed": 123,
+      "beta": 1.7001453638076782
+    },
+    {
+      "dataset": "cifar10",
+      "seed": 456,
+      "beta": 1.626981496810913
+    },
+    {
+      "dataset": "cifar10",
+      "seed": 789,
+      "beta": 1.7486076354980469
+    },
+    {
+      "dataset": "cifar10",
+      "seed": 1000,
+      "beta": 1.7752025127410889
+    }
+  ],
+  "_provenance": {
+    "schema": 2,
+    "script": "experiments/uniform_beta_checkpoints.py",
+    "argv": [
+      "experiments/uniform_beta_checkpoints.py"
+    ],
+    "inputs": [
+      {
+        "path": "models/capsule_mnist_entropy_uniform_seed42.pt",
+        "sha256": "d42a32dedecbe1d1e6761fb3925051c42029f9d41172f20af1f65655d6d9f062",
+        "bytes": 32866519,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_mnist_entropy_uniform_seed123.pt",
+        "sha256": "dd3e18c7e080b45581e1e465261048f0a44e15eed13bc0e3f4d3cb43979efcc1",
+        "bytes": 32866533,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_mnist_entropy_uniform_seed456.pt",
+        "sha256": "bdc7490f064c1d20035bab0b25927c27cb08fc09558739cafae998fc539ae94f",
+        "bytes": 32866533,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_mnist_entropy_uniform_seed789.pt",
+        "sha256": "54f63c8d0e7a33ed067c4f5f5e57a6e6804cf4e833c8c0b2c7cf8e846af23cbc",
+        "bytes": 32866533,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_mnist_entropy_uniform_seed1000.pt",
+        "sha256": "59aa0ed3f423cd0860c7243f6439f7dd1ede95ddb309495023ea8a4147ae0283",
+        "bytes": 32866547,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_fashionmnist_entropy_uniform_seed42.pt",
+        "sha256": "d952f0401a40ee01bbc77f2e3712aa46950edab824588348db878e1f72f11e5e",
+        "bytes": 32866617,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_fashionmnist_entropy_uniform_seed123.pt",
+        "sha256": "3fe4649cfab35c080e45d79755dccdd3e75f81fa310898b579bf4687f219d4b2",
+        "bytes": 32866631,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_fashionmnist_entropy_uniform_seed456.pt",
+        "sha256": "5044c2d302eb32b0d2f255e6863329850324cb70932fbfb8a1624cf5a3c5c31e",
+        "bytes": 32866631,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_fashionmnist_entropy_uniform_seed789.pt",
+        "sha256": "40f540aee7e3c32119cd9acb63159c746d0f09d73113fd837cca633d27364a33",
+        "bytes": 32866631,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_fashionmnist_entropy_uniform_seed1000.pt",
+        "sha256": "476f01d7f5f678b1bcc65c9aa3537bd9c148a390044cc470b714d0e991a2c403",
+        "bytes": 32866645,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_cifar10_entropy_uniform_seed42.pt",
+        "sha256": "fc5b5f34730e9305b9c826be87e1b76bb9660c52469fb44e085384c86f9a5252",
+        "bytes": 78721203,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_cifar10_entropy_uniform_seed123.pt",
+        "sha256": "f78cf2ced710a9d81ad0e9e952061271324227849f162f23b1b69a5e8db79be6",
+        "bytes": 78721217,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_cifar10_entropy_uniform_seed456.pt",
+        "sha256": "a808933731f8335102995e1f0cdadaef572abba70a991b7460e7401e540b7d96",
+        "bytes": 78721217,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_cifar10_entropy_uniform_seed789.pt",
+        "sha256": "31b995828cb34061a9f2e8f7660f16286e2981c00e90d97cbc43ba3e6ec5c05f",
+        "bytes": 78721217,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_cifar10_entropy_uniform_seed1000.pt",
+        "sha256": "1a272b2fc02cdddb4d2c40392f3e17883526065029f4992545833ac79cac7678",
+        "bytes": 78721231,
+        "status": "present"
+      }
+    ],
+    "random_seed": {
+      "rng": null,
+      "note": "Pure read-and-reduce over checkpoints: no training, no randomness, no thresholds."
+    },
+    "sample_counts": {
+      "n_models": 15,
+      "datasets": [
+        "cifar10",
+        "fashionmnist",
+        "mnist"
+      ],
+      "seeds": [
+        42,
+        123,
+        456,
+        789,
+        1000
+      ]
+    },
+    "timestamp_utc": "2026-11-12T19:56:09+00:00",
+    "software": {
+      "python": "3.10.10",
+      "platform": "Linux-6.8.0-106-generic-x86_64-with-glibc2.39",
+      "numpy": "1.25.1",
+      "torch": "2.0.1+cu118",
+      "cuda": "11.8",
+      "gpu": "NVIDIA GeForce RTX 4090"
+    },
+    "statistical_method": "Reads the shared scalar digits.routing_module.beta from each best-accuracy Uniform-beta checkpoint and reduces to mean, SD, min, max, argmin and argmax overall and per dataset. Deliberately not read from component_ablation.json beta_stats, which samples beta after the final epoch."
+  }
+}

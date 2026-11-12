@@ -1,0 +1,104 @@
+{
+  "_provenance": {
+    "schema": 2,
+    "script": "experiments/symmetric_raw_records.py",
+    "argv": [
+      "experiments/symmetric_raw_records.py",
+      "--dataset",
+      "cifar10"
+    ],
+    "inputs": [
+      {
+        "path": "models/capsule_cifar10_best_dynamic.pt",
+        "sha256": "5f6d9bcaeee9e91b59a38c1f342c7621cec374efca31b24565754ea61e732481",
+        "bytes": 78720764,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_cifar10_dynamic_seed123.pt",
+        "sha256": "3cf3f3e41ba121873b9b85179488e188df3f1393cea4a780e5d6de9b77ca59ee",
+        "bytes": 78720764,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_cifar10_dynamic_seed456.pt",
+        "sha256": "c0c7096702f85a02b4026e1b733fdc23a282011e55fc7951cc40469468d023c3",
+        "bytes": 78720764,
+        "status": "present"
+      },
+      {
+        "path": "results/data/cifar10/hub_taxonomy.json",
+        "sha256": "e51fdea15c0b1e4a8b31391f0af85bc9c22b8202f568510e116c3059b14baf09",
+        "bytes": 48259,
+        "status": "present"
+      },
+      {
+        "path": "results/data/cifar10/importance_matrix.npy",
+        "sha256": "bf85fc25352acc567a1c00029d1d231904f53d5d37b08619b777fd250db7a661",
+        "bytes": 327808,
+        "status": "present"
+      },
+      {
+        "path": "results/data/cifar10/seed123/hub_taxonomy.json",
+        "sha256": "28e837a5342c020568054dc239de0ddde3bc618f175509ca2702a28134e0fd7b",
+        "bytes": 48786,
+        "status": "present"
+      },
+      {
+        "path": "results/data/cifar10/seed123/importance_matrix.npy",
+        "sha256": "ebe238d594fa8324577cfa5710bc150a5d36685053b2e2f636f1176c21c4dab5",
+        "bytes": 327808,
+        "status": "present"
+      },
+      {
+        "path": "results/data/cifar10/seed456/hub_taxonomy.json",
+        "sha256": "2a984512fa66172fb89450555b92a11d494f2d96a7f285f6f0d13e081d92f220",
+        "bytes": 50409,
+        "status": "present"
+      },
+      {
+        "path": "results/data/cifar10/seed456/importance_matrix.npy",
+        "sha256": "98ab03ef315e3a14e7bcd8d4592c446c60e1b39bf7accbb29aaadc1066d041c0",
+        "bytes": 327808,
+        "status": "present"
+      }
+    ],
+    "random_seed": {
+      "trained_model_seeds": [
+        42,
+        123,
+        456
+      ],
+      "random_capsule_draw": "numpy default_rng(seed + 1000) per seed",
+      "note": "The image pools are a deterministic disjoint slice from capsnet.data, not a random draw."
+    },
+    "sample_counts": {
+      "n_records": 4006000,
+      "samples_per_class": 200,
+      "n_random_per_seed": 50,
+      "capsules_per_seed_role": {
+        "42|hub": 443,
+        "42|random": 50,
+        "42|specialist": 188,
+        "123|hub": 484,
+        "123|random": 50,
+        "123|specialist": 98,
+        "456|hub": 601,
+        "456|random": 50,
+        "456|specialist": 39
+      }
+    },
+    "timestamp_utc": "2026-11-12T19:50:29+00:00",
+    "software": {
+      "python": "3.10.10",
+      "platform": "Linux-6.8.0-106-generic-x86_64-with-glibc2.39",
+      "numpy": "1.25.1",
+      "pandas": "2.0.3",
+      "pyarrow": "14.0.2",
+      "torch": "2.0.1+cu118",
+      "cuda": "11.8",
+      "gpu": "NVIDIA GeForce RTX 4090"
+    },
+    "statistical_method": "Per-observation routing-correctness records. Correctness is argmax over the ten digit capsules of the coupling coefficient equalling the TRUE label of the shown image; condition is within when the shown class equals the capsule home class (argmax of its importance column), cross otherwise. No inference here: the clustering-aware models are fitted downstream."
+  }
+}

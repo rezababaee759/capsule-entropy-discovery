@@ -1,0 +1,5 @@
+Torchvision downloads MNIST / FashionMNIST / CIFAR-10 into this directory on first
+use (every script passes download=True). Nothing here is tracked; the directory
+exists so that a fresh clone has somewhere to put them.
+
+Scripts assume they are run from the repository root, so this resolves as ./data.

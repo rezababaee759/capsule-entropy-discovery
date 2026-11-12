@@ -1,0 +1,17 @@
+Trained checkpoints live here.
+
+They are ~2.4 GB in total and are therefore NOT in the git repository. The
+checkpoint archive link will be added with the public release; see the "Model
+checkpoints" section of README.md. Unpack the archive into this directory so that
+e.g.
+
+    models/capsule_mnist_best_dynamic.pt
+    models/ablation_predictor.pt
+
+exist. `./reproduce.sh --artifacts` checks for the first of these and stops with
+instructions if it is missing.
+
+`make recompute` re-derives the paper's central statistics from the committed
+per-observation records in results/ and diffs them against the committed values.
+It needs no GPU and no dataset; only its final parameter-count check reads the
+checkpoints in this directory.

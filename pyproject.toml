@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "capsnet"
+version = "1.0.0"
+description = "Shared library of the Entropy Bridge capsule-network analyses"
+requires-python = ">=3.10"
+# Dependencies are the exact pins in requirements.txt (CUDA builds of torch and
+# torchvision), installed first: pip install -r requirements.txt
+
+[tool.setuptools]
+packages = ["capsnet"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+# Show the reason of every skip in the summary, and keep .pytest_cache out of the tree.
+addopts = "-rfEs -p no:cacheprovider"

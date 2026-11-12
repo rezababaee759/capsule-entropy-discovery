@@ -1,0 +1,62 @@
+# =============================================================================
+# The Entropy Bridge (capsule networks, Vectorized Entropy Gating) -- pinned environment
+# =============================================================================
+# These are exact pins, not minimums: the versions that produced every result, captured
+# from the reference environment:
+#
+#   Python 3.10.10, single NVIDIA RTX 4090 (24 GB), CUDA 11.8
+#
+# Every `torch.load` call passes `weights_only=False` explicitly, so the code also runs
+# on PyTorch releases where that default changed; the pin guarantees the environment
+# the results came from.
+#
+# CUDA build: torch and torchvision are pinned to their +cu118 builds. Install with
+#     pip install -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cu118
+# A CPU-only machine is enough for `make recompute` and `make figures`; artifact
+# regeneration and training need a GPU. For a CPU build, replace the two +cu118 pins
+# with +cpu and install from https://download.pytorch.org/whl/cpu instead of the
+# cu118 index.
+# =============================================================================
+
+# Core deep learning framework
+torch==2.0.1+cu118
+torchvision==0.15.2+cu118
+
+# Scientific computing
+numpy==1.25.1
+scipy==1.11.1
+scikit-learn==1.7.2
+
+# Statistics: cluster-robust standard errors and Wald tests for the symmetric
+# routing-correctness evaluation (statsmodels.stats.sandwich_covariance,
+# statsmodels.formula.api). Required to reproduce the paper's clustering-aware
+# p-values -- see experiments/symmetric_{analysis,digit_confound}.py
+statsmodels==0.14.0
+patsy==0.5.3                # formula backend of statsmodels.formula.api; pinned to
+                            # the version the results were produced with
+# Data manipulation
+pandas==2.0.3
+pyarrow==14.0.2             # parquet engine; the raw symmetric-evaluation records
+                            # are read via pandas.read_parquet
+
+# Visualization
+matplotlib==3.7.2
+pillow==10.0.0              # not imported directly; required by torchvision datasets
+                            # and matplotlib, pinned to the version the results were
+                            # produced with
+
+# Explainability
+shap==0.49.1
+
+# Utilities
+tqdm==4.67.3
+
+# Tests (python -m pytest tests)
+pytest==9.0.3
+
+# -----------------------------------------------------------------------------
+# Python version: 3.10 or newer is required; every number was produced on 3.10.10.
+#
+# This list is complete: everything needed to reproduce every reported number is
+# above. There is no separate requirements file for optional extras.
+# -----------------------------------------------------------------------------

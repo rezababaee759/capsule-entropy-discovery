@@ -1,0 +1,277 @@
+{
+  "dataset": "mnist",
+  "model_path": "models/capsule_mnist_best_entropy.pt",
+  "taxonomy_path": "results/data/mnist/veg_best_entropy/hub_taxonomy.json",
+  "gate_distribution_by_role": {
+    "Primary Hub": {
+      "n_obs": 18432,
+      "mean": 0.8945282697677612,
+      "median": 0.8852974772453308,
+      "std": 0.26583927869796753,
+      "min": 0.40856754779815674,
+      "max": 1.3281155824661255
+    },
+    "Secondary Hub": {
+      "n_obs": 182272,
+      "mean": 0.4007914364337921,
+      "median": 0.3549045920372009,
+      "std": 0.16478216648101807,
+      "min": 0.21157434582710266,
+      "max": 1.1405377388000488
+    },
+    "Specialist": {
+      "n_obs": 169984,
+      "mean": 0.22465066611766815,
+      "median": 0.21366611123085022,
+      "std": 0.04849915951490402,
+      "min": 0.15160183608531952,
+      "max": 0.5035533308982849
+    },
+    "Generalist": {
+      "n_obs": 1730560,
+      "mean": 0.19824939966201782,
+      "median": 0.18362188339233398,
+      "std": 0.06892217695713043,
+      "min": 0.0911238044500351,
+      "max": 0.8278420567512512
+    },
+    "Non-critical": {
+      "n_obs": 258048,
+      "mean": 0.17905834317207336,
+      "median": 0.16212746500968933,
+      "std": 0.05755715072154999,
+      "min": 0.103199303150177,
+      "max": 0.3899998962879181
+    }
+  },
+  "beta_init_value": 0.0,
+  "beta_cross_seed_stability": {
+    "Primary Hub": {
+      "n_models": 4,
+      "values": [
+        0.06499599665403366,
+        -0.07119732350111008,
+        0.07395593076944351,
+        0.13226519525051117
+      ],
+      "mean": 0.050004949793219566,
+      "std_ddof1": 0.08612997931443267,
+      "cv": 1.7224290729337255
+    },
+    "Secondary Hub": {
+      "n_models": 4,
+      "values": [
+        0.42548927664756775,
+        0.015045220032334328,
+        0.5463374257087708,
+        0.41666749119758606
+      ],
+      "mean": 0.3508848533965647,
+      "std_ddof1": 0.23157658399642078,
+      "cv": 0.659978855612489
+    },
+    "Specialist": {
+      "n_models": 4,
+      "values": [
+        0.6573866605758667,
+        0.0792868435382843,
+        0.8072391748428345,
+        0.6411879062652588
+      ],
+      "mean": 0.5462751463055611,
+      "std_ddof1": 0.32017417120398295,
+      "cv": 0.5861042248934611
+    },
+    "Generalist": {
+      "n_models": 4,
+      "values": [
+        0.7240889072418213,
+        0.0961492657661438,
+        0.9091062545776367,
+        0.7368314862251282
+      ],
+      "mean": 0.6165439784526825,
+      "std_ddof1": 0.35704263920802054,
+      "cv": 0.579103278413451
+    },
+    "Non-critical": {
+      "n_models": 4,
+      "values": [
+        0.7660240530967712,
+        0.09451645612716675,
+        0.9461498856544495,
+        0.7450077533721924
+      ],
+      "mean": 0.637924537062645,
+      "std_ddof1": 0.37335037572584695,
+      "cv": 0.5852579012636153
+    }
+  },
+  "role_mean_beta_learned": {
+    "Hub(P+S)": 0.39238275093387587,
+    "Specialist": 0.6573866605758667,
+    "Non-critical": 0.7660240530967712
+  },
+  "intervention_accuracy": {
+    "control_unmodified": {
+      "accuracy": 0.9944,
+      "per_class_accuracy": [
+        0.9979591836734694,
+        0.9973568281938326,
+        0.9941860465116279,
+        0.997029702970297,
+        0.9887983706720977,
+        0.9955156950672646,
+        0.9916492693110647,
+        0.9961089494163424,
+        0.9948665297741273,
+        0.9900891972249752
+      ]
+    },
+    "suppress_hubs_to_noncritical_mean": {
+      "accuracy": 0.63,
+      "per_class_accuracy": [
+        0.7020408163265306,
+        0.9559471365638766,
+        0.623062015503876,
+        0.6485148514851485,
+        0.9175152749490835,
+        0.18385650224215247,
+        0.9405010438413361,
+        0.8103112840466926,
+        0.2648870636550308,
+        0.17046580773042616
+      ]
+    },
+    "suppress_specialists_to_noncritical_mean": {
+      "accuracy": 0.9942,
+      "per_class_accuracy": [
+        0.9979591836734694,
+        0.9973568281938326,
+        0.9932170542635659,
+        0.997029702970297,
+        0.9877800407331976,
+        0.9955156950672646,
+        0.9916492693110647,
+        0.9961089494163424,
+        0.9948665297741273,
+        0.9900891972249752
+      ]
+    },
+    "unsuppress_noncritical_to_hub_mean": {
+      "accuracy": 0.9943,
+      "per_class_accuracy": [
+        0.9979591836734694,
+        0.9973568281938326,
+        0.9941860465116279,
+        0.997029702970297,
+        0.9908350305498982,
+        0.9943946188340808,
+        0.9916492693110647,
+        0.9961089494163424,
+        0.9938398357289527,
+        0.9890981169474727
+      ]
+    },
+    "hub_specialist_swap": {
+      "accuracy": 0.7846,
+      "per_class_accuracy": [
+        0.8826530612244898,
+        0.9788546255506608,
+        0.7790697674418605,
+        0.8584158415841584,
+        0.9643584521384929,
+        0.5022421524663677,
+        0.9624217118997912,
+        0.9075875486381323,
+        0.5,
+        0.4578790882061447
+      ]
+    },
+    "zero_gate_all": {
+      "accuracy": 0.8735,
+      "per_class_accuracy": [
+        0.9520408163265306,
+        0.9859030837004406,
+        0.811046511627907,
+        0.9326732673267327,
+        0.9663951120162932,
+        0.7051569506726457,
+        0.964509394572025,
+        0.9640077821011673,
+        0.6827515400410678,
+        0.7393458870168483
+      ]
+    },
+    "zero_gate_hub_only": {
+      "accuracy": 0.9933,
+      "per_class_accuracy": [
+        0.9989795918367347,
+        0.9973568281938326,
+        0.9941860465116279,
+        0.995049504950495,
+        0.9877800407331976,
+        0.9943946188340808,
+        0.9874739039665971,
+        0.9961089494163424,
+        0.9928131416837782,
+        0.9881070366699702
+      ]
+    }
+  },
+  "_provenance": {
+    "schema": 2,
+    "script": "experiments/role_intervention.py",
+    "argv": [
+      "experiments/role_intervention.py",
+      "--dataset",
+      "mnist"
+    ],
+    "inputs": [
+      {
+        "path": "models/capsule_mnist_best_entropy.pt",
+        "sha256": "8d5071ca205d28eac4a6546020e71a917284c5fff2f57fed2a530403aab3ef8a",
+        "bytes": 32871029,
+        "status": "present"
+      },
+      {
+        "path": "results/data/mnist/veg_best_entropy/hub_taxonomy.json",
+        "sha256": "61340e9fa4ae9b064bbec4f7084b6c833a826de259dff985cbf63b01351325bb",
+        "bytes": 13961,
+        "status": "present"
+      }
+    ],
+    "random_seed": {
+      "rng": null,
+      "note": "No RNG. Gate collection and every intervention are deterministic passes over an unshuffled test loader; the beta overrides are exact."
+    },
+    "sample_counts": {
+      "max_gate_images_requested": 2000,
+      "gate_observations_per_role": {
+        "Primary Hub": 18432,
+        "Secondary Hub": 182272,
+        "Specialist": 169984,
+        "Generalist": 1730560,
+        "Non-critical": 258048
+      },
+      "capsules_per_role": {
+        "Primary Hub": 9,
+        "Secondary Hub": 89,
+        "Specialist": 83,
+        "Generalist": 845,
+        "Non-critical": 126
+      },
+      "n_intervention_conditions": 7
+    },
+    "timestamp_utc": "2026-11-12T19:56:16+00:00",
+    "software": {
+      "python": "3.10.10",
+      "platform": "Linux-6.8.0-106-generic-x86_64-with-glibc2.39",
+      "numpy": "1.25.1",
+      "torch": "2.0.1+cu118",
+      "cuda": "11.8",
+      "gpu": "NVIDIA GeForce RTX 4090"
+    },
+    "statistical_method": "Inference-only on one frozen best-accuracy checkpoint per dataset. (1) Realised gate G_i = exp(-beta_i*H_i) from the final routing iteration, summarised per native role. (2) Cross-model spread of role-mean beta. (3) The unmodified control and six beta overrides, each with full test-set and per-class accuracy; no delta is stored. No hypothesis test and no interval are computed."
+  }
+}

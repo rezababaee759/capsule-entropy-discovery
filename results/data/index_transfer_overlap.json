@@ -1,0 +1,126 @@
+{
+  "mnist_seed42": {
+    "veg_taxonomy": "results/data/mnist/veg_seed42/hub_taxonomy.json",
+    "baseline_taxonomy": "results/data/mnist/hub_taxonomy.json",
+    "n_universe": 1152,
+    "primary_hub_jaccard": 0.0,
+    "primary_hub_intersection": 0,
+    "primary_hub_veg_n": 12,
+    "primary_hub_baseline_n": 14,
+    "primary_hub_chance": {
+      "n_universe": 1152,
+      "expected_intersection": 0.14583333333333334,
+      "expected_jaccard": 0.0056406124093473006,
+      "p_two_sided": 1.0,
+      "p_at_most_observed": 0.8629174108932489,
+      "p_at_least_observed": 1.0,
+      "verdict": "indistinguishable from chance",
+      "null": "hypergeometric(n_universe, n_veg, n_baseline) -- the two taxonomies select capsules independently"
+    },
+    "all_hub_jaccard": 0.01020408163265306,
+    "all_hub_intersection": 2,
+    "all_hub_veg_n": 101,
+    "all_hub_baseline_n": 97,
+    "all_hub_chance": {
+      "n_universe": 1152,
+      "expected_intersection": 8.504340277777779,
+      "expected_jaccard": 0.04487881300418234,
+      "p_two_sided": 0.012992824156709631,
+      "p_at_most_observed": 0.005663021179403178,
+      "p_at_least_observed": 0.9989842039601137,
+      "verdict": "below chance",
+      "null": "hypergeometric(n_universe, n_veg, n_baseline) -- the two taxonomies select capsules independently"
+    }
+  },
+  "cifar10_best_entropy": {
+    "veg_taxonomy": "results/data/cifar10/veg_best_entropy/hub_taxonomy.json",
+    "baseline_taxonomy": "results/data/cifar10/hub_taxonomy.json",
+    "n_universe": 4096,
+    "primary_hub_jaccard": 0.0,
+    "primary_hub_intersection": 0,
+    "primary_hub_veg_n": 65,
+    "primary_hub_baseline_n": 23,
+    "primary_hub_chance": {
+      "n_universe": 4096,
+      "expected_intersection": 0.364990234375,
+      "expected_jaccard": 0.004164890668137611,
+      "p_two_sided": 0.9999999999999998,
+      "p_at_most_observed": 0.6914828155393329,
+      "p_at_least_observed": 1.0,
+      "verdict": "indistinguishable from chance",
+      "null": "hypergeometric(n_universe, n_veg, n_baseline) -- the two taxonomies select capsules independently"
+    },
+    "all_hub_jaccard": 0.025885558583106268,
+    "all_hub_intersection": 19,
+    "all_hub_veg_n": 310,
+    "all_hub_baseline_n": 443,
+    "all_hub_chance": {
+      "n_universe": 4096,
+      "expected_intersection": 33.52783203125,
+      "expected_jaccard": 0.04660059627588856,
+      "p_two_sided": 0.004210420508729093,
+      "p_at_most_observed": 0.0023172768751125424,
+      "p_at_least_observed": 0.9988676102460574,
+      "verdict": "below chance",
+      "null": "hypergeometric(n_universe, n_veg, n_baseline) -- the two taxonomies select capsules independently"
+    }
+  },
+  "_provenance": {
+    "schema": 2,
+    "script": "experiments/index_transfer_overlap.py",
+    "argv": [
+      "experiments/index_transfer_overlap.py"
+    ],
+    "inputs": [
+      {
+        "path": "results/data/cifar10/hub_taxonomy.json",
+        "sha256": "e51fdea15c0b1e4a8b31391f0af85bc9c22b8202f568510e116c3059b14baf09",
+        "bytes": 48259,
+        "status": "present"
+      },
+      {
+        "path": "results/data/cifar10/veg_best_entropy/hub_taxonomy.json",
+        "sha256": "544bcf202a2b334f6e6e1499290bf8124652bc719d6a12166223286805facdda",
+        "bytes": 46416,
+        "status": "present"
+      },
+      {
+        "path": "results/data/mnist/hub_taxonomy.json",
+        "sha256": "ec35638a39b2dfc3a9c990d00127e057586860035daa25e760905e6b26e94d38",
+        "bytes": 13973,
+        "status": "present"
+      },
+      {
+        "path": "results/data/mnist/veg_seed42/hub_taxonomy.json",
+        "sha256": "6da74e91e119379fb6643a8966ea5b5d98df02efdc7ebe8d20e91c91ff0774fb",
+        "bytes": 14032,
+        "status": "present"
+      }
+    ],
+    "random_seed": {
+      "rng": null,
+      "note": "Fully deterministic; set comparison only."
+    },
+    "sample_counts": {
+      "mnist_seed42": {
+        "primary_hub_veg_n": 12,
+        "primary_hub_baseline_n": 14
+      },
+      "cifar10_best_entropy": {
+        "primary_hub_veg_n": 65,
+        "primary_hub_baseline_n": 23
+      }
+    },
+    "timestamp_utc": "2026-11-12T19:57:24+00:00",
+    "software": {
+      "python": "3.10.10",
+      "platform": "Linux-6.8.0-106-generic-x86_64-with-glibc2.39",
+      "numpy": "1.25.1",
+      "scipy": "1.11.1",
+      "torch": "2.0.1+cu118",
+      "cuda": "11.8",
+      "gpu": "NVIDIA GeForce RTX 4090"
+    },
+    "statistical_method": "Jaccard overlap of Primary-Hub and combined-Hub index sets between a VEG-native taxonomy and the dynamic-routing baseline, with a hypergeometric chance model giving the expected overlap and an exact two-sided p by summing outcomes no more likely than observed."
+  }
+}

@@ -1,0 +1,180 @@
+{
+  "description": "Per-digit sparsity of ground-truth single-capsule ablation importance, MNIST primary dynamic-routing model, taxonomy-calibration slice. Negative mean importances are set to zero before the Gini coefficient and the 80% share are computed, as in experiments/ground_truth_sparsity.py.",
+  "importance_source": "results/data/mnist/importance_matrix.npy",
+  "importance_definition": "Row d is the mean over the calibration images of true digit d of the drop in the predicted class's capsule length when one primary capsule is zeroed (experiments/hub_taxonomy.py).",
+  "negative_values": "set to zero",
+  "share": 0.8,
+  "n_capsules": 1152,
+  "n_digits": 10,
+  "per_digit": [
+    {
+      "digit": 0,
+      "gini": 0.734903927894494,
+      "k_80": 280,
+      "percent_80": 24.305555555555557,
+      "n_negative": 415,
+      "top_capsule": 869,
+      "surrogate_top_capsule": 869,
+      "surrogate_gini": 0.8970735402483265
+    },
+    {
+      "digit": 1,
+      "gini": 0.7122669695360853,
+      "k_80": 300,
+      "percent_80": 26.041666666666668,
+      "n_negative": 417,
+      "top_capsule": 117,
+      "surrogate_top_capsule": 117,
+      "surrogate_gini": 0.7299332190815748
+    },
+    {
+      "digit": 2,
+      "gini": 0.7496129306794523,
+      "k_80": 263,
+      "percent_80": 22.82986111111111,
+      "n_negative": 454,
+      "top_capsule": 1139,
+      "surrogate_top_capsule": 1139,
+      "surrogate_gini": 0.9541024853237909
+    },
+    {
+      "digit": 3,
+      "gini": 0.8339691353987699,
+      "k_80": 180,
+      "percent_80": 15.625,
+      "n_negative": 545,
+      "top_capsule": 68,
+      "surrogate_top_capsule": 68,
+      "surrogate_gini": 0.9916356714956545
+    },
+    {
+      "digit": 4,
+      "gini": 0.8416212135989993,
+      "k_80": 174,
+      "percent_80": 15.104166666666666,
+      "n_negative": 503,
+      "top_capsule": 101,
+      "surrogate_top_capsule": 101,
+      "surrogate_gini": 0.9936981123438866
+    },
+    {
+      "digit": 5,
+      "gini": 0.8325698564149717,
+      "k_80": 178,
+      "percent_80": 15.45138888888889,
+      "n_negative": 512,
+      "top_capsule": 374,
+      "surrogate_top_capsule": 374,
+      "surrogate_gini": 0.989366057238038
+    },
+    {
+      "digit": 6,
+      "gini": 0.7755560759137006,
+      "k_80": 239,
+      "percent_80": 20.74652777777778,
+      "n_negative": 428,
+      "top_capsule": 245,
+      "surrogate_top_capsule": 245,
+      "surrogate_gini": 0.9594564852297724
+    },
+    {
+      "digit": 7,
+      "gini": 0.826560394097146,
+      "k_80": 195,
+      "percent_80": 16.927083333333332,
+      "n_negative": 509,
+      "top_capsule": 1021,
+      "surrogate_top_capsule": 1021,
+      "surrogate_gini": 0.9930482478181972
+    },
+    {
+      "digit": 8,
+      "gini": 0.8144119572240343,
+      "k_80": 194,
+      "percent_80": 16.84027777777778,
+      "n_negative": 508,
+      "top_capsule": 1060,
+      "surrogate_top_capsule": 1060,
+      "surrogate_gini": 0.987312395350125
+    },
+    {
+      "digit": 9,
+      "gini": 0.8784549407530449,
+      "k_80": 128,
+      "percent_80": 11.11111111111111,
+      "n_negative": 631,
+      "top_capsule": 101,
+      "surrogate_top_capsule": 101,
+      "surrogate_gini": 0.9923399327226365
+    }
+  ],
+  "mean_over_digits": {
+    "gini": 0.7999927401510698,
+    "percent_80": 18.49826388888889,
+    "percent_80_range": [
+      11.11111111111111,
+      26.041666666666668
+    ],
+    "k_80_range": [
+      128,
+      300
+    ],
+    "gini_range": [
+      0.7122669695360853,
+      0.8784549407530449
+    ]
+  },
+  "digit_averaged_importance": {
+    "gini": 0.7720477867617277,
+    "k_80": 239,
+    "percent_80": 20.74652777777778
+  },
+  "negative_fraction_of_matrix": 0.42725694444444445,
+  "surrogate_comparison": {
+    "source": "results/data/mnist/per_digit_sparsity_surrogate.json",
+    "top_capsule_agreement": 10,
+    "mean_gini_surrogate": 0.9487966146852003,
+    "mean_gini_ground_truth": 0.7999927401510698
+  },
+  "_provenance": {
+    "schema": 2,
+    "script": "experiments/per_digit_sparsity_ground_truth.py",
+    "argv": [
+      "experiments/per_digit_sparsity_ground_truth.py",
+      "--output",
+      "results/data/mnist/per_digit_sparsity_ground_truth.json"
+    ],
+    "inputs": [
+      {
+        "path": "results/data/mnist/importance_matrix.npy",
+        "sha256": "e7e8d74e40e315e8bc4acbd34ca6d7d3d469b87d7aa9db1ff2f882d602172b56",
+        "bytes": 92288,
+        "status": "present"
+      },
+      {
+        "path": "results/data/mnist/per_digit_sparsity_surrogate.json",
+        "sha256": "d175495e2fcf992e286a602b0cf8128def08394e373b02256f31a746b7651322",
+        "bytes": 5448,
+        "status": "present"
+      }
+    ],
+    "random_seed": {
+      "rng": null,
+      "note": "Pure read-and-reduce over a saved matrix."
+    },
+    "sample_counts": {
+      "n_digits": 10,
+      "n_capsules": 1152
+    },
+    "timestamp_utc": "2026-11-12T19:57:25+00:00",
+    "software": {
+      "python": "3.10.10",
+      "platform": "Linux-6.8.0-106-generic-x86_64-with-glibc2.39",
+      "numpy": "1.25.1",
+      "torch": "2.0.1+cu118",
+      "cuda": "11.8",
+      "gpu": "NVIDIA GeForce RTX 4090"
+    },
+    "statistical_method": "Per digit: clip negative importance to zero, Gini coefficient, and the smallest k whose top-k cumulative sum reaches 80% of the clipped total."
+  }
+}

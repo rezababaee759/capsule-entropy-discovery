@@ -1,0 +1,82 @@
+{
+  "mnist": {
+    "dataset": "mnist",
+    "num_capsules": 1152,
+    "device": "cuda",
+    "forward_pass_only_ms": {
+      "mean_ms": 0.8637865539640188,
+      "std_ms": 0.18919856885751313,
+      "median_ms": 0.8301408961415291,
+      "min_ms": 0.7449444383382797,
+      "max_ms": 3.055065870285034,
+      "n_trials": 200
+    },
+    "gradient_features_only_ms": {
+      "mean_ms": 6.000543013215065,
+      "std_ms": 1.0960826804096349,
+      "median_ms": 6.587626412510872,
+      "min_ms": 2.25219689309597,
+      "max_ms": 7.743289694190025,
+      "n_trials": 200
+    },
+    "mlp_surrogate_only_ms": {
+      "mean_ms": 0.32119831070303917,
+      "std_ms": 0.10059091737833285,
+      "median_ms": 0.28934795409440994,
+      "min_ms": 0.19998475909233093,
+      "max_ms": 0.6202459335327148,
+      "n_trials": 200
+    },
+    "full_pipeline_ms": {
+      "mean_ms": 7.02308451756835,
+      "std_ms": 1.318648580002133,
+      "median_ms": 7.134520448744297,
+      "min_ms": 3.751920536160469,
+      "max_ms": 10.938333347439766,
+      "n_trials": 200
+    }
+  },
+  "cifar10": {
+    "dataset": "cifar10",
+    "num_capsules": 4096,
+    "device": "cuda",
+    "forward_pass_only_ms": {
+      "mean_ms": 0.8459401596337557,
+      "std_ms": 0.04505077701759648,
+      "median_ms": 0.836547464132309,
+      "min_ms": 0.7500424981117249,
+      "max_ms": 1.1470913887023926,
+      "n_trials": 200
+    },
+    "gradient_features_only_ms": {
+      "mean_ms": 5.427775178104639,
+      "std_ms": 1.5455888114661527,
+      "median_ms": 6.104055792093277,
+      "min_ms": 2.1292176097631454,
+      "max_ms": 8.739573881030083,
+      "n_trials": 200
+    },
+    "mlp_surrogate_only_ms": {
+      "mean_ms": 0.22224938496947289,
+      "std_ms": 0.07536698792550456,
+      "median_ms": 0.2022627741098404,
+      "min_ms": 0.16771256923675537,
+      "max_ms": 0.7446464151144028,
+      "n_trials": 200
+    },
+    "full_pipeline_ms": {
+      "mean_ms": 6.920462315902114,
+      "std_ms": 1.2292629308306255,
+      "median_ms": 6.911261938512325,
+      "min_ms": 3.5154465585947037,
+      "max_ms": 9.863296523690224,
+      "n_trials": 200
+    }
+  },
+  "environment": {
+    "torch_version": "2.0.1+cu118",
+    "cuda_available": true,
+    "gpu_name": "NVIDIA GeForce RTX 4090",
+    "python_version": "3.10.10"
+  }
+}

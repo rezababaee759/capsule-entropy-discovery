@@ -1,0 +1,31 @@
+{
+  "dataset": "mnist",
+  "method": "ground_truth_ablation",
+  "num_capsules": 1152,
+  "samples_per_class": 50,
+  "split_purpose": "taxonomy_calibration",
+  "split_positions_per_class": [
+    60,
+    110
+  ],
+  "split_contract": "mnist: surrogate_train [0:10) | surrogate_heldout [10:60) | taxonomy_calibration [60:110) | evaluation [110:310) | top_capsule_evaluation [310:360)",
+  "input_transform": "mnist: ToTensor() only; images in [0,1]. NO Normalize.",
+  "results": {
+    "Dynamic Routing": {
+      "gini": 0.7693435510111324,
+      "percent_50": 5.902777777777778,
+      "percent_80": 21.006944444444446,
+      "k_50": 68,
+      "k_80": 242,
+      "total_samples": 499
+    },
+    "Entropy Routing (VEG)": {
+      "gini": 0.9841534568013035,
+      "percent_50": 0.1736111111111111,
+      "percent_80": 0.4340277777777778,
+      "k_50": 2,
+      "k_80": 5,
+      "total_samples": 499
+    }
+  }
+}

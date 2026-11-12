@@ -1,0 +1,59 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Editors and tools
+.idea/
+.vscode/
+.cursor/
+*.swp
+*.swo
+.ipynb_checkpoints/
+.ruff_cache/
+.mypy_cache/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Checkpoints are distributed separately; the manifest of their hashes is committed.
+*.pt
+*.pth
+*.ckpt
+
+# Datasets and checkpoints. The leading slash anchors these to the repository root:
+# an unanchored "data/" would also match results/data/, which holds the committed
+# result artifacts. `/models/*` (not `/models/`) excludes the contents but keeps the
+# directory, so the negations below can re-include the placeholders and manifest.
+/data/*
+/models/*
+!/data/.gitkeep
+!/models/.gitkeep
+!/models/CHECKSUMS.sha256
+
+# Scratch files
+outputs/
+logs/
+runs/
+*.log
+*.tmp
+*.bak
+*.orig
+.cache/
+
+# Environment variables
+.env
+.env.local
+

@@ -1,0 +1,31 @@
+{
+  "dataset": "cifar10",
+  "method": "ground_truth_ablation",
+  "num_capsules": 4096,
+  "samples_per_class": 50,
+  "split_purpose": "taxonomy_calibration",
+  "split_positions_per_class": [
+    10,
+    60
+  ],
+  "split_contract": "cifar10: surrogate_train [0:10) | taxonomy_calibration [10:60) | evaluation [60:260)",
+  "input_transform": "cifar10: ToTensor() + Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.201)).",
+  "results": {
+    "Dynamic Routing": {
+      "gini": 0.9418300699150788,
+      "percent_50": 0.048828125,
+      "percent_80": 4.58984375,
+      "k_50": 2,
+      "k_80": 188,
+      "total_samples": 500
+    },
+    "Entropy Routing (VEG)": {
+      "gini": 0.9722831996825654,
+      "percent_50": 0.0244140625,
+      "percent_80": 0.7080078125,
+      "k_50": 1,
+      "k_80": 29,
+      "total_samples": 494
+    }
+  }
+}

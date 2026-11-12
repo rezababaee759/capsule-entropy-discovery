@@ -1,0 +1,364 @@
+{
+  "target_definition": "y_i = softplus(g_theta(A_i, C_i, E_i, grad_a_i, grad_c_i, H_i, onehot(digit_i))) + 1e-8, the surrogate predicted importance on each sampled capsule state. Every input is the state's own value at [row, capsule] of the training-data checkpoint (row = idx // n_capsules, capsule = idx % n_capsules), digit_i = digit_labels[row], and H is the grad_H input (delta_H). No cap is applied.",
+  "feature_legend": {
+    "A": "activation input (capsule activation norm)",
+    "C": "coupling input (routing coefficient to the image's class)",
+    "entropy": "entropy input (normalized coupling entropy)",
+    "grad_a": "grad_a input (stored log1p gradient w.r.t. activation)",
+    "grad_c": "grad_c input (stored log1p gradient w.r.t. coupling)",
+    "H": "grad_H input (delta_H, stored log1p entropy-gradient feature)",
+    "digit": "digit one-hot input, onehot(digit_labels[row]); 10 columns"
+  },
+  "sampled_states": {
+    "n": 1000,
+    "distinct_rows": 100,
+    "digit_counts": {
+      "0": 106,
+      "1": 97,
+      "2": 91,
+      "3": 106,
+      "4": 112,
+      "5": 100,
+      "6": 98,
+      "7": 101,
+      "8": 100,
+      "9": 89
+    }
+  },
+  "input_checks": {
+    "inputs_equal_stored_values": true,
+    "digit_onehot_equals_onehot_of_digit_labels_row": true,
+    "distinct_digits_sampled": 10,
+    "max_abs_raw_diff_vs_training_layout_call": 9.5367431640625e-07,
+    "slot_order_matches_forward_keywords": true,
+    "output_transform_is_softplus_plus_1e-8": true
+  },
+  "shap": {
+    "method": "shap",
+    "explainer": "DeepExplainer",
+    "explained_function": "softplus(g_theta(all 16 inputs)) + 1e-8",
+    "num_background": 100,
+    "num_test": 500,
+    "input_columns": [
+      "activation",
+      "coupling",
+      "entropy",
+      "grad_a",
+      "grad_c",
+      "grad_H",
+      "digit_0",
+      "digit_1",
+      "digit_2",
+      "digit_3",
+      "digit_4",
+      "digit_5",
+      "digit_6",
+      "digit_7",
+      "digit_8",
+      "digit_9"
+    ],
+    "groups": {
+      "A": [
+        "activation"
+      ],
+      "C": [
+        "coupling"
+      ],
+      "entropy": [
+        "entropy"
+      ],
+      "grad_a": [
+        "grad_a"
+      ],
+      "grad_c": [
+        "grad_c"
+      ],
+      "H": [
+        "grad_H"
+      ],
+      "digit": [
+        "digit_0",
+        "digit_1",
+        "digit_2",
+        "digit_3",
+        "digit_4",
+        "digit_5",
+        "digit_6",
+        "digit_7",
+        "digit_8",
+        "digit_9"
+      ]
+    },
+    "group_rule": "per test state, the SHAP values of a group's columns are summed; feature_importance is the mean absolute value of that sum over test states",
+    "expected_value_background_mean": 0.000102922073820082,
+    "max_additivity_gap": 1.2256342234451267e-06,
+    "feature_importance": {
+      "A": 6.063537565929699e-06,
+      "C": 0.012683809326836687,
+      "entropy": 0.00011606987198379125,
+      "grad_a": 0.0018942972788267385,
+      "grad_c": 0.003363722476420634,
+      "H": 0.00040042346228067415,
+      "digit": 0.0008626839074187472
+    },
+    "relative_importance": {
+      "A": 0.0003137328942997586,
+      "C": 0.656271717225621,
+      "entropy": 0.006005559705457836,
+      "grad_a": 0.09801264715333667,
+      "grad_c": 0.17404203019673883,
+      "H": 0.020718270547662444,
+      "digit": 0.04463604227688337
+    },
+    "per_column_mean_abs_shap": {
+      "activation": 6.063537565929699e-06,
+      "coupling": 0.012683809326836687,
+      "entropy": 0.00011606987198379123,
+      "grad_a": 0.0018942972788267385,
+      "grad_c": 0.003363722476420634,
+      "grad_H": 0.00040042346228067415,
+      "digit_0": 6.626482093224695e-05,
+      "digit_1": 8.675671255855377e-05,
+      "digit_2": 0.00011809570235908495,
+      "digit_3": 0.00027865859203885,
+      "digit_4": 0.00020784216965353153,
+      "digit_5": 0.00012320184348482143,
+      "digit_6": 0.00015313899992383995,
+      "digit_7": 0.00011445497219556847,
+      "digit_8": 0.00012015581344073212,
+      "digit_9": 3.072451010984878e-05
+    },
+    "shap_values_sample": [
+      [
+        -1.0130512464456842e-06,
+        -3.8850161217851564e-05,
+        1.1906381436332936e-09,
+        -2.151898115698714e-06,
+        -8.493109817209188e-06,
+        -3.5207253858970944e-06,
+        8.256270120909903e-06,
+        1.2652546502067707e-05,
+        -1.6761268852860667e-06,
+        -2.534718817059911e-07,
+        3.511826889734948e-06,
+        2.8704776013910305e-06,
+        5.692480044672266e-06,
+        2.1927544366917573e-06,
+        -4.4585303839994594e-05,
+        5.376440185500542e-06
+      ],
+      [
+        -1.2237613873367081e-06,
+        6.66951818857342e-05,
+        5.304709560505216e-09,
+        6.917014161444968e-06,
+        2.464371755195316e-05,
+        1.085601525119273e-05,
+        2.2230527974897996e-05,
+        3.842470050585689e-06,
+        1.1711230399669148e-05,
+        1.426939525117632e-05,
+        6.920316991454456e-06,
+        -7.190949690993875e-05,
+        2.8820568331866525e-06,
+        -8.58274597703712e-06,
+        3.746889660760644e-06,
+        1.1898594493686687e-05
+      ],
+      [
+        2.1036651105532655e-06,
+        -1.144703674071934e-05,
+        -1.2798877513375828e-08,
+        -2.4001260499062482e-06,
+        -1.5200808775261976e-05,
+        -7.054119578242535e-06,
+        1.0672325515770353e-05,
+        1.6560739823034965e-05,
+        1.1889541156051564e-06,
+        8.324519512825646e-06,
+        1.2002789844700601e-05,
+        2.140119931937079e-06,
+        -7.207410089904442e-05,
+        1.7495144675194751e-06,
+        6.981102160352748e-06,
+        -1.1937979706999613e-06
+      ],
+      [
+        -1.326173332927283e-06,
+        -1.4191625268722419e-05,
+        -1.2007081551246301e-08,
+        -6.970411732254433e-07,
+        -1.2720191989501473e-05,
+        -5.613380380964372e-06,
+        1.920604745464516e-06,
+        3.0427120236709015e-06,
+        -1.205128228320973e-05,
+        -4.496674137044465e-06,
+        2.487932306394214e-06,
+        1.0966635272779968e-05,
+        5.329748546500923e-06,
+        -3.719879714481067e-06,
+        6.753223260602681e-07,
+        2.229568963230122e-06
+      ],
+      [
+        -1.8633943454915425e-07,
+        -2.008205592574086e-05,
+        -1.1479655448454196e-08,
+        -1.768841570992663e-06,
+        -1.1933061614399776e-05,
+        -5.250029516901122e-06,
+        1.8206108052254422e-06,
+        2.911154297180474e-06,
+        -1.173253076558467e-05,
+        -4.905233708996093e-06,
+        2.4558062250434887e-06,
+        1.0571146049187519e-05,
+        5.041382792114746e-06,
+        -3.5485413718561176e-06,
+        6.438128252739261e-07,
+        2.078943225569674e-06
+      ],
+      [
+        4.143620628838107e-07,
+        -1.6500207493663765e-05,
+        -1.2984709307772846e-08,
+        -2.9028058179392247e-06,
+        -1.3427103112917393e-05,
+        -6.205772024259204e-06,
+        1.0090356227010489e-05,
+        1.591168256709352e-05,
+        1.0809228569996776e-06,
+        7.929859748401213e-06,
+        1.14272143036942e-05,
+        1.9901199266314507e-06,
+        -6.928023503860459e-05,
+        1.7143893273896538e-06,
+        6.710090019623749e-06,
+        -1.197172991851403e-06
+      ],
+      [
+        1.8057291526929475e-05,
+        0.0002897215308621526,
+        5.300312295730691e-07,
+        2.510577905923128e-05,
+        0.00010632981866365299,
+        3.855933027807623e-05,
+        1.4238928088161629e-05,
+        3.936339999199845e-05,
+        -1.508953300799476e-05,
+        -1.631985287531279e-05,
+        2.8449476303649135e-06,
+        -1.880407944554463e-05,
+        6.387753728631651e-06,
+        -3.688711512950249e-05,
+        6.926760761416517e-06,
+        -3.2223601920122746e-06
+      ],
+      [
+        -1.202153157464636e-06,
+        -2.1280253349686973e-05,
+        1.2428528206598344e-09,
+        -5.450906996884441e-07,
+        -5.0006819947157055e-06,
+        -2.112304628099082e-06,
+        -5.1518745749490336e-06,
+        7.91095408203546e-06,
+        -6.899237178004114e-06,
+        -1.2227519619045779e-05,
+        7.822917723387945e-06,
+        7.80907430453226e-06,
+        1.3810247310175328e-06,
+        -4.329161583882524e-06,
+        -4.475061814446235e-07,
+        6.29081841907464e-06
+      ],
+      [
+        -1.8024777546088444e-06,
+        -8.34271759231342e-06,
+        -1.2068823274091756e-08,
+        -1.5512425761698978e-06,
+        -1.3081957149552181e-05,
+        -5.824854724778561e-06,
+        1.99095575226238e-06,
+        3.1239851523423567e-06,
+        -1.2323516784817912e-05,
+        -4.406743755680509e-06,
+        2.5371637093485333e-06,
+        1.1255056961090304e-05,
+        5.531820988835534e-06,
+        -3.841586476482917e-06,
+        6.95616449775116e-07,
+        2.326372850802727e-06
+      ],
+      [
+        -2.3668237645324552e-06,
+        -5.012640031054616e-06,
+        -1.1047320391810445e-08,
+        -2.986868139487342e-06,
+        -1.6393096302635968e-05,
+        -7.42798965802649e-06,
+        5.742061148339417e-06,
+        -5.4936455853749067e-05,
+        8.810414328763727e-06,
+        2.8079437015549047e-06,
+        1.1139394700876437e-05,
+        3.1442543786397437e-06,
+        9.139508620137349e-06,
+        9.827953363128472e-06,
+        8.454792805423494e-06,
+        1.983411266337498e-06
+      ]
+    ]
+  },
+  "_provenance": {
+    "schema": 2,
+    "script": "experiments/surrogate_attribution.py",
+    "argv": [
+      "experiments/surrogate_attribution.py",
+      "--predictor",
+      "models/ablation_predictor.pt",
+      "--training_data",
+      "models/ablation_predictor_training_data.pt",
+      "--num_samples",
+      "1000",
+      "--seed",
+      "42",
+      "--output",
+      "docs/figures/interpretation_output",
+      "--force"
+    ],
+    "inputs": [
+      {
+        "path": "models/ablation_predictor.pt",
+        "sha256": "1d0134e3f8030fac8e36f4274d5cce8ab38412be9e14d0b5cb550d0893ec40ea",
+        "bytes": 78703,
+        "status": "present"
+      },
+      {
+        "path": "models/ablation_predictor_training_data.pt",
+        "sha256": "fa9323b6eceeef8b780bd578091954040cb5dd09dcee14ba5c813db2a00cbb7d",
+        "bytes": 3806259,
+        "status": "present"
+      }
+    ],
+    "random_seed": {
+      "--seed": 42,
+      "note": "Seeds numpy and torch globally. The SHAP background and test index draws use the global numpy stream, so they depend on call order after seeding."
+    },
+    "sample_counts": {
+      "num_samples_requested": 1000
+    },
+    "timestamp_utc": "2026-11-12T19:57:59+00:00",
+    "software": {
+      "python": "3.10.10",
+      "platform": "Linux-6.8.0-106-generic-x86_64-with-glibc2.39",
+      "numpy": "1.25.1",
+      "shap": "0.49.1",
+      "torch": "2.0.1+cu118",
+      "cuda": "11.8",
+      "gpu": "NVIDIA GeForce RTX 4090"
+    },
+    "statistical_method": "SHAP DeepExplainer attribution of the ablation surrogate's predicted importance softplus(g_theta)+1e-8 over all predictor inputs, on states sampled from its training data, each with its own inputs."
+  }
+}

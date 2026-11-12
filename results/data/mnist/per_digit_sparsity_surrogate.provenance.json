@@ -1,0 +1,54 @@
+{
+  "_provenance": {
+    "schema": 2,
+    "script": "experiments/per_digit_sparsity_surrogate.py",
+    "argv": [
+      "experiments/per_digit_sparsity_surrogate.py",
+      "--capsule_model",
+      "models/capsule_mnist_best_dynamic.pt",
+      "--predictor",
+      "models/ablation_predictor.pt",
+      "--samples",
+      "50",
+      "--output",
+      "results/data/mnist/per_digit_sparsity_surrogate.json"
+    ],
+    "inputs": [
+      {
+        "path": "models/capsule_mnist_best_dynamic.pt",
+        "sha256": "49a12eea63c69764df675271c985ee1fae962f9a5d0aaa50a8a730675ebfb089",
+        "bytes": 32866082,
+        "status": "present"
+      },
+      {
+        "path": "models/ablation_predictor.pt",
+        "sha256": "1d0134e3f8030fac8e36f4274d5cce8ab38412be9e14d0b5cb550d0893ec40ea",
+        "bytes": 78703,
+        "status": "present"
+      }
+    ],
+    "random_seed": {
+      "rng": null,
+      "note": "No RNG. The calibration image slice is a deterministic range from capsnet.data, not a random draw."
+    },
+    "sample_counts": {
+      "samples_per_digit": 50,
+      "calibration_slice": [
+        60,
+        110
+      ],
+      "n_digits": 10
+    },
+    "timestamp_utc": "2026-11-12T19:42:34+00:00",
+    "software": {
+      "python": "3.10.10",
+      "platform": "Linux-6.8.0-106-generic-x86_64-with-glibc2.39",
+      "numpy": "1.25.1",
+      "scipy": "1.11.1",
+      "torch": "2.0.1+cu118",
+      "cuda": "11.8",
+      "gpu": "NVIDIA GeForce RTX 4090"
+    },
+    "statistical_method": "Per-digit Gini coefficient and cumulative-mass thresholds (sparsity_50, sparsity_80) over surrogate-predicted capsule importance. Descriptive: no test, no interval."
+  }
+}

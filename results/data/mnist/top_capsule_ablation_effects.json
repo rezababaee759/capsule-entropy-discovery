@@ -1,0 +1,461 @@
+{
+  "description": "Per-digit confidence-drop uncertainty and a matched random-capsule baseline: 30 non-critical capsules, each ablated across the same images as the top capsule; mean and SD are taken across capsules (capsule-level replicates), not over pooled images.",
+  "selection_vs_evaluation": {
+    "selection_source": "results/data/mnist/importance_matrix.npy",
+    "selection_split_purpose": "taxonomy_calibration",
+    "evaluation_split_purpose": "top_capsule_evaluation",
+    "evaluation_slice": [
+      310,
+      360
+    ],
+    "split_contract": "mnist: surrogate_train [0:10) | surrogate_heldout [10:60) | taxonomy_calibration [60:110) | evaluation [110:310) | top_capsule_evaluation [310:360)",
+    "note": "The top capsule is the argmax of the importance matrix, and the controls are drawn from a category thresholded on that same matrix; both are properties of the taxonomy_calibration slice. The ablation effect, the rank test and the bootstrap interval are measured on a disjoint slice, so the rank test compares the selected capsule against its controls on images that took no part in the selection. capsnet/data.py asserts the two ranges are disjoint at import."
+  },
+  "seed": 42,
+  "n_images_per_digit": 50,
+  "n_random_capsules": 30,
+  "random_baseline_capsule_ids": [
+    102,
+    109,
+    138,
+    221,
+    222,
+    365,
+    394,
+    411,
+    430,
+    472,
+    500,
+    551,
+    683,
+    720,
+    764,
+    768,
+    800,
+    813,
+    834,
+    872,
+    888,
+    900,
+    923,
+    930,
+    996,
+    1006,
+    1015,
+    1058,
+    1067,
+    1084
+  ],
+  "multiplicity": {
+    "family_size": 10,
+    "family": "one one-sided rank test per digit",
+    "primary": "Benjamini-Hochberg, q=0.05",
+    "secondary": "Holm-Bonferroni, alpha=0.05",
+    "implementation": "statsmodels.stats.multitest.multipletests",
+    "n_significant_bh": 10,
+    "n_significant_holm": 0,
+    "attainable_one_sided_p_floor": 0.03225806451612903,
+    "floor_note": "The smallest one-sided rank p attainable with 30 controls is 1/31 = 0.03226. A digit at that floor carries no resolution beyond \"the top capsule exceeded all 30 controls\". Surviving Bonferroni over 10 tests would need at least 199 controls per digit."
+  },
+  "per_digit": {
+    "0": {
+      "top_capsule": 869,
+      "top_conf_drop_pct_mean": 0.7536826133728027,
+      "top_conf_drop_pct_sd": 0.32495858394116567,
+      "n_images": 50,
+      "random_baseline_conf_drop_pct_mean": 0.010444362958272299,
+      "random_baseline_conf_drop_pct_sd": 0.027485078339765982,
+      "n_random_capsules": 30,
+      "exceeds_n_random_capsules": 30,
+      "n_random_capsules_compared": 30,
+      "rank_p_one_sided": 0.03225806451612903,
+      "excess_conf_drop_pct_mean": 0.7432382504145305,
+      "excess_conf_drop_pct_ci95": [
+        0.6504152312874794,
+        0.8338222967584928
+      ],
+      "excess_conf_drop_pct_ci95_sources": "top-capsule images + control capsules",
+      "excess_conf_drop_pct_ci95_baseline_only": [
+        0.73366024573644,
+        0.752933035492897
+      ],
+      "excess_conf_drop_pct_ci95_baseline_only_note": "Resamples only the control capsules, holding the top capsule mean fixed, so it is an interval on the baseline rather than on the excess. Use excess_conf_drop_pct_ci95.",
+      "effect_size_z": 27.041518355041323,
+      "effect_size_z_note": "Denominator is the SD of N_IMAGES-averaged means, so this scales as sqrt(N_IMAGES). Use rank_p_one_sided and excess_conf_drop_pct_ci95.",
+      "impact_ratio_mean": 72.1616642761213,
+      "impact_ratio_ci95": [
+        37.46832439296487,
+        382.4034568001913
+      ],
+      "rank_p_bh_adjusted": 0.03225806451612903,
+      "rank_p_significant_bh": true,
+      "rank_p_holm_adjusted": 0.3225806451612903,
+      "rank_p_significant_holm": false,
+      "rank_p_attainable_floor": 0.03225806451612903
+    },
+    "1": {
+      "top_capsule": 117,
+      "top_conf_drop_pct_mean": 0.4901965260505676,
+      "top_conf_drop_pct_sd": 0.13615082216865787,
+      "n_images": 50,
+      "random_baseline_conf_drop_pct_mean": 0.014655381441116333,
+      "random_baseline_conf_drop_pct_sd": 0.032092623104234316,
+      "n_random_capsules": 30,
+      "exceeds_n_random_capsules": 30,
+      "n_random_capsules_compared": 30,
+      "rank_p_one_sided": 0.03225806451612903,
+      "excess_conf_drop_pct_mean": 0.4755411446094513,
+      "excess_conf_drop_pct_ci95": [
+        0.4376374804476897,
+        0.5145819560190042
+      ],
+      "excess_conf_drop_pct_ci95_sources": "top-capsule images + control capsules",
+      "excess_conf_drop_pct_ci95_baseline_only": [
+        0.4638256390392781,
+        0.4862944587568442
+      ],
+      "excess_conf_drop_pct_ci95_baseline_only_note": "Resamples only the control capsules, holding the top capsule mean fixed, so it is an interval on the baseline rather than on the excess. Use excess_conf_drop_pct_ci95.",
+      "effect_size_z": 14.817771145254506,
+      "effect_size_z_note": "Denominator is the SD of N_IMAGES-averaged means, so this scales as sqrt(N_IMAGES). Use rank_p_one_sided and excess_conf_drop_pct_ci95.",
+      "impact_ratio_mean": 33.44822705707947,
+      "impact_ratio_ci95": [
+        18.589716455705926,
+        118.14727756462186
+      ],
+      "rank_p_bh_adjusted": 0.03225806451612903,
+      "rank_p_significant_bh": true,
+      "rank_p_holm_adjusted": 0.3225806451612903,
+      "rank_p_significant_holm": false,
+      "rank_p_attainable_floor": 0.03225806451612903
+    },
+    "2": {
+      "top_capsule": 1139,
+      "top_conf_drop_pct_mean": 0.8094601631164551,
+      "top_conf_drop_pct_sd": 0.7512930722250155,
+      "n_images": 50,
+      "random_baseline_conf_drop_pct_mean": 0.004912702242533365,
+      "random_baseline_conf_drop_pct_sd": 0.028914113727457315,
+      "n_random_capsules": 30,
+      "exceeds_n_random_capsules": 30,
+      "n_random_capsules_compared": 30,
+      "rank_p_one_sided": 0.03225806451612903,
+      "excess_conf_drop_pct_mean": 0.8045474608739217,
+      "excess_conf_drop_pct_ci95": [
+        0.611052279273669,
+        1.0202412971854211
+      ],
+      "excess_conf_drop_pct_ci95_sources": "top-capsule images + control capsules",
+      "excess_conf_drop_pct_ci95_baseline_only": [
+        0.7939718026916186,
+        0.8141285794973373
+      ],
+      "excess_conf_drop_pct_ci95_baseline_only_note": "Resamples only the control capsules, holding the top capsule mean fixed, so it is an interval on the baseline rather than on the excess. Use excess_conf_drop_pct_ci95.",
+      "effect_size_z": 27.825423544277974,
+      "effect_size_z_note": "Denominator is the SD of N_IMAGES-averaged means, so this scales as sqrt(N_IMAGES). Use rank_p_one_sided and excess_conf_drop_pct_ci95.",
+      "impact_ratio_mean": 164.7688223618119,
+      "impact_ratio_ci95": [
+        49.95051106296851,
+        2011.566546321773
+      ],
+      "rank_p_bh_adjusted": 0.03225806451612903,
+      "rank_p_significant_bh": true,
+      "rank_p_holm_adjusted": 0.3225806451612903,
+      "rank_p_significant_holm": false,
+      "rank_p_attainable_floor": 0.03225806451612903
+    },
+    "3": {
+      "top_capsule": 68,
+      "top_conf_drop_pct_mean": 3.162351369857788,
+      "top_conf_drop_pct_sd": 1.4337946106217774,
+      "n_images": 50,
+      "random_baseline_conf_drop_pct_mean": 0.01523873408635457,
+      "random_baseline_conf_drop_pct_sd": 0.04066154250509425,
+      "n_random_capsules": 30,
+      "exceeds_n_random_capsules": 30,
+      "n_random_capsules_compared": 30,
+      "rank_p_one_sided": 0.03225806451612903,
+      "excess_conf_drop_pct_mean": 3.147112635771434,
+      "excess_conf_drop_pct_ci95": [
+        2.7776008568207424,
+        3.5570187437534333
+      ],
+      "excess_conf_drop_pct_ci95_sources": "top-capsule images + control capsules",
+      "excess_conf_drop_pct_ci95_baseline_only": [
+        3.131581115225951,
+        3.160054268737634
+      ],
+      "excess_conf_drop_pct_ci95_baseline_only_note": "Resamples only the control capsules, holding the top capsule mean fixed, so it is an interval on the baseline rather than on the excess. Use excess_conf_drop_pct_ci95.",
+      "effect_size_z": 77.39776806000782,
+      "effect_size_z_note": "Denominator is the SD of N_IMAGES-averaged means, so this scales as sqrt(N_IMAGES). Use rank_p_one_sided and excess_conf_drop_pct_ci95.",
+      "impact_ratio_mean": 207.52060846638804,
+      "impact_ratio_ci95": [
+        102.52253673968721,
+        1061.500968404855
+      ],
+      "rank_p_bh_adjusted": 0.03225806451612903,
+      "rank_p_significant_bh": true,
+      "rank_p_holm_adjusted": 0.3225806451612903,
+      "rank_p_significant_holm": false,
+      "rank_p_attainable_floor": 0.03225806451612903
+    },
+    "4": {
+      "top_capsule": 101,
+      "top_conf_drop_pct_mean": 4.37085485458374,
+      "top_conf_drop_pct_sd": 1.9201367905825057,
+      "n_images": 50,
+      "random_baseline_conf_drop_pct_mean": 0.0012487490971883138,
+      "random_baseline_conf_drop_pct_sd": 0.028965644249487343,
+      "n_random_capsules": 30,
+      "exceeds_n_random_capsules": 30,
+      "n_random_capsules_compared": 30,
+      "rank_p_one_sided": 0.03225806451612903,
+      "excess_conf_drop_pct_mean": 4.369606105486552,
+      "excess_conf_drop_pct_ci95": [
+        3.8752952585617693,
+        4.934340837697188
+      ],
+      "excess_conf_drop_pct_ci95_sources": "top-capsule images + control capsules",
+      "excess_conf_drop_pct_ci95_baseline_only": [
+        4.359665505290032,
+        4.379624054332575
+      ],
+      "excess_conf_drop_pct_ci95_baseline_only_note": "Resamples only the control capsules, holding the top capsule mean fixed, so it is an interval on the baseline rather than on the excess. Use excess_conf_drop_pct_ci95.",
+      "effect_size_z": 150.8547874112584,
+      "effect_size_z_note": "Denominator is the SD of N_IMAGES-averaged means, so this scales as sqrt(N_IMAGES). Use rank_p_one_sided and excess_conf_drop_pct_ci95.",
+      "impact_ratio_mean": 3500.186598272757,
+      "impact_ratio_ci95": [
+        346.27531154166263,
+        24332.040606291368
+      ],
+      "rank_p_bh_adjusted": 0.03225806451612903,
+      "rank_p_significant_bh": true,
+      "rank_p_holm_adjusted": 0.3225806451612903,
+      "rank_p_significant_holm": false,
+      "rank_p_attainable_floor": 0.03225806451612903
+    },
+    "5": {
+      "top_capsule": 374,
+      "top_conf_drop_pct_mean": 2.982588827610016,
+      "top_conf_drop_pct_sd": 1.7724995214739758,
+      "n_images": 50,
+      "random_baseline_conf_drop_pct_mean": 0.017755315949519478,
+      "random_baseline_conf_drop_pct_sd": 0.07221324896608163,
+      "n_random_capsules": 30,
+      "exceeds_n_random_capsules": 30,
+      "n_random_capsules_compared": 30,
+      "rank_p_one_sided": 0.03225806451612903,
+      "excess_conf_drop_pct_mean": 2.9648335116604962,
+      "excess_conf_drop_pct_ci95": [
+        2.5262182890002927,
+        3.4693736054810387
+      ],
+      "excess_conf_drop_pct_ci95_sources": "top-capsule images + control capsules",
+      "excess_conf_drop_pct_ci95_baseline_only": [
+        2.937802637902399,
+        2.988150384686887
+      ],
+      "excess_conf_drop_pct_ci95_baseline_only_note": "Resamples only the control capsules, holding the top capsule mean fixed, so it is an interval on the baseline rather than on the excess. Use excess_conf_drop_pct_ci95.",
+      "effect_size_z": 41.05664201666194,
+      "effect_size_z_note": "Denominator is the SD of N_IMAGES-averaged means, so this scales as sqrt(N_IMAGES). Use rank_p_one_sided and excess_conf_drop_pct_ci95.",
+      "impact_ratio_mean": 167.9828641793747,
+      "impact_ratio_ci95": [
+        63.90474504816493,
+        1850.97668227048
+      ],
+      "rank_p_bh_adjusted": 0.03225806451612903,
+      "rank_p_significant_bh": true,
+      "rank_p_holm_adjusted": 0.3225806451612903,
+      "rank_p_significant_holm": false,
+      "rank_p_attainable_floor": 0.03225806451612903
+    },
+    "6": {
+      "top_capsule": 245,
+      "top_conf_drop_pct_mean": 1.083733320236206,
+      "top_conf_drop_pct_sd": 0.6396681768407296,
+      "n_images": 50,
+      "random_baseline_conf_drop_pct_mean": 0.012478240331013996,
+      "random_baseline_conf_drop_pct_sd": 0.03944311622600102,
+      "n_random_capsules": 30,
+      "exceeds_n_random_capsules": 30,
+      "n_random_capsules_compared": 30,
+      "rank_p_one_sided": 0.03225806451612903,
+      "excess_conf_drop_pct_mean": 1.071255079905192,
+      "excess_conf_drop_pct_ci95": [
+        0.908498059908549,
+        1.2521029923359552
+      ],
+      "excess_conf_drop_pct_ci95_sources": "top-capsule images + control capsules",
+      "excess_conf_drop_pct_ci95_baseline_only": [
+        1.0575269074241322,
+        1.0848239849011103
+      ],
+      "excess_conf_drop_pct_ci95_baseline_only_note": "Resamples only the control capsules, holding the top capsule mean fixed, so it is an interval on the baseline rather than on the excess. Use excess_conf_drop_pct_ci95.",
+      "effect_size_z": 27.159494036097932,
+      "effect_size_z_note": "Denominator is the SD of N_IMAGES-averaged means, so this scales as sqrt(N_IMAGES). Use rank_p_one_sided and excess_conf_drop_pct_ci95.",
+      "impact_ratio_mean": 86.849851540577,
+      "impact_ratio_ci95": [
+        40.87270729588814,
+        741.9601242231894
+      ],
+      "rank_p_bh_adjusted": 0.03225806451612903,
+      "rank_p_significant_bh": true,
+      "rank_p_holm_adjusted": 0.3225806451612903,
+      "rank_p_significant_holm": false,
+      "rank_p_attainable_floor": 0.03225806451612903
+    },
+    "7": {
+      "top_capsule": 1021,
+      "top_conf_drop_pct_mean": 9.038837999105453,
+      "top_conf_drop_pct_sd": 4.232090158738535,
+      "n_images": 50,
+      "random_baseline_conf_drop_pct_mean": -0.0039100249608357745,
+      "random_baseline_conf_drop_pct_sd": 0.03661223588658398,
+      "n_random_capsules": 30,
+      "exceeds_n_random_capsules": 30,
+      "n_random_capsules_compared": 30,
+      "rank_p_one_sided": 0.03225806451612903,
+      "excess_conf_drop_pct_mean": 9.04274802406629,
+      "excess_conf_drop_pct_ci95": [
+        7.969146969715754,
+        10.256002113074064
+      ],
+      "excess_conf_drop_pct_ci95_sources": "top-capsule images + control capsules",
+      "excess_conf_drop_pct_ci95_baseline_only": [
+        9.029840623835723,
+        9.055472636967897
+      ],
+      "excess_conf_drop_pct_ci95_baseline_only_note": "Resamples only the control capsules, holding the top capsule mean fixed, so it is an interval on the baseline rather than on the excess. Use excess_conf_drop_pct_ci95.",
+      "effect_size_z": 246.98704695551993,
+      "effect_size_z_note": "Denominator is the SD of N_IMAGES-averaged means, so this scales as sqrt(N_IMAGES). Use rank_p_one_sided and excess_conf_drop_pct_ci95.",
+      "impact_ratio_mean": -2311.7085158385757,
+      "impact_ratio_ci95": [
+        780.767470867254,
+        62466.42013546164
+      ],
+      "rank_p_bh_adjusted": 0.03225806451612903,
+      "rank_p_significant_bh": true,
+      "rank_p_holm_adjusted": 0.3225806451612903,
+      "rank_p_significant_holm": false,
+      "rank_p_attainable_floor": 0.03225806451612903
+    },
+    "8": {
+      "top_capsule": 1060,
+      "top_conf_drop_pct_mean": 2.219026207923889,
+      "top_conf_drop_pct_sd": 1.4680381674050045,
+      "n_images": 50,
+      "random_baseline_conf_drop_pct_mean": 0.017921149730682373,
+      "random_baseline_conf_drop_pct_sd": 0.053383127569026065,
+      "n_random_capsules": 30,
+      "exceeds_n_random_capsules": 30,
+      "n_random_capsules_compared": 30,
+      "rank_p_one_sided": 0.03225806451612903,
+      "excess_conf_drop_pct_mean": 2.201105058193207,
+      "excess_conf_drop_pct_ci95": [
+        1.840153166850408,
+        2.6444507132967314
+      ],
+      "excess_conf_drop_pct_ci95_sources": "top-capsule images + control capsules",
+      "excess_conf_drop_pct_ci95_baseline_only": [
+        2.180765427251657,
+        2.2181736792127293
+      ],
+      "excess_conf_drop_pct_ci95_baseline_only_note": "Resamples only the control capsules, holding the top capsule mean fixed, so it is an interval on the baseline rather than on the excess. Use excess_conf_drop_pct_ci95.",
+      "effect_size_z": 41.23222370864481,
+      "effect_size_z_note": "Denominator is the SD of N_IMAGES-averaged means, so this scales as sqrt(N_IMAGES). Use rank_p_one_sided and excess_conf_drop_pct_ci95.",
+      "impact_ratio_mean": 123.82164321325585,
+      "impact_ratio_ci95": [
+        57.75669811154883,
+        803.0281717482995
+      ],
+      "rank_p_bh_adjusted": 0.03225806451612903,
+      "rank_p_significant_bh": true,
+      "rank_p_holm_adjusted": 0.3225806451612903,
+      "rank_p_significant_holm": false,
+      "rank_p_attainable_floor": 0.03225806451612903
+    },
+    "9": {
+      "top_capsule": 101,
+      "top_conf_drop_pct_mean": 16.679901480674744,
+      "top_conf_drop_pct_sd": 5.66990167760478,
+      "n_images": 50,
+      "random_baseline_conf_drop_pct_mean": -0.0081593910853068,
+      "random_baseline_conf_drop_pct_sd": 0.07450303637321208,
+      "n_random_capsules": 30,
+      "exceeds_n_random_capsules": 30,
+      "n_random_capsules_compared": 30,
+      "rank_p_one_sided": 0.03225806451612903,
+      "excess_conf_drop_pct_mean": 16.68806087176005,
+      "excess_conf_drop_pct_ci95": [
+        15.168769272069135,
+        18.27974258452654
+      ],
+      "excess_conf_drop_pct_ci95_sources": "top-capsule images + control capsules",
+      "excess_conf_drop_pct_ci95_baseline_only": [
+        16.66167432983716,
+        16.714012651443483
+      ],
+      "excess_conf_drop_pct_ci95_baseline_only_note": "Resamples only the control capsules, holding the top capsule mean fixed, so it is an interval on the baseline rather than on the excess. Use excess_conf_drop_pct_ci95.",
+      "effect_size_z": 223.991687911398,
+      "effect_size_z_note": "Denominator is the SD of N_IMAGES-averaged means, so this scales as sqrt(N_IMAGES). Use rank_p_one_sided and excess_conf_drop_pct_ci95.",
+      "impact_ratio_mean": -2044.258120034403,
+      "impact_ratio_ci95": [
+        660.8875130398428,
+        54908.50839292123
+      ],
+      "rank_p_bh_adjusted": 0.03225806451612903,
+      "rank_p_significant_bh": true,
+      "rank_p_holm_adjusted": 0.3225806451612903,
+      "rank_p_significant_holm": false,
+      "rank_p_attainable_floor": 0.03225806451612903
+    }
+  },
+  "_provenance": {
+    "schema": 2,
+    "script": "experiments/top_capsule_ablation_effects.py",
+    "argv": [
+      "experiments/top_capsule_ablation_effects.py"
+    ],
+    "inputs": [
+      {
+        "path": "results/data/mnist/importance_matrix.npy",
+        "sha256": "e7e8d74e40e315e8bc4acbd34ca6d7d3d469b87d7aa9db1ff2f882d602172b56",
+        "bytes": 92288,
+        "status": "present"
+      },
+      {
+        "path": "results/data/mnist/hub_taxonomy.json",
+        "sha256": "ec35638a39b2dfc3a9c990d00127e057586860035daa25e760905e6b26e94d38",
+        "bytes": 13973,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_mnist_best_dynamic.pt",
+        "sha256": "49a12eea63c69764df675271c985ee1fae962f9a5d0aaa50a8a730675ebfb089",
+        "bytes": 32866082,
+        "status": "present"
+      }
+    ],
+    "random_seed": {
+      "SEED": 42,
+      "note": "One default_rng(SEED) stream is shared by the control-capsule draw and all three bootstrap loops, in that order."
+    },
+    "sample_counts": {
+      "n_images_per_digit": 50,
+      "n_random_capsules": 30,
+      "n_bootstrap": 10000,
+      "n_digits": 10,
+      "non_critical_pool_size": 202
+    },
+    "timestamp_utc": "2026-11-12T19:43:06+00:00",
+    "software": {
+      "python": "3.10.10",
+      "platform": "Linux-6.8.0-106-generic-x86_64-with-glibc2.39",
+      "numpy": "1.25.1",
+      "statsmodels": "0.14.0",
+      "torch": "2.0.1+cu118",
+      "cuda": "11.8",
+      "gpu": "NVIDIA GeForce RTX 4090"
+    },
+    "statistical_method": "Per digit: the top capsule is the argmax of the importance matrix (built on the taxonomy_calibration slice); its ablation effect, an exact one-sided randomisation rank test against the non-critical controls, and a percentile bootstrap CI on the excess resampling BOTH images and control capsules, are all measured on the disjoint top_capsule_evaluation slice. The per-digit rank tests are corrected with Benjamini-Hochberg and Holm-Bonferroni."
+  }
+}

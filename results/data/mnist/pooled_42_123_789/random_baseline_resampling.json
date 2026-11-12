@@ -1,0 +1,155 @@
+{
+  "description": "Resampling distribution of the Random-baseline domain gap. The canonical analysis draws 50 non-critical capsules per seed once; this evaluates the entire non-critical pool with the identical protocol and resamples 50-capsule subsets, so the interval reflects which capsules the protocol could have selected.",
+  "n_resamples": 2000,
+  "n_random_per_seed": 50,
+  "seeds": [
+    42,
+    123,
+    789
+  ],
+  "samples_per_digit": 200,
+  "eval_start": 110,
+  "pool_sizes": {
+    "42": 202,
+    "123": 152,
+    "789": 144
+  },
+  "random_baseline_gap_resampled": {
+    "mean_pp": 42.772737407407405,
+    "sd_pp": 1.322962084092177,
+    "ci95_pp": [
+      40.251074074074076,
+      45.36972222222221
+    ],
+    "min_pp": 38.16888888888889,
+    "max_pp": 47.456666666666656
+  },
+  "full_pool_no_sampling": {
+    "gap_pp": 43.23828647925034,
+    "within_pct": 85.28313253012048,
+    "cross_pct": 42.04484605087014,
+    "n_capsule_seats": 498
+  },
+  "hub": {
+    "gap_pp": 31.73515691263783,
+    "within_pct": 97.19083969465649,
+    "cross_pct": 65.45568278201866,
+    "n_capsule_seats": 262
+  },
+  "specialist": {
+    "gap_pp": 35.9237987987988,
+    "within_pct": 93.57939189189189,
+    "cross_pct": 57.655593093093096,
+    "n_capsule_seats": 296
+  },
+  "one_sided_resampling_p": {
+    "hub": 1.0,
+    "specialist": 1.0
+  },
+  "environment": {
+    "torch": "2.0.1+cu118",
+    "python": "3.10.10"
+  },
+  "_provenance": {
+    "schema": 2,
+    "script": "experiments/random_baseline_resampling.py",
+    "argv": [
+      "experiments/random_baseline_resampling.py",
+      "--seeds",
+      "42",
+      "123",
+      "789",
+      "--output",
+      "results/data/mnist/pooled_42_123_789/random_baseline_resampling.json"
+    ],
+    "inputs": [
+      {
+        "path": "models/capsule_mnist_best_dynamic.pt",
+        "sha256": "49a12eea63c69764df675271c985ee1fae962f9a5d0aaa50a8a730675ebfb089",
+        "bytes": 32866082,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_mnist_dynamic_seed123.pt",
+        "sha256": "c8676fd3fb840446d574643058372e500ba7ba8f2cf7cc0a605037b910d014b0",
+        "bytes": 32866082,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_mnist_dynamic_seed789.pt",
+        "sha256": "bd193b55290b3a5863d84bf53933af224293872dfb40ac4e49599eeab2432e6f",
+        "bytes": 32866082,
+        "status": "present"
+      },
+      {
+        "path": "results/data/mnist/hub_taxonomy.json",
+        "sha256": "ec35638a39b2dfc3a9c990d00127e057586860035daa25e760905e6b26e94d38",
+        "bytes": 13973,
+        "status": "present"
+      },
+      {
+        "path": "results/data/mnist/importance_matrix.npy",
+        "sha256": "e7e8d74e40e315e8bc4acbd34ca6d7d3d469b87d7aa9db1ff2f882d602172b56",
+        "bytes": 92288,
+        "status": "present"
+      },
+      {
+        "path": "results/data/mnist/seed123/hub_taxonomy.json",
+        "sha256": "b44254afb424e48a1d5d6e29db759c3a78e514081c48308c8e8bdc2aa33e5f54",
+        "bytes": 13920,
+        "status": "present"
+      },
+      {
+        "path": "results/data/mnist/seed123/importance_matrix.npy",
+        "sha256": "e69d5376a1ab9a6afb1a5dee16e929a7063d536863cc8ff27f3357e70f115646",
+        "bytes": 92288,
+        "status": "present"
+      },
+      {
+        "path": "results/data/mnist/seed789/hub_taxonomy.json",
+        "sha256": "fb4a8d08258f613543b805c2398618e1a90dfd901a461257370cab5b2a366b4a",
+        "bytes": 13682,
+        "status": "present"
+      },
+      {
+        "path": "results/data/mnist/seed789/importance_matrix.npy",
+        "sha256": "ddf3a2bf28ccf147c07bb3911fad5f64336e6244e1d9ae9ba8402bb97ad2c10a",
+        "bytes": 92288,
+        "status": "present"
+      }
+    ],
+    "random_seed": {
+      "--seed": 0,
+      "resampling_rng": "numpy default_rng(0)",
+      "trained_model_seeds": [
+        42,
+        123,
+        789
+      ],
+      "note": "The image pools are a deterministic slice; only the capsule subsampling consumes the RNG."
+    },
+    "sample_counts": {
+      "n_resamples": 2000,
+      "n_random_per_seed": 50,
+      "samples_per_digit": 200,
+      "non_critical_pool_sizes": {
+        "42": 202,
+        "123": 152,
+        "789": 144
+      },
+      "hub_capsule_seats": 262,
+      "specialist_capsule_seats": 296
+    },
+    "timestamp_utc": "2026-11-12T19:54:40+00:00",
+    "software": {
+      "python": "3.10.10",
+      "platform": "Linux-6.8.0-106-generic-x86_64-with-glibc2.39",
+      "numpy": "1.25.1",
+      "scipy": "1.11.1",
+      "torch": "2.0.1+cu118",
+      "cuda": "11.8",
+      "gpu": "NVIDIA GeForce RTX 4090"
+    },
+    "statistical_method": "Subsampling (not bootstrap) distribution of the non-critical domain gap: every non-critical capsule is evaluated under the canonical protocol, then 50-capsule subsets are drawn WITHOUT replacement per seed and pooled across seeds, giving a 95% percentile interval over which capsules the protocol could have selected. One-sided tail fractions are reported for the Hub and Specialist gaps."
+  }
+}

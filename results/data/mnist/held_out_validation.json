@@ -1,0 +1,94 @@
+{
+  "images_per_digit": 50,
+  "skip_per_digit": 10,
+  "total_images": 500,
+  "overall": {
+    "pearson_r": 0.8386562522756992,
+    "spearman_r": 0.8104762083091968,
+    "precision_at_50": 0.88
+  },
+  "training_set_reference": {
+    "pearson": 0.8319125582688098,
+    "spearman": 0.7132664252761998,
+    "mse": 0.0683966875076294,
+    "individual_loss": 0.3512708246707916,
+    "topk_loss": 0.0,
+    "precision@10": 0.9,
+    "ndcg@10": 0.9363792118010483,
+    "precision@50": 0.84,
+    "ndcg@50": 0.8865645805107687,
+    "precision@100": 0.93,
+    "ndcg@100": 0.9494563646657233,
+    "precision@200": 0.7,
+    "ndcg@200": 0.7640296418469378,
+    "diagnostics": {
+      "pred_cv": 32.874613607519734,
+      "targ_cv": 10.719628782844946,
+      "median_rank_diff": 11809.5,
+      "mean_rank_diff": 17513.890026041667,
+      "small_diff_ratio": 0.6423524305555556
+    }
+  },
+  "per_digit": {
+    "0": {
+      "n_images": 50,
+      "pearson_r": 0.46740241305387004,
+      "spearman_r": 0.9253441426479977,
+      "precision_at_50": 0.74
+    },
+    "1": {
+      "n_images": 50,
+      "pearson_r": 0.6001993416592476,
+      "spearman_r": 0.9325370321871748,
+      "precision_at_50": 0.48
+    },
+    "2": {
+      "n_images": 50,
+      "pearson_r": 0.5144106483011798,
+      "spearman_r": 0.8546756926949536,
+      "precision_at_50": 0.54
+    },
+    "3": {
+      "n_images": 50,
+      "pearson_r": 0.7847407413976943,
+      "spearman_r": 0.8441812274189885,
+      "precision_at_50": 0.68
+    },
+    "4": {
+      "n_images": 50,
+      "pearson_r": 0.8438881601480732,
+      "spearman_r": 0.7823559261961992,
+      "precision_at_50": 0.62
+    },
+    "5": {
+      "n_images": 50,
+      "pearson_r": 0.7744975105758443,
+      "spearman_r": 0.8466280662174651,
+      "precision_at_50": 0.72
+    },
+    "6": {
+      "n_images": 50,
+      "pearson_r": 0.5529979633039651,
+      "spearman_r": 0.884260438075977,
+      "precision_at_50": 0.46
+    },
+    "7": {
+      "n_images": 50,
+      "pearson_r": 0.9035200207485153,
+      "spearman_r": 0.8755883007174345,
+      "precision_at_50": 0.98
+    },
+    "8": {
+      "n_images": 50,
+      "pearson_r": 0.7815403004194992,
+      "spearman_r": 0.8322449317995901,
+      "precision_at_50": 0.56
+    },
+    "9": {
+      "n_images": 50,
+      "pearson_r": 0.9313185393006941,
+      "spearman_r": 0.7323183277873696,
+      "precision_at_50": 1.0
+    }
+  }
+}

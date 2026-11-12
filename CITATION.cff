@@ -1,0 +1,52 @@
+# Citation metadata for this repository (Citation File Format 1.2.0).
+# https://citation-file-format.github.io
+#
+# Not yet recorded: a DOI (software and article) and ORCID identifiers. Add them at
+# publication.
+
+cff-version: 1.2.0
+message: If you use this software or its results, please cite the article below.
+title: "The Entropy Bridge: From Mechanistic Interpretability to Explainability in Capsule Networks"
+abstract: >-
+  Implementation, canonical result artifacts and reproduction pipeline for a study
+  of Capsule Networks through causal mechanistic interpretability. Exhaustive
+  single-capsule ablation reveals a functional hierarchy among primary capsules
+  (the Hub-Specialist taxonomy), which motivates Vectorized Entropy Gating (VEG),
+  a routing rule that learns a per-capsule uncertainty tolerance.
+type: software
+repository-code: "https://github.com/rezababaee759/capsule-entropy-discovery"
+license: MIT
+authors:
+  - family-names: Babaei
+    given-names: Reza
+    affiliation: "University of Oklahoma"
+  - family-names: Cheng
+    given-names: Samuel
+    affiliation: "University of Oklahoma"
+  - family-names: Zhao
+    given-names: Shangqing
+    affiliation: "University of Oklahoma"
+keywords:
+  - capsule networks
+  - mechanistic interpretability
+  - explainable AI
+  - dynamic routing
+  - entropy gating
+  - reproducible research
+
+preferred-citation:
+  type: article
+  title: "The Entropy Bridge: From Mechanistic Interpretability to Explainability in Capsule Networks"
+  authors:
+    - family-names: Babaei
+      given-names: Reza
+      affiliation: "University of Oklahoma"
+    - family-names: Cheng
+      given-names: Samuel
+      affiliation: "University of Oklahoma"
+    - family-names: Zhao
+      given-names: Shangqing
+      affiliation: "University of Oklahoma"
+  journal: "Information Sciences"
+  year: 2026
+  notes: "Under review"

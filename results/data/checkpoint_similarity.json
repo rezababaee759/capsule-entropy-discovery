@@ -1,0 +1,1942 @@
+{
+  "pairs": {
+    "mnist_best_dynamic": {
+      "stored_keys": [
+        "conv1.bias",
+        "conv1.weight",
+        "decoder.0.bias",
+        "decoder.0.weight",
+        "decoder.2.bias",
+        "decoder.2.weight",
+        "decoder.4.bias",
+        "decoder.4.weight",
+        "digits.routing_module.W",
+        "primary.conv.bias",
+        "primary.conv.weight"
+      ],
+      "vs": {
+        "seed42": {
+          "relative_l2": 1.6982419181260229,
+          "min_cosine": -0.005449273319718765,
+          "exact_equal": false,
+          "per_tensor": {
+            "conv1.weight": {
+              "relative_l2": 1.4394582049452294,
+              "cosine": 0.09155346827190805
+            },
+            "conv1.bias": {
+              "relative_l2": 1.3028743655085158,
+              "cosine": 0.3191403946467227
+            },
+            "primary.conv.weight": {
+              "relative_l2": 1.7967674580160875,
+              "cosine": 0.0017355609496480604
+            },
+            "primary.conv.bias": {
+              "relative_l2": 1.6639611953057551,
+              "cosine": 0.034091572645529124
+            },
+            "digits.routing_module.W": {
+              "relative_l2": 1.5649969925658889,
+              "cosine": -0.0006726192462187715
+            },
+            "decoder.0.weight": {
+              "relative_l2": 1.4868418958317504,
+              "cosine": -0.005449273319718765
+            },
+            "decoder.0.bias": {
+              "relative_l2": 1.056171154479137,
+              "cosine": 0.4231991210692725
+            },
+            "decoder.2.weight": {
+              "relative_l2": 1.4280164437812954,
+              "cosine": 0.024301269992478
+            },
+            "decoder.2.bias": {
+              "relative_l2": 1.1828561829997069,
+              "cosine": 0.3012012986120015
+            },
+            "decoder.4.weight": {
+              "relative_l2": 1.3951657741106518,
+              "cosine": 0.10045109408572533
+            },
+            "decoder.4.bias": {
+              "relative_l2": 0.6988856895088071,
+              "cosine": 0.7569939011141826
+            }
+          }
+        },
+        "seed123": {
+          "relative_l2": 1.540227189814807,
+          "min_cosine": -0.0002386280101196092,
+          "exact_equal": false,
+          "per_tensor": {
+            "conv1.weight": {
+              "relative_l2": 1.4004025898914536,
+              "cosine": 0.08870104068182783
+            },
+            "conv1.bias": {
+              "relative_l2": 1.1991420924568603,
+              "cosine": 0.34308762594167824
+            },
+            "primary.conv.weight": {
+              "relative_l2": 1.5891820977181903,
+              "cosine": -0.0002386280101196092
+            },
+            "primary.conv.bias": {
+              "relative_l2": 1.607060899327694,
+              "cosine": 0.013314900723090946
+            },
+            "digits.routing_module.W": {
+              "relative_l2": 1.486961423803517,
+              "cosine": 0.00035398792226079366
+            },
+            "decoder.0.weight": {
+              "relative_l2": 1.468135460877573,
+              "cosine": 0.0013149694648609358
+            },
+            "decoder.0.bias": {
+              "relative_l2": 1.0188858252069017,
+              "cosine": 0.4820828228146394
+            },
+            "decoder.2.weight": {
+              "relative_l2": 1.424196795976165,
+              "cosine": 0.02365078207971117
+            },
+            "decoder.2.bias": {
+              "relative_l2": 1.2142072071170442,
+              "cosine": 0.28411473074445137
+            },
+            "decoder.4.weight": {
+              "relative_l2": 1.3702823519848164,
+              "cosine": 0.11061633472737097
+            },
+            "decoder.4.bias": {
+              "relative_l2": 0.661808535645777,
+              "cosine": 0.7802932814119842
+            }
+          }
+        },
+        "seed456": {
+          "relative_l2": 0.015269337924929186,
+          "min_cosine": 0.9998282909741778,
+          "exact_equal": false,
+          "per_tensor": {
+            "conv1.weight": {
+              "relative_l2": 0.018531305644961266,
+              "cosine": 0.9998282909741778
+            },
+            "conv1.bias": {
+              "relative_l2": 0.010296237529414267,
+              "cosine": 0.9999472022452258
+            },
+            "primary.conv.weight": {
+              "relative_l2": 0.01785912593076736,
+              "cosine": 0.9998405231085048
+            },
+            "primary.conv.bias": {
+              "relative_l2": 0.006436429462848158,
+              "cosine": 0.9999792921517063
+            },
+            "digits.routing_module.W": {
+              "relative_l2": 0.0064975843288807705,
+              "cosine": 0.9999788905975581
+            },
+            "decoder.0.weight": {
+              "relative_l2": 0.002194902079844661,
+              "cosine": 0.999997591349296
+            },
+            "decoder.0.bias": {
+              "relative_l2": 0.004416736129104377,
+              "cosine": 0.9999902502100603
+            },
+            "decoder.2.weight": {
+              "relative_l2": 0.002933170854519844,
+              "cosine": 0.9999956982451407
+            },
+            "decoder.2.bias": {
+              "relative_l2": 0.0072471392535390314,
+              "cosine": 0.9999737430188769
+            },
+            "decoder.4.weight": {
+              "relative_l2": 0.0010342587869593787,
+              "cosine": 0.9999994651559835
+            },
+            "decoder.4.bias": {
+              "relative_l2": 0.0003249234207425046,
+              "cosine": 0.9999999476122644
+            }
+          }
+        },
+        "seed789": {
+          "relative_l2": 2.0914636769431545,
+          "min_cosine": -0.07159992501046833,
+          "exact_equal": false,
+          "per_tensor": {
+            "conv1.weight": {
+              "relative_l2": 1.58275015294059,
+              "cosine": 0.09759660230155444
+            },
+            "conv1.bias": {
+              "relative_l2": 1.4591662032333008,
+              "cosine": 0.4317053157050098
+            },
+            "primary.conv.weight": {
+              "relative_l2": 2.28803063476099,
+              "cosine": -0.0038178149912517795
+            },
+            "primary.conv.bias": {
+              "relative_l2": 2.3047856278303223,
+              "cosine": -0.07159992501046833
+            },
+            "digits.routing_module.W": {
+              "relative_l2": 1.6842468879507244,
+              "cosine": -0.00023333479115825956
+            },
+            "decoder.0.weight": {
+              "relative_l2": 1.6457854932174203,
+              "cosine": 0.006159600251494034
+            },
+            "decoder.0.bias": {
+              "relative_l2": 1.0947075746843467,
+              "cosine": 0.3759822883463434
+            },
+            "decoder.2.weight": {
+              "relative_l2": 1.5192961781690701,
+              "cosine": 0.019925147107966952
+            },
+            "decoder.2.bias": {
+              "relative_l2": 1.2530906239663608,
+              "cosine": 0.23414705682590561
+            },
+            "decoder.4.weight": {
+              "relative_l2": 1.4981941127406557,
+              "cosine": 0.10002832634841674
+            },
+            "decoder.4.bias": {
+              "relative_l2": 0.7086966710583523,
+              "cosine": 0.7872220421416469
+            }
+          }
+        },
+        "seed1000": {
+          "relative_l2": 1.4971529015245182,
+          "min_cosine": -0.1255652193420181,
+          "exact_equal": false,
+          "per_tensor": {
+            "conv1.weight": {
+              "relative_l2": 1.3913412734627593,
+              "cosine": 0.08536243495457158
+            },
+            "conv1.bias": {
+              "relative_l2": 1.2040719055944673,
+              "cosine": 0.3529796012130365
+            },
+            "primary.conv.weight": {
+              "relative_l2": 1.5291372316398537,
+              "cosine": 0.001270422393112728
+            },
+            "primary.conv.bias": {
+              "relative_l2": 1.6714670474806068,
+              "cosine": -0.1255652193420181
+            },
+            "digits.routing_module.W": {
+              "relative_l2": 1.444528080108749,
+              "cosine": 0.0016512264340829332
+            },
+            "decoder.0.weight": {
+              "relative_l2": 1.483256920834536,
+              "cosine": -0.0014179919467008455
+            },
+            "decoder.0.bias": {
+              "relative_l2": 1.0948374988742915,
+              "cosine": 0.4089645171861139
+            },
+            "decoder.2.weight": {
+              "relative_l2": 1.4347109217768144,
+              "cosine": 0.020261359700744646
+            },
+            "decoder.2.bias": {
+              "relative_l2": 1.2521325863822714,
+              "cosine": 0.23410746542992827
+            },
+            "decoder.4.weight": {
+              "relative_l2": 1.379069305521674,
+              "cosine": 0.09952310642837509
+            },
+            "decoder.4.bias": {
+              "relative_l2": 0.659575502023437,
+              "cosine": 0.7817967585570014
+            }
+          }
+        }
+      }
+    },
+    "mnist_best_entropy": {
+      "stored_keys": [
+        "conv1.bias",
+        "conv1.weight",
+        "decoder.0.bias",
+        "decoder.0.weight",
+        "decoder.2.bias",
+        "decoder.2.weight",
+        "decoder.4.bias",
+        "decoder.4.weight",
+        "digits.routing_module.W",
+        "digits.routing_module.beta",
+        "primary.conv.bias",
+        "primary.conv.weight"
+      ],
+      "vs": {
+        "seed42": {
+          "relative_l2": 1.0745089713103142,
+          "min_cosine": -0.007650979666977442,
+          "exact_equal": false,
+          "per_tensor": {
+            "conv1.weight": {
+              "relative_l2": 1.1172898652751972,
+              "cosine": 0.09962263676777135
+            },
+            "conv1.bias": {
+              "relative_l2": 0.9196859505417395,
+              "cosine": 0.40085421497476215
+            },
+            "primary.conv.weight": {
+              "relative_l2": 1.0671307598449469,
+              "cosine": -2.0977125882097592e-05
+            },
+            "primary.conv.bias": {
+              "relative_l2": 1.035769658748018,
+              "cosine": 0.06823632656721014
+            },
+            "digits.routing_module.W": {
+              "relative_l2": 1.1228377681387967,
+              "cosine": -0.000803669253867359
+            },
+            "digits.routing_module.beta": {
+              "relative_l2": 0.8843121789713525,
+              "cosine": 0.8856263719266912
+            },
+            "decoder.0.weight": {
+              "relative_l2": 1.1295640290040962,
+              "cosine": -0.007650979666977442
+            },
+            "decoder.0.bias": {
+              "relative_l2": 1.1777232698137274,
+              "cosine": 0.3606336661062306
+            },
+            "decoder.2.weight": {
+              "relative_l2": 1.192311334304885,
+              "cosine": 0.018163679759505676
+            },
+            "decoder.2.bias": {
+              "relative_l2": 1.1812169028370965,
+              "cosine": 0.26840590983289514
+            },
+            "decoder.4.weight": {
+              "relative_l2": 1.1300132189100445,
+              "cosine": 0.10107046160078456
+            },
+            "decoder.4.bias": {
+              "relative_l2": 0.6634733260668145,
+              "cosine": 0.7497324856442065
+            }
+          }
+        },
+        "seed123": {
+          "relative_l2": 1.5150333861126888,
+          "min_cosine": -0.004995331682063544,
+          "exact_equal": false,
+          "per_tensor": {
+            "conv1.weight": {
+              "relative_l2": 1.3921832104012408,
+              "cosine": 0.11478327008247852
+            },
+            "conv1.bias": {
+              "relative_l2": 0.8775443808818186,
+              "cosine": 0.6320578971136249
+            },
+            "primary.conv.weight": {
+              "relative_l2": 1.5320968361708895,
+              "cosine": 0.0007513852324265644
+            },
+            "primary.conv.bias": {
+              "relative_l2": 1.568292218753758,
+              "cosine": 0.04715907784860056
+            },
+            "digits.routing_module.W": {
+              "relative_l2": 1.5691070507832992,
+              "cosine": 0.0003473528752426651
+            },
+            "digits.routing_module.beta": {
+              "relative_l2": 0.4189756012878096,
+              "cosine": 0.9557510852272866
+            },
+            "decoder.0.weight": {
+              "relative_l2": 1.5235282067874198,
+              "cosine": -0.004995331682063544
+            },
+            "decoder.0.bias": {
+              "relative_l2": 1.1760769741995232,
+              "cosine": 0.3075840043096891
+            },
+            "decoder.2.weight": {
+              "relative_l2": 1.4747046839265627,
+              "cosine": 0.010873827732589054
+            },
+            "decoder.2.bias": {
+              "relative_l2": 1.2931988966851344,
+              "cosine": 0.21690677857608018
+            },
+            "decoder.4.weight": {
+              "relative_l2": 1.3895973852516843,
+              "cosine": 0.12131658586001841
+            },
+            "decoder.4.bias": {
+              "relative_l2": 0.5155600755670933,
+              "cosine": 0.8742679101224129
+            }
+          }
+        },
+        "seed456": {
+          "relative_l2": 0.6029860505539397,
+          "min_cosine": 0.7938506182454145,
+          "exact_equal": false,
+          "per_tensor": {
+            "conv1.weight": {
+              "relative_l2": 0.25762990448471107,
+              "cosine": 0.9668773448490606
+            },
+            "conv1.bias": {
+              "relative_l2": 0.12926234049385574,
+              "cosine": 0.9916423420411946
+            },
+            "primary.conv.weight": {
+              "relative_l2": 0.6348804706078761,
+              "cosine": 0.8000032961591579
+            },
+            "primary.conv.bias": {
+              "relative_l2": 0.3646774654544763,
+              "cosine": 0.9354821395993312
+            },
+            "digits.routing_module.W": {
+              "relative_l2": 0.6468903370348977,
+              "cosine": 0.7938506182454145
+            },
+            "digits.routing_module.beta": {
+              "relative_l2": 0.04156886559111421,
+              "cosine": 0.9991989642479999
+            },
+            "decoder.0.weight": {
+              "relative_l2": 0.26691382430886096,
+              "cosine": 0.9645462667980582
+            },
+            "decoder.0.bias": {
+              "relative_l2": 0.1300501501710791,
+              "cosine": 0.9921408525502539
+            },
+            "decoder.2.weight": {
+              "relative_l2": 0.1243825707450717,
+              "cosine": 0.9923894482184669
+            },
+            "decoder.2.bias": {
+              "relative_l2": 0.15421402700654727,
+              "cosine": 0.9883226623901724
+            },
+            "decoder.4.weight": {
+              "relative_l2": 0.16197468013091482,
+              "cosine": 0.9870942539847982
+            },
+            "decoder.4.bias": {
+              "relative_l2": 0.08279002797681108,
+              "cosine": 0.9966723459616986
+            }
+          }
+        },
+        "seed789": {
+          "relative_l2": 1.4325520330389965,
+          "min_cosine": -0.003392145954595428,
+          "exact_equal": false,
+          "per_tensor": {
+            "conv1.weight": {
+              "relative_l2": 1.3496419545872231,
+              "cosine": 0.1192685034043525
+            },
+            "conv1.bias": {
+              "relative_l2": 0.857377969149151,
+              "cosine": 0.6457528334891748
+            },
+            "primary.conv.weight": {
+              "relative_l2": 1.4532989883373175,
+              "cosine": -0.003392145954595428
+            },
+            "primary.conv.bias": {
+              "relative_l2": 1.5534504031934675,
+              "cosine": 0.01742811306568874
+            },
+            "digits.routing_module.W": {
+              "relative_l2": 1.4390678363164142,
+              "cosine": 0.0002794286455544074
+            },
+            "digits.routing_module.beta": {
+              "relative_l2": 0.33741392821294997,
+              "cosine": 0.9489907343101744
+            },
+            "decoder.0.weight": {
+              "relative_l2": 1.3592466187746108,
+              "cosine": 0.009243493462040904
+            },
+            "decoder.0.bias": {
+              "relative_l2": 1.2389365960901544,
+              "cosine": 0.2397661654596382
+            },
+            "decoder.2.weight": {
+              "relative_l2": 1.37942180600308,
+              "cosine": 0.011932589439988909
+            },
+            "decoder.2.bias": {
+              "relative_l2": 1.3118684084804253,
+              "cosine": 0.14860757357630422
+            },
+            "decoder.4.weight": {
+              "relative_l2": 1.3159384524708664,
+              "cosine": 0.11056495503005821
+            },
+            "decoder.4.bias": {
+              "relative_l2": 0.507972165826062,
+              "cosine": 0.8725682132976784
+            }
+          }
+        },
+        "seed1000": {
+          "relative_l2": 2.35746990086559,
+          "min_cosine": -0.1422223006313041,
+          "exact_equal": false,
+          "per_tensor": {
+            "conv1.weight": {
+              "relative_l2": 1.8692993201153114,
+              "cosine": 0.11732038453764326
+            },
+            "conv1.bias": {
+              "relative_l2": 1.3342143364272139,
+              "cosine": 0.6671206654320754
+            },
+            "primary.conv.weight": {
+              "relative_l2": 2.2959732755110553,
+              "cosine": 0.00045751442759969807
+            },
+            "primary.conv.bias": {
+              "relative_l2": 3.1979011687839227,
+              "cosine": -0.1422223006313041
+            },
+            "digits.routing_module.W": {
+              "relative_l2": 3.0635177960532225,
+              "cosine": 0.00133633883770484
+            },
+            "digits.routing_module.beta": {
+              "relative_l2": 1.3378479146295514,
+              "cosine": 0.9529633321165032
+            },
+            "decoder.0.weight": {
+              "relative_l2": 3.0379355737577347,
+              "cosine": -0.004081314983552457
+            },
+            "decoder.0.bias": {
+              "relative_l2": 1.2016021858015766,
+              "cosine": 0.19718921545136373
+            },
+            "decoder.2.weight": {
+              "relative_l2": 2.6909793765078156,
+              "cosine": 0.0053785446686250805
+            },
+            "decoder.2.bias": {
+              "relative_l2": 1.5774556773505193,
+              "cosine": 0.07755342223200698
+            },
+            "decoder.4.weight": {
+              "relative_l2": 2.6079620487355095,
+              "cosine": 0.05620218528212718
+            },
+            "decoder.4.bias": {
+              "relative_l2": 0.9081869207134617,
+              "cosine": 0.7650188156955408
+            }
+          }
+        }
+      }
+    },
+    "fashionmnist_best_dynamic": {
+      "stored_keys": [
+        "conv1.bias",
+        "conv1.weight",
+        "decoder.0.bias",
+        "decoder.0.weight",
+        "decoder.2.bias",
+        "decoder.2.weight",
+        "decoder.4.bias",
+        "decoder.4.weight",
+        "digits.routing_module.W",
+        "primary.conv.bias",
+        "primary.conv.weight"
+      ],
+      "vs": {
+        "seed42": {
+          "relative_l2": 1.3210694781162355,
+          "min_cosine": -0.061909336927819456,
+          "exact_equal": false,
+          "per_tensor": {
+            "conv1.weight": {
+              "relative_l2": 1.3353121138830517,
+              "cosine": 0.03865509767373532
+            },
+            "conv1.bias": {
+              "relative_l2": 1.4072836840778444,
+              "cosine": -0.061909336927819456
+            },
+            "primary.conv.weight": {
+              "relative_l2": 1.3183988142008551,
+              "cosine": -0.0020989841534549605
+            },
+            "primary.conv.bias": {
+              "relative_l2": 1.4099529566631865,
+              "cosine": -0.03291418776475186
+            },
+            "digits.routing_module.W": {
+              "relative_l2": 1.3384909006755812,
+              "cosine": -0.00017832045848725938
+            },
+            "decoder.0.weight": {
+              "relative_l2": 1.3617588648038328,
+              "cosine": 0.004523024656612595
+            },
+            "decoder.0.bias": {
+              "relative_l2": 1.2937105004516394,
+              "cosine": 0.10667909481467794
+            },
+            "decoder.2.weight": {
+              "relative_l2": 1.3569267275075643,
+              "cosine": 0.01271522474705926
+            },
+            "decoder.2.bias": {
+              "relative_l2": 1.3519541501678207,
+              "cosine": 0.12461670478788477
+            },
+            "decoder.4.weight": {
+              "relative_l2": 1.3117744532127762,
+              "cosine": 0.07675287220856447
+            },
+            "decoder.4.bias": {
+              "relative_l2": 0.5204111698064163,
+              "cosine": 0.8610101411045712
+            }
+          }
+        },
+        "seed123": {
+          "relative_l2": 1.4719755627691078,
+          "min_cosine": -0.0008700369637407594,
+          "exact_equal": false,
+          "per_tensor": {
+            "conv1.weight": {
+              "relative_l2": 1.4026750947210669,
+              "cosine": 0.043606725619230305
+            },
+            "conv1.bias": {
+              "relative_l2": 1.4110096116366027,
+              "cosine": 0.039565443379491125
+            },
+            "primary.conv.weight": {
+              "relative_l2": 1.4763555748441897,
+              "cosine": 0.003488264657080265
+            },
+            "primary.conv.bias": {
+              "relative_l2": 1.5503082600586378,
+              "cosine": 0.0010973425326751829
+            },
+            "digits.routing_module.W": {
+              "relative_l2": 1.489099808953323,
+              "cosine": -0.0008700369637407594
+            },
+            "decoder.0.weight": {
+              "relative_l2": 1.444285877974226,
+              "cosine": 0.005168137121463238
+            },
+            "decoder.0.bias": {
+              "relative_l2": 1.3167433188507804,
+              "cosine": 0.05924712470672812
+            },
+            "decoder.2.weight": {
+              "relative_l2": 1.4260539197133029,
+              "cosine": 0.012563079754932302
+            },
+            "decoder.2.bias": {
+              "relative_l2": 1.405984104582588,
+              "cosine": 0.07255930846537476
+            },
+            "decoder.4.weight": {
+              "relative_l2": 1.3820791324805468,
+              "cosine": 0.07749624529974129
+            },
+            "decoder.4.bias": {
+              "relative_l2": 0.511124865491959,
+              "cosine": 0.8776204327784063
+            }
+          }
+        },
+        "seed456": {
+          "relative_l2": 0.7235236594930973,
+          "min_cosine": 0.778732011046559,
+          "exact_equal": false,
+          "per_tensor": {
+            "conv1.weight": {
+              "relative_l2": 0.28410956639574997,
+              "cosine": 0.9737111884909004
+            },
+            "conv1.bias": {
+              "relative_l2": 0.34174467445401685,
+              "cosine": 0.9610546217340186
+            },
+            "primary.conv.weight": {
+              "relative_l2": 0.7475455967946474,
+              "cosine": 0.8068035726087635
+            },
+            "primary.conv.bias": {
+              "relative_l2": 0.38009750177395546,
+              "cosine": 0.9282974418136378
+            },
+            "digits.routing_module.W": {
+              "relative_l2": 0.7712518186279085,
+              "cosine": 0.778732011046559
+            },
+            "decoder.0.weight": {
+              "relative_l2": 0.4459879922035951,
+              "cosine": 0.9245439286704269
+            },
+            "decoder.0.bias": {
+              "relative_l2": 0.26547279681863145,
+              "cosine": 0.968168230763135
+            },
+            "decoder.2.weight": {
+              "relative_l2": 0.2376548944418631,
+              "cosine": 0.9797508879838704
+            },
+            "decoder.2.bias": {
+              "relative_l2": 0.22902329926789622,
+              "cosine": 0.9772246885455638
+            },
+            "decoder.4.weight": {
+              "relative_l2": 0.26004016841106836,
+              "cosine": 0.9755933496567315
+            },
+            "decoder.4.bias": {
+              "relative_l2": 0.15606870144603727,
+              "cosine": 0.9923437586666763
+            }
+          }
+        },
+        "seed789": {
+          "relative_l2": 1.221486552347752,
+          "min_cosine": -0.08657136554297974,
+          "exact_equal": false,
+          "per_tensor": {
+            "conv1.weight": {
+              "relative_l2": 1.2796036607487835,
+              "cosine": 0.04230222274183833
+            },
+            "conv1.bias": {
+              "relative_l2": 1.3389618401916605,
+              "cosine": -0.021541895872041764
+            },
+            "primary.conv.weight": {
+              "relative_l2": 1.2144681089492526,
+              "cosine": 0.0016199830023003522
+            },
+            "primary.conv.bias": {
+              "relative_l2": 1.38401539880073,
+              "cosine": -0.08657136554297974
+            },
+            "digits.routing_module.W": {
+              "relative_l2": 1.2363315876831729,
+              "cosine": -0.0009657481117108146
+            },
+            "decoder.0.weight": {
+              "relative_l2": 1.3015019674564552,
+              "cosine": -0.0033910040513877877
+            },
+            "decoder.0.bias": {
+              "relative_l2": 1.292655114000168,
+              "cosine": 0.1551835752538847
+            },
+            "decoder.2.weight": {
+              "relative_l2": 1.3091960720870393,
+              "cosine": 0.011164087322455883
+            },
+            "decoder.2.bias": {
+              "relative_l2": 1.3219505186954048,
+              "cosine": 0.1274966374023162
+            },
+            "decoder.4.weight": {
+              "relative_l2": 1.2617559594148637,
+              "cosine": 0.07508867672874876
+            },
+            "decoder.4.bias": {
+              "relative_l2": 0.5170859538884462,
+              "cosine": 0.8601548078888248
+            }
+          }
+        },
+        "seed1000": {
+          "relative_l2": 1.3666622908481176,
+          "min_cosine": -0.05383894813350186,
+          "exact_equal": false,
+          "per_tensor": {
+            "conv1.weight": {
+              "relative_l2": 1.3309374919098704,
+              "cosine": 0.043158093644851445
+            },
+            "conv1.bias": {
+              "relative_l2": 1.4487321983755248,
+              "cosine": -0.038328597918047935
+            },
+            "primary.conv.weight": {
+              "relative_l2": 1.3662548777169556,
+              "cosine": -6.444936710764458e-05
+            },
+            "primary.conv.bias": {
+              "relative_l2": 1.4344903547324677,
+              "cosine": -0.05383894813350186
+            },
+            "digits.routing_module.W": {
+              "relative_l2": 1.3990063754787,
+              "cosine": 0.0007769446562297909
+            },
+            "decoder.0.weight": {
+              "relative_l2": 1.3822771838844718,
+              "cosine": -0.0002651887299456618
+            },
+            "decoder.0.bias": {
+              "relative_l2": 1.3370778835604422,
+              "cosine": 0.06064585560521435
+            },
+            "decoder.2.weight": {
+              "relative_l2": 1.3714595254286595,
+              "cosine": 0.011646322014275965
+            },
+            "decoder.2.bias": {
+              "relative_l2": 1.3757352891717491,
+              "cosine": 0.07202385852449253
+            },
+            "decoder.4.weight": {
+              "relative_l2": 1.3223898351044978,
+              "cosine": 0.08364126971435075
+            },
+            "decoder.4.bias": {
+              "relative_l2": 0.5158964854824416,
+              "cosine": 0.8626363774820056
+            }
+          }
+        }
+      }
+    },
+    "fashionmnist_best_entropy": {
+      "stored_keys": [
+        "conv1.bias",
+        "conv1.weight",
+        "decoder.0.bias",
+        "decoder.0.weight",
+        "decoder.2.bias",
+        "decoder.2.weight",
+        "decoder.4.bias",
+        "decoder.4.weight",
+        "digits.routing_module.W",
+        "digits.routing_module.beta",
+        "primary.conv.bias",
+        "primary.conv.weight"
+      ],
+      "vs": {
+        "seed42": {
+          "relative_l2": 1.5359300754215481,
+          "min_cosine": -0.0027751290045169063,
+          "exact_equal": false,
+          "per_tensor": {
+            "conv1.weight": {
+              "relative_l2": 1.484858508451777,
+              "cosine": 0.04741422204714592
+            },
+            "conv1.bias": {
+              "relative_l2": 1.4432775842493275,
+              "cosine": 0.12308335653430184
+            },
+            "primary.conv.weight": {
+              "relative_l2": 1.5398366222690902,
+              "cosine": -0.0008939566627455145
+            },
+            "primary.conv.bias": {
+              "relative_l2": 1.5481261340076469,
+              "cosine": 0.013348593033923129
+            },
+            "digits.routing_module.W": {
+              "relative_l2": 1.5859617153034042,
+              "cosine": 0.0002492318152808906
+            },
+            "digits.routing_module.beta": {
+              "relative_l2": 0.3746591347746689,
+              "cosine": 0.9442489447280198
+            },
+            "decoder.0.weight": {
+              "relative_l2": 1.581871991065483,
+              "cosine": 0.003525700245241118
+            },
+            "decoder.0.bias": {
+              "relative_l2": 1.3332926429650676,
+              "cosine": -0.0027751290045169063
+            },
+            "decoder.2.weight": {
+              "relative_l2": 1.5250314614359735,
+              "cosine": 0.0013499456646405437
+            },
+            "decoder.2.bias": {
+              "relative_l2": 1.4381830099788988,
+              "cosine": 0.009346015883051902
+            },
+            "decoder.4.weight": {
+              "relative_l2": 1.487275097341537,
+              "cosine": 0.04771115269563093
+            },
+            "decoder.4.bias": {
+              "relative_l2": 0.5515334569523648,
+              "cosine": 0.8573443561458596
+            }
+          }
+        },
+        "seed123": {
+          "relative_l2": 1.6169414460853837,
+          "min_cosine": 0.0007660395068752423,
+          "exact_equal": false,
+          "per_tensor": {
+            "conv1.weight": {
+              "relative_l2": 1.5575970067357066,
+              "cosine": 0.035302504823604565
+            },
+            "conv1.bias": {
+              "relative_l2": 1.425733939332393,
+              "cosine": 0.22146152899071556
+            },
+            "primary.conv.weight": {
+              "relative_l2": 1.618851141017025,
+              "cosine": 0.0021159627857013407
+            },
+            "primary.conv.bias": {
+              "relative_l2": 1.9547398836161372,
+              "cosine": 0.0043620381800386085
+            },
+            "digits.routing_module.W": {
+              "relative_l2": 1.6831832982787014,
+              "cosine": 0.0007660395068752423
+            },
+            "digits.routing_module.beta": {
+              "relative_l2": 0.4271261535422657,
+              "cosine": 0.941837168014247
+            },
+            "decoder.0.weight": {
+              "relative_l2": 1.6409167428003713,
+              "cosine": 0.0013845184674312829
+            },
+            "decoder.0.bias": {
+              "relative_l2": 1.3353619582692091,
+              "cosine": 0.10281492999528204
+            },
+            "decoder.2.weight": {
+              "relative_l2": 1.6255283925301847,
+              "cosine": 0.0030597922895442735
+            },
+            "decoder.2.bias": {
+              "relative_l2": 1.5940394510676963,
+              "cosine": 0.025799583565896105
+            },
+            "decoder.4.weight": {
+              "relative_l2": 1.5884867213526381,
+              "cosine": 0.04709769417632365
+            },
+            "decoder.4.bias": {
+              "relative_l2": 0.6470201881000933,
+              "cosine": 0.8322564828602714
+            }
+          }
+        },
+        "seed456": {
+          "relative_l2": 0.9782024918720837,
+          "min_cosine": 0.6465980592761424,
+          "exact_equal": false,
+          "per_tensor": {
+            "conv1.weight": {
+              "relative_l2": 0.5063854122443618,
+              "cosine": 0.9243766538783456
+            },
+            "conv1.bias": {
+              "relative_l2": 0.47179029720734306,
+              "cosine": 0.9481073103114583
+            },
+            "primary.conv.weight": {
+              "relative_l2": 0.9888256586197184,
+              "cosine": 0.6465980592761424
+            },
+            "primary.conv.bias": {
+              "relative_l2": 0.7258648619270781,
+              "cosine": 0.8641526183279372
+            },
+            "digits.routing_module.W": {
+              "relative_l2": 1.0500423993255696,
+              "cosine": 0.6561247534851686
+            },
+            "digits.routing_module.beta": {
+              "relative_l2": 0.24120237675111922,
+              "cosine": 0.9965901761230893
+            },
+            "decoder.0.weight": {
+              "relative_l2": 0.7066001437037529,
+              "cosine": 0.8340374090287012
+            },
+            "decoder.0.bias": {
+              "relative_l2": 0.3434664587362942,
+              "cosine": 0.9510833729316097
+            },
+            "decoder.2.weight": {
+              "relative_l2": 0.638938688907692,
+              "cosine": 0.8704503780189139
+            },
+            "decoder.2.bias": {
+              "relative_l2": 0.4937210841345416,
+              "cosine": 0.9101122848913563
+            },
+            "decoder.4.weight": {
+              "relative_l2": 0.6627397577893948,
+              "cosine": 0.8568367860702187
+            },
+            "decoder.4.bias": {
+              "relative_l2": 0.3602907894695215,
+              "cosine": 0.9595153916481644
+            }
+          }
+        },
+        "seed789": {
+          "relative_l2": 1.7230707771221132,
+          "min_cosine": -0.024798113225515686,
+          "exact_equal": false,
+          "per_tensor": {
+            "conv1.weight": {
+              "relative_l2": 1.6648662155380487,
+              "cosine": 0.04051368854040738
+            },
+            "conv1.bias": {
+              "relative_l2": 1.529575064174632,
+              "cosine": 0.20884946399068208
+            },
+            "primary.conv.weight": {
+              "relative_l2": 1.7130484147342355,
+              "cosine": 0.0013821000572248644
+            },
+            "primary.conv.bias": {
+              "relative_l2": 1.8674900706926005,
+              "cosine": -0.024798113225515686
+            },
+            "digits.routing_module.W": {
+              "relative_l2": 1.882256105616307,
+              "cosine": -0.0011339274108235033
+            },
+            "digits.routing_module.beta": {
+              "relative_l2": 0.4633593822491472,
+              "cosine": 0.943845540446068
+            },
+            "decoder.0.weight": {
+              "relative_l2": 1.7908355825105517,
+              "cosine": -0.002448327412435982
+            },
+            "decoder.0.bias": {
+              "relative_l2": 1.4959506128766682,
+              "cosine": 0.018604904654791657
+            },
+            "decoder.2.weight": {
+              "relative_l2": 1.7188836141001342,
+              "cosine": 0.0010967846962700077
+            },
+            "decoder.2.bias": {
+              "relative_l2": 1.654302429508995,
+              "cosine": 0.010852182145280786
+            },
+            "decoder.4.weight": {
+              "relative_l2": 1.6749727306805642,
+              "cosine": 0.0401815116918673
+            },
+            "decoder.4.bias": {
+              "relative_l2": 0.6589477291801339,
+              "cosine": 0.846807271583771
+            }
+          }
+        },
+        "seed1000": {
+          "relative_l2": 1.5353246484468714,
+          "min_cosine": -0.056706894417542134,
+          "exact_equal": false,
+          "per_tensor": {
+            "conv1.weight": {
+              "relative_l2": 1.471423035429867,
+              "cosine": 0.03778289205429597
+            },
+            "conv1.bias": {
+              "relative_l2": 1.4432079031911944,
+              "cosine": 0.13916605283111574
+            },
+            "primary.conv.weight": {
+              "relative_l2": 1.5370904365412588,
+              "cosine": 0.0009530295745862923
+            },
+            "primary.conv.bias": {
+              "relative_l2": 1.661995389560247,
+              "cosine": -0.056706894417542134
+            },
+            "digits.routing_module.W": {
+              "relative_l2": 1.5963243511238068,
+              "cosine": 0.0009836890122482253
+            },
+            "digits.routing_module.beta": {
+              "relative_l2": 0.39782263169641235,
+              "cosine": 0.9404588463838541
+            },
+            "decoder.0.weight": {
+              "relative_l2": 1.565809537282801,
+              "cosine": -0.0009277580355165518
+            },
+            "decoder.0.bias": {
+              "relative_l2": 1.57429098619964,
+              "cosine": -0.027182667103591577
+            },
+            "decoder.2.weight": {
+              "relative_l2": 1.5561791628606658,
+              "cosine": 0.0040833536389227355
+            },
+            "decoder.2.bias": {
+              "relative_l2": 1.4700951432441933,
+              "cosine": 0.021302125911348547
+            },
+            "decoder.4.weight": {
+              "relative_l2": 1.5123540042203927,
+              "cosine": 0.05348102892217547
+            },
+            "decoder.4.bias": {
+              "relative_l2": 0.5458702505452846,
+              "cosine": 0.8584372688807724
+            }
+          }
+        }
+      }
+    },
+    "cifar10_best_dynamic": {
+      "stored_keys": [
+        "conv1.bias",
+        "conv1.weight",
+        "decoder.0.bias",
+        "decoder.0.weight",
+        "decoder.2.bias",
+        "decoder.2.weight",
+        "decoder.4.bias",
+        "decoder.4.weight",
+        "digits.routing_module.W",
+        "primary.conv.bias",
+        "primary.conv.weight"
+      ],
+      "vs": {
+        "seed42": {
+          "relative_l2": 1.25017863177176,
+          "min_cosine": -0.18006893652073996,
+          "exact_equal": false,
+          "per_tensor": {
+            "conv1.weight": {
+              "relative_l2": 1.3143135843537697,
+              "cosine": 0.002824328292684585
+            },
+            "conv1.bias": {
+              "relative_l2": 0.6346576129900303,
+              "cosine": 0.7753880808884834
+            },
+            "primary.conv.weight": {
+              "relative_l2": 1.2584283964826048,
+              "cosine": -0.027284477862532276
+            },
+            "primary.conv.bias": {
+              "relative_l2": 1.3193847273435642,
+              "cosine": 0.0010496230840688608
+            },
+            "digits.routing_module.W": {
+              "relative_l2": 1.1782436835435486,
+              "cosine": -0.0007527247673669618
+            },
+            "decoder.0.weight": {
+              "relative_l2": 1.348299360628394,
+              "cosine": -0.004365421473830511
+            },
+            "decoder.0.bias": {
+              "relative_l2": 1.6253437782072777,
+              "cosine": 0.15154001759731647
+            },
+            "decoder.2.weight": {
+              "relative_l2": 1.1198691133066143,
+              "cosine": -0.0004798824549542437
+            },
+            "decoder.2.bias": {
+              "relative_l2": 1.5839011875125224,
+              "cosine": -0.18006893652073996
+            },
+            "decoder.4.weight": {
+              "relative_l2": 1.0169202188402127,
+              "cosine": 0.025688222174818823
+            },
+            "decoder.4.bias": {
+              "relative_l2": 0.8173592101510826,
+              "cosine": 0.6188659853904378
+            }
+          }
+        },
+        "seed123": {
+          "relative_l2": 1.241949320421668,
+          "min_cosine": -0.07713832770371706,
+          "exact_equal": false,
+          "per_tensor": {
+            "conv1.weight": {
+              "relative_l2": 1.280676053815653,
+              "cosine": 0.2810027773784662
+            },
+            "conv1.bias": {
+              "relative_l2": 0.6286481874486736,
+              "cosine": 0.8522823374979582
+            },
+            "primary.conv.weight": {
+              "relative_l2": 1.2479565136382849,
+              "cosine": 0.24089527959937626
+            },
+            "primary.conv.bias": {
+              "relative_l2": 1.342418861366108,
+              "cosine": 0.40748102523759516
+            },
+            "digits.routing_module.W": {
+              "relative_l2": 1.2616278704777744,
+              "cosine": 0.0004081086477648254
+            },
+            "decoder.0.weight": {
+              "relative_l2": 1.4101876936875954,
+              "cosine": 0.05037020811860127
+            },
+            "decoder.0.bias": {
+              "relative_l2": 2.1231158296429338,
+              "cosine": 0.2413684603947902
+            },
+            "decoder.2.weight": {
+              "relative_l2": 1.1415530476713498,
+              "cosine": 0.02993888190006925
+            },
+            "decoder.2.bias": {
+              "relative_l2": 1.6743347675170168,
+              "cosine": -0.07713832770371706
+            },
+            "decoder.4.weight": {
+              "relative_l2": 1.009997780734315,
+              "cosine": 0.0755289362375858
+            },
+            "decoder.4.bias": {
+              "relative_l2": 0.7459459368662338,
+              "cosine": 0.6922671670533483
+            }
+          }
+        },
+        "seed456": {
+          "relative_l2": 1.301150227796082,
+          "min_cosine": -0.15073829895288,
+          "exact_equal": false,
+          "per_tensor": {
+            "conv1.weight": {
+              "relative_l2": 1.364075991479438,
+              "cosine": -0.011417534058165157
+            },
+            "conv1.bias": {
+              "relative_l2": 0.6496794861762881,
+              "cosine": 0.768129899799298
+            },
+            "primary.conv.weight": {
+              "relative_l2": 1.311779987189284,
+              "cosine": -0.041690111991846
+            },
+            "primary.conv.bias": {
+              "relative_l2": 1.413739155776499,
+              "cosine": -0.07354015400553274
+            },
+            "digits.routing_module.W": {
+              "relative_l2": 1.1891654983387958,
+              "cosine": -0.0011113398262105687
+            },
+            "decoder.0.weight": {
+              "relative_l2": 1.3243857829269763,
+              "cosine": 0.0035331989798969648
+            },
+            "decoder.0.bias": {
+              "relative_l2": 1.6703102249538662,
+              "cosine": 0.14067634111778926
+            },
+            "decoder.2.weight": {
+              "relative_l2": 1.1081726238418514,
+              "cosine": 0.0037227271637811474
+            },
+            "decoder.2.bias": {
+              "relative_l2": 1.5331303817859754,
+              "cosine": -0.15073829895288
+            },
+            "decoder.4.weight": {
+              "relative_l2": 1.0159671561664445,
+              "cosine": 0.02178921660037622
+            },
+            "decoder.4.bias": {
+              "relative_l2": 0.8091192460379224,
+              "cosine": 0.6167630359588381
+            }
+          }
+        },
+        "seed789": {
+          "relative_l2": 1.36885311642951,
+          "min_cosine": -0.14135064406939582,
+          "exact_equal": false,
+          "per_tensor": {
+            "conv1.weight": {
+              "relative_l2": 1.4410131184558377,
+              "cosine": -0.004992407728330851
+            },
+            "conv1.bias": {
+              "relative_l2": 0.7242814798171363,
+              "cosine": 0.754207421719945
+            },
+            "primary.conv.weight": {
+              "relative_l2": 1.3817958553334233,
+              "cosine": -0.015318647624019917
+            },
+            "primary.conv.bias": {
+              "relative_l2": 1.5165068407897502,
+              "cosine": -0.030158622481347177
+            },
+            "digits.routing_module.W": {
+              "relative_l2": 1.2234190294883645,
+              "cosine": 0.0009843471358677333
+            },
+            "decoder.0.weight": {
+              "relative_l2": 1.397833236539572,
+              "cosine": 0.0007744329938367112
+            },
+            "decoder.0.bias": {
+              "relative_l2": 1.9254270602322976,
+              "cosine": 0.09163168396518637
+            },
+            "decoder.2.weight": {
+              "relative_l2": 1.1341113567920074,
+              "cosine": -0.00014541360661548956
+            },
+            "decoder.2.bias": {
+              "relative_l2": 1.6161266992504906,
+              "cosine": -0.14135064406939582
+            },
+            "decoder.4.weight": {
+              "relative_l2": 1.0192414086843289,
+              "cosine": 0.021616940248188346
+            },
+            "decoder.4.bias": {
+              "relative_l2": 0.7647733135903623,
+              "cosine": 0.696531691206254
+            }
+          }
+        },
+        "seed1000": {
+          "relative_l2": 1.3233105211764449,
+          "min_cosine": -0.11206514468316647,
+          "exact_equal": false,
+          "per_tensor": {
+            "conv1.weight": {
+              "relative_l2": 1.4150588406218365,
+              "cosine": -0.013291651898659282
+            },
+            "conv1.bias": {
+              "relative_l2": 0.6706914253011789,
+              "cosine": 0.7797625164985578
+            },
+            "primary.conv.weight": {
+              "relative_l2": 1.3342938851858053,
+              "cosine": -9.872862864945624e-05
+            },
+            "primary.conv.bias": {
+              "relative_l2": 1.495539272056527,
+              "cosine": 0.02864443321242395
+            },
+            "digits.routing_module.W": {
+              "relative_l2": 1.211509870643175,
+              "cosine": -0.00029234662205989266
+            },
+            "decoder.0.weight": {
+              "relative_l2": 1.3872277009102254,
+              "cosine": 0.002856452713798893
+            },
+            "decoder.0.bias": {
+              "relative_l2": 1.8493351360422385,
+              "cosine": 0.13452554248836682
+            },
+            "decoder.2.weight": {
+              "relative_l2": 1.1277132862911659,
+              "cosine": 0.0026482692836362178
+            },
+            "decoder.2.bias": {
+              "relative_l2": 1.4972476320900547,
+              "cosine": -0.11206514468316647
+            },
+            "decoder.4.weight": {
+              "relative_l2": 1.0212281532201282,
+              "cosine": 0.00982808762536345
+            },
+            "decoder.4.bias": {
+              "relative_l2": 0.7908184859181451,
+              "cosine": 0.6449371314025399
+            }
+          }
+        }
+      }
+    },
+    "cifar10_best_entropy": {
+      "stored_keys": [
+        "conv1.bias",
+        "conv1.weight",
+        "decoder.0.bias",
+        "decoder.0.weight",
+        "decoder.2.bias",
+        "decoder.2.weight",
+        "decoder.4.bias",
+        "decoder.4.weight",
+        "digits.routing_module.W",
+        "digits.routing_module.beta",
+        "primary.conv.bias",
+        "primary.conv.weight"
+      ],
+      "vs": {
+        "seed42": {
+          "relative_l2": 1.2344491751613522,
+          "min_cosine": -0.30043911976406723,
+          "exact_equal": false,
+          "per_tensor": {
+            "conv1.weight": {
+              "relative_l2": 1.2879279110719064,
+              "cosine": 0.008525105940304315
+            },
+            "conv1.bias": {
+              "relative_l2": 0.5645125501084893,
+              "cosine": 0.8255445998496552
+            },
+            "primary.conv.weight": {
+              "relative_l2": 1.2746912569707978,
+              "cosine": 0.0021363601393784917
+            },
+            "primary.conv.bias": {
+              "relative_l2": 1.1679258790587044,
+              "cosine": 0.018595005285211103
+            },
+            "digits.routing_module.W": {
+              "relative_l2": 1.3591159105691761,
+              "cosine": -0.000230416548341801
+            },
+            "digits.routing_module.beta": {
+              "relative_l2": 0.49467873039136506,
+              "cosine": 0.869252422526253
+            },
+            "decoder.0.weight": {
+              "relative_l2": 1.2851093789269818,
+              "cosine": 0.0015612235749429626
+            },
+            "decoder.0.bias": {
+              "relative_l2": 1.5422929622892487,
+              "cosine": 0.023728857844994757
+            },
+            "decoder.2.weight": {
+              "relative_l2": 1.1586407325289498,
+              "cosine": -0.0003239392044674828
+            },
+            "decoder.2.bias": {
+              "relative_l2": 1.8437287577706276,
+              "cosine": -0.30043911976406723
+            },
+            "decoder.4.weight": {
+              "relative_l2": 1.0157358566481833,
+              "cosine": 0.01495297139114431
+            },
+            "decoder.4.bias": {
+              "relative_l2": 0.9312247223536905,
+              "cosine": 0.36982790119270303
+            }
+          }
+        },
+        "seed123": {
+          "relative_l2": 1.2597495029846626,
+          "min_cosine": -0.2589204019583362,
+          "exact_equal": false,
+          "per_tensor": {
+            "conv1.weight": {
+              "relative_l2": 1.3307475516333362,
+              "cosine": 0.008082707723644599
+            },
+            "conv1.bias": {
+              "relative_l2": 0.5938809370455672,
+              "cosine": 0.8087377519744219
+            },
+            "primary.conv.weight": {
+              "relative_l2": 1.3057944565595996,
+              "cosine": -0.00030290808996927363
+            },
+            "primary.conv.bias": {
+              "relative_l2": 1.2425964508114862,
+              "cosine": 0.021367316874159138
+            },
+            "digits.routing_module.W": {
+              "relative_l2": 1.3869988573109928,
+              "cosine": -0.0020141777943472614
+            },
+            "digits.routing_module.beta": {
+              "relative_l2": 0.5913870708775085,
+              "cosine": 0.8363001617475507
+            },
+            "decoder.0.weight": {
+              "relative_l2": 1.3366708932082039,
+              "cosine": -0.0008888339457371998
+            },
+            "decoder.0.bias": {
+              "relative_l2": 1.5551065259279275,
+              "cosine": 0.03563518014537149
+            },
+            "decoder.2.weight": {
+              "relative_l2": 1.1722728651624406,
+              "cosine": -0.0006399957266791758
+            },
+            "decoder.2.bias": {
+              "relative_l2": 1.8154900268848109,
+              "cosine": -0.2589204019583362
+            },
+            "decoder.4.weight": {
+              "relative_l2": 1.018085952986393,
+              "cosine": 0.008946879099791178
+            },
+            "decoder.4.bias": {
+              "relative_l2": 0.9041744172365483,
+              "cosine": 0.4350581904812013
+            }
+          }
+        },
+        "seed456": {
+          "relative_l2": 1.175144646173273,
+          "min_cosine": -0.25442812535477277,
+          "exact_equal": false,
+          "per_tensor": {
+            "conv1.weight": {
+              "relative_l2": 1.0493519805732539,
+              "cosine": 0.3235968192315921
+            },
+            "conv1.bias": {
+              "relative_l2": 0.5328699533093161,
+              "cosine": 0.8532509080285288
+            },
+            "primary.conv.weight": {
+              "relative_l2": 1.204046626959538,
+              "cosine": 0.014263468602714494
+            },
+            "primary.conv.bias": {
+              "relative_l2": 1.135505357511779,
+              "cosine": 0.06106564988795267
+            },
+            "digits.routing_module.W": {
+              "relative_l2": 1.2851053946709652,
+              "cosine": -0.0004333639327659687
+            },
+            "digits.routing_module.beta": {
+              "relative_l2": 0.5136862416962142,
+              "cosine": 0.8837044764655199
+            },
+            "decoder.0.weight": {
+              "relative_l2": 1.2388812085708742,
+              "cosine": 0.04626976386107444
+            },
+            "decoder.0.bias": {
+              "relative_l2": 1.4538689369419953,
+              "cosine": 0.08979507397599079
+            },
+            "decoder.2.weight": {
+              "relative_l2": 1.1304633777343813,
+              "cosine": 0.020512869649949247
+            },
+            "decoder.2.bias": {
+              "relative_l2": 1.700021538994633,
+              "cosine": -0.25442812535477277
+            },
+            "decoder.4.weight": {
+              "relative_l2": 1.0053240001869606,
+              "cosine": 0.06111293200195174
+            },
+            "decoder.4.bias": {
+              "relative_l2": 0.9466598544132864,
+              "cosine": 0.32271964645791595
+            }
+          }
+        },
+        "seed789": {
+          "relative_l2": 1.3365067166621516,
+          "min_cosine": -0.23539140480859283,
+          "exact_equal": false,
+          "per_tensor": {
+            "conv1.weight": {
+              "relative_l2": 1.407196854169157,
+              "cosine": -0.0016983393240350714
+            },
+            "conv1.bias": {
+              "relative_l2": 0.6003932324725005,
+              "cosine": 0.8203199387810194
+            },
+            "primary.conv.weight": {
+              "relative_l2": 1.397305132840622,
+              "cosine": -0.002752936015528405
+            },
+            "primary.conv.bias": {
+              "relative_l2": 1.3436096179109858,
+              "cosine": -0.012590864285698257
+            },
+            "digits.routing_module.W": {
+              "relative_l2": 1.488626743933712,
+              "cosine": -0.00027888535825240033
+            },
+            "digits.routing_module.beta": {
+              "relative_l2": 0.5007724133514511,
+              "cosine": 0.8681679494692285
+            },
+            "decoder.0.weight": {
+              "relative_l2": 1.3858909420684011,
+              "cosine": -0.003608108079674278
+            },
+            "decoder.0.bias": {
+              "relative_l2": 1.7240088289107527,
+              "cosine": -0.0876029568066762
+            },
+            "decoder.2.weight": {
+              "relative_l2": 1.2117360392611627,
+              "cosine": 0.000949827181241691
+            },
+            "decoder.2.bias": {
+              "relative_l2": 1.9223585364265652,
+              "cosine": -0.23539140480859283
+            },
+            "decoder.4.weight": {
+              "relative_l2": 1.0229870048387855,
+              "cosine": 0.00847809667384681
+            },
+            "decoder.4.bias": {
+              "relative_l2": 0.9085068109022701,
+              "cosine": 0.4239325935115532
+            }
+          }
+        },
+        "seed1000": {
+          "relative_l2": 1.3213441765607115,
+          "min_cosine": -0.2857163553331438,
+          "exact_equal": false,
+          "per_tensor": {
+            "conv1.weight": {
+              "relative_l2": 1.3985718607345445,
+              "cosine": -0.0015271340665931245
+            },
+            "conv1.bias": {
+              "relative_l2": 0.5827404195858984,
+              "cosine": 0.8307116278430466
+            },
+            "primary.conv.weight": {
+              "relative_l2": 1.3776649488939674,
+              "cosine": -0.0018773751397164937
+            },
+            "primary.conv.bias": {
+              "relative_l2": 1.3266820494268108,
+              "cosine": -0.07309022255250835
+            },
+            "digits.routing_module.W": {
+              "relative_l2": 1.4707468829696073,
+              "cosine": 6.757479237344544e-05
+            },
+            "digits.routing_module.beta": {
+              "relative_l2": 0.5588092790244643,
+              "cosine": 0.8460445862797917
+            },
+            "decoder.0.weight": {
+              "relative_l2": 1.3859555738535418,
+              "cosine": -0.004275125500655407
+            },
+            "decoder.0.bias": {
+              "relative_l2": 1.656597291697295,
+              "cosine": -0.032924721511387894
+            },
+            "decoder.2.weight": {
+              "relative_l2": 1.2152406096613877,
+              "cosine": -0.00018391922319515382
+            },
+            "decoder.2.bias": {
+              "relative_l2": 1.8719032561528461,
+              "cosine": -0.2857163553331438
+            },
+            "decoder.4.weight": {
+              "relative_l2": 1.0232871427186603,
+              "cosine": 0.008053274294588469
+            },
+            "decoder.4.bias": {
+              "relative_l2": 0.9061583638287826,
+              "cosine": 0.4412624503357937
+            }
+          }
+        }
+      }
+    }
+  },
+  "_provenance": {
+    "schema": 2,
+    "script": "experiments/checkpoint_similarity.py",
+    "argv": [
+      "experiments/checkpoint_similarity.py",
+      "--output",
+      "results/data/checkpoint_similarity.json"
+    ],
+    "inputs": [
+      {
+        "path": "models/capsule_mnist_best_dynamic.pt",
+        "sha256": "49a12eea63c69764df675271c985ee1fae962f9a5d0aaa50a8a730675ebfb089",
+        "bytes": 32866082,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_mnist_dynamic_seed42.pt",
+        "sha256": "95ea9e63a22037af20e2a94e7f5546f8b03ab1078c54aa23d50789aff2f103c7",
+        "bytes": 32866069,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_mnist_dynamic_seed123.pt",
+        "sha256": "c8676fd3fb840446d574643058372e500ba7ba8f2cf7cc0a605037b910d014b0",
+        "bytes": 32866082,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_mnist_dynamic_seed456.pt",
+        "sha256": "2378ca5acfb95610e0512011f712eb41bce9e6bf9b47c717e121c02de96b5cae",
+        "bytes": 32866082,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_mnist_dynamic_seed789.pt",
+        "sha256": "bd193b55290b3a5863d84bf53933af224293872dfb40ac4e49599eeab2432e6f",
+        "bytes": 32866082,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_mnist_dynamic_seed1000.pt",
+        "sha256": "55ecd488d08bd2416b4194994e8b76a0a42df6cf15990ef09889353be1ceb446",
+        "bytes": 32866095,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_mnist_best_entropy.pt",
+        "sha256": "8d5071ca205d28eac4a6546020e71a917284c5fff2f57fed2a530403aab3ef8a",
+        "bytes": 32871029,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_mnist_entropy_seed42.pt",
+        "sha256": "9e4e69730309dd9b095432aa15fc5d630103234e178307b14727d8173cd0d51b",
+        "bytes": 32871015,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_mnist_entropy_seed123.pt",
+        "sha256": "6467323180b3f4307184ec5451499b0e5200eb7dd99dd7176eaf854585b72a5c",
+        "bytes": 32871029,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_mnist_entropy_seed456.pt",
+        "sha256": "064d5dfb9ce13f884de4d696c8f8f4033d8e4794c18d5f21efcb011df0a1af55",
+        "bytes": 32871029,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_mnist_entropy_seed789.pt",
+        "sha256": "1d3f4b2be10048934f5aa993145c68e1357bcd0fb620fc29b16c770f83d9ba2f",
+        "bytes": 32871029,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_mnist_entropy_seed1000.pt",
+        "sha256": "32434fb7f37e106b41b735cbc6edb518ecb9faf2d1e8c77889bbfd4df65f3429",
+        "bytes": 32871043,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_fashionmnist_best_dynamic.pt",
+        "sha256": "5f599b2e0a322b2e95a941ecc5bedf5e89f7613f0b92512744afab455d8a6790",
+        "bytes": 32866237,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_fashionmnist_dynamic_seed42.pt",
+        "sha256": "614689bf6c45367dbe25b52bf734869c667a045b0c1aced70418afb2600a86e8",
+        "bytes": 32866160,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_fashionmnist_dynamic_seed123.pt",
+        "sha256": "8dc6db128a5826b0068d730ccfd0c1a488e3c1e4e7aaddf3bae5165eaa43e62e",
+        "bytes": 32866237,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_fashionmnist_dynamic_seed456.pt",
+        "sha256": "3084871173ba904102271ea3cde1372a0e292b332183de947cfd68d08b746086",
+        "bytes": 32866237,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_fashionmnist_dynamic_seed789.pt",
+        "sha256": "1f28fc2403c5d7b0aa9d957796a03cfdf0f44074a1eebc6b5217a25d911736f3",
+        "bytes": 32866237,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_fashionmnist_dynamic_seed1000.pt",
+        "sha256": "9964d118451c36f835cea57ac6ba3838bd5cec0585407e346a025d60641b40e0",
+        "bytes": 32866250,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_fashionmnist_best_entropy.pt",
+        "sha256": "8f7bf434aea6d081e6b2766cacf6ecf54e4ae80e305beac9aa2c6dab0fa23ee8",
+        "bytes": 32871127,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_fashionmnist_entropy_seed42.pt",
+        "sha256": "ed7c6667b9ff76100364602036c6fc52f3465c34f90c4998a7603b8babd68558",
+        "bytes": 32871113,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_fashionmnist_entropy_seed123.pt",
+        "sha256": "1e4552eb01bd96b3733192ad225fb264f1c70102fd68ba90f4f55081657a30eb",
+        "bytes": 32871127,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_fashionmnist_entropy_seed456.pt",
+        "sha256": "48021a9952c2a70dcf541a41fbc0d7ade705e141112ad4cc4ed83d56154e9250",
+        "bytes": 32871127,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_fashionmnist_entropy_seed789.pt",
+        "sha256": "0b37285a749ba96ba57647dd6101ee15cef6941b2b809c65ce05d5da8b5b4b06",
+        "bytes": 32871127,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_fashionmnist_entropy_seed1000.pt",
+        "sha256": "7c007ef65b690597398e2dce1e3c809167f84d7bc06201b0f586ef9a4d824677",
+        "bytes": 32871141,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_cifar10_best_dynamic.pt",
+        "sha256": "5f6d9bcaeee9e91b59a38c1f342c7621cec374efca31b24565754ea61e732481",
+        "bytes": 78720764,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_cifar10_dynamic_seed42.pt",
+        "sha256": "675342242e8d6ef7c7c84f6467685d04d0174288fb45aae88e44f6d7f57dce85",
+        "bytes": 78720751,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_cifar10_dynamic_seed123.pt",
+        "sha256": "3cf3f3e41ba121873b9b85179488e188df3f1393cea4a780e5d6de9b77ca59ee",
+        "bytes": 78720764,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_cifar10_dynamic_seed456.pt",
+        "sha256": "c0c7096702f85a02b4026e1b733fdc23a282011e55fc7951cc40469468d023c3",
+        "bytes": 78720764,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_cifar10_dynamic_seed789.pt",
+        "sha256": "80966306fe28b2c167106438b156d34b3507fcd9b454da780bb078e337b5cc7d",
+        "bytes": 78720764,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_cifar10_dynamic_seed1000.pt",
+        "sha256": "6384e90c5be28f35fd2cbdb369490b5b6c6b94a9cf07dfc0ed798f2f6ed60dbf",
+        "bytes": 78720777,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_cifar10_best_entropy.pt",
+        "sha256": "427e6f47a4081e348d7db31ce63aa40d684d418a358570aa000271c1822d7c61",
+        "bytes": 78737489,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_cifar10_entropy_seed42.pt",
+        "sha256": "fb74f357467782b7696b0c1983be3581983af2119d92c88ef8bcb4d5f5096e22",
+        "bytes": 78737475,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_cifar10_entropy_seed123.pt",
+        "sha256": "a4f6fd1a6436c042c6bd9acc1bceddfa7a4eef4625cffc935dc7c309f91bf1f9",
+        "bytes": 78737489,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_cifar10_entropy_seed456.pt",
+        "sha256": "3e12a7d110c023d6e960fc70908b7538b1da98e1edd95bd072c5708633942bce",
+        "bytes": 78737489,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_cifar10_entropy_seed789.pt",
+        "sha256": "270e5871641881ae3f47755e597a39c33bc67435e66c0402c57259cac9504438",
+        "bytes": 78737489,
+        "status": "present"
+      },
+      {
+        "path": "models/capsule_cifar10_entropy_seed1000.pt",
+        "sha256": "f576197ba866c3e093138751f52a7cff58b9a8d8338ef908cdafcb9c5ffa1756",
+        "bytes": 78737503,
+        "status": "present"
+      }
+    ],
+    "random_seed": {
+      "rng": null,
+      "note": "Deterministic; no RNG."
+    },
+    "sample_counts": {
+      "n_pairs": 30
+    },
+    "timestamp_utc": "2026-11-12T19:57:45+00:00",
+    "software": {
+      "python": "3.10.10",
+      "platform": "Linux-6.8.0-106-generic-x86_64-with-glibc2.39",
+      "torch": "2.0.1+cu118",
+      "cuda": "11.8",
+      "gpu": "NVIDIA GeForce RTX 4090"
+    },
+    "statistical_method": "Relative L2 distance between the full parameter vectors of each primary checkpoint and each seeded checkpoint of the same dataset and arm, plus per-tensor cosine similarity."
+  }
+}

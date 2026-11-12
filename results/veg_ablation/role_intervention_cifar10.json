@@ -1,0 +1,277 @@
+{
+  "dataset": "cifar10",
+  "model_path": "models/capsule_cifar10_best_entropy.pt",
+  "taxonomy_path": "results/data/cifar10/veg_best_entropy/hub_taxonomy.json",
+  "gate_distribution_by_role": {
+    "Primary Hub": {
+      "n_obs": 133120,
+      "mean": 0.06592375040054321,
+      "median": 0.04234328866004944,
+      "std": 0.10366471111774445,
+      "min": 0.014013554900884628,
+      "max": 0.9942752718925476
+    },
+    "Secondary Hub": {
+      "n_obs": 501760,
+      "mean": 0.03227673098444939,
+      "median": 0.02954651601612568,
+      "std": 0.015454237349331379,
+      "min": 0.006629601586610079,
+      "max": 0.14370125532150269
+    },
+    "Specialist": {
+      "n_obs": 432128,
+      "mean": 0.01855481043457985,
+      "median": 0.01692202128469944,
+      "std": 0.009788545779883862,
+      "min": 0.0024895016103982925,
+      "max": 0.09811993688344955
+    },
+    "Generalist": {
+      "n_obs": 5754880,
+      "mean": 0.016176791861653328,
+      "median": 0.014820005744695663,
+      "std": 0.009434782899916172,
+      "min": 0.0001793189294403419,
+      "max": 0.18938466906547546
+    },
+    "Non-critical": {
+      "n_obs": 1566720,
+      "mean": 0.007844514213502407,
+      "median": 0.00413832813501358,
+      "std": 0.01479563768953085,
+      "min": 2.891068788812845e-06,
+      "max": 0.3392532467842102
+    }
+  },
+  "beta_init_value": 0.0,
+  "beta_cross_seed_stability": {
+    "Primary Hub": {
+      "n_models": 4,
+      "values": [
+        1.3475682735443115,
+        1.0469404458999634,
+        1.0999395847320557,
+        1.138852596282959
+      ],
+      "mean": 1.1583252251148224,
+      "std_ddof1": 0.1316656962362864,
+      "cv": 0.11366902263846897
+    },
+    "Secondary Hub": {
+      "n_models": 4,
+      "values": [
+        1.5375183820724487,
+        1.2952752113342285,
+        1.311996579170227,
+        1.2225537300109863
+      ],
+      "mean": 1.3418359756469727,
+      "std_ddof1": 0.13611043636683695,
+      "cv": 0.10143597193480422
+    },
+    "Specialist": {
+      "n_models": 4,
+      "values": [
+        1.7985482215881348,
+        1.5645674467086792,
+        1.576858639717102,
+        1.4865957498550415
+      ],
+      "mean": 1.6066425144672394,
+      "std_ddof1": 0.134035339421421,
+      "cv": 0.0834257392135966
+    },
+    "Generalist": {
+      "n_models": 4,
+      "values": [
+        1.8853662014007568,
+        1.7492598295211792,
+        1.987697720527649,
+        2.005983591079712
+      ],
+      "mean": 1.9070768356323242,
+      "std_ddof1": 0.11784146470443053,
+      "cv": 0.06179167116009679
+    },
+    "Non-critical": {
+      "n_models": 4,
+      "values": [
+        3.0567190647125244,
+        2.7039339542388916,
+        3.1637985706329346,
+        3.367324113845825
+      ],
+      "mean": 3.072943925857544,
+      "std_ddof1": 0.2776963970660837,
+      "cv": 0.0903681953742742
+    }
+  },
+  "role_mean_beta_learned": {
+    "Hub(P+S)": 1.4976901335100974,
+    "Specialist": 1.7985482215881348,
+    "Non-critical": 3.0567190647125244
+  },
+  "intervention_accuracy": {
+    "control_unmodified": {
+      "accuracy": 0.8333,
+      "per_class_accuracy": [
+        0.782,
+        0.909,
+        0.761,
+        0.682,
+        0.869,
+        0.744,
+        0.891,
+        0.876,
+        0.929,
+        0.89
+      ]
+    },
+    "suppress_hubs_to_noncritical_mean": {
+      "accuracy": 0.012,
+      "per_class_accuracy": [
+        0.022,
+        0.009,
+        0.023,
+        0.013,
+        0.028,
+        0.01,
+        0.008,
+        0.001,
+        0.002,
+        0.004
+      ]
+    },
+    "suppress_specialists_to_noncritical_mean": {
+      "accuracy": 0.8312,
+      "per_class_accuracy": [
+        0.767,
+        0.915,
+        0.781,
+        0.686,
+        0.865,
+        0.752,
+        0.887,
+        0.849,
+        0.935,
+        0.875
+      ]
+    },
+    "unsuppress_noncritical_to_hub_mean": {
+      "accuracy": 0.7449,
+      "per_class_accuracy": [
+        0.635,
+        0.854,
+        0.836,
+        0.409,
+        0.781,
+        0.638,
+        0.593,
+        0.875,
+        0.913,
+        0.915
+      ]
+    },
+    "hub_specialist_swap": {
+      "accuracy": 0.0107,
+      "per_class_accuracy": [
+        0.02,
+        0.009,
+        0.036,
+        0.007,
+        0.016,
+        0.009,
+        0.005,
+        0.001,
+        0.001,
+        0.003
+      ]
+    },
+    "zero_gate_all": {
+      "accuracy": 0.0529,
+      "per_class_accuracy": [
+        0.092,
+        0.077,
+        0.023,
+        0.161,
+        0.043,
+        0.067,
+        0.048,
+        0.003,
+        0.008,
+        0.007
+      ]
+    },
+    "zero_gate_hub_only": {
+      "accuracy": 0.5745,
+      "per_class_accuracy": [
+        0.353,
+        0.917,
+        0.306,
+        0.183,
+        0.638,
+        0.232,
+        0.795,
+        0.799,
+        0.776,
+        0.746
+      ]
+    }
+  },
+  "_provenance": {
+    "schema": 2,
+    "script": "experiments/role_intervention.py",
+    "argv": [
+      "experiments/role_intervention.py",
+      "--dataset",
+      "cifar10"
+    ],
+    "inputs": [
+      {
+        "path": "models/capsule_cifar10_best_entropy.pt",
+        "sha256": "427e6f47a4081e348d7db31ce63aa40d684d418a358570aa000271c1822d7c61",
+        "bytes": 78737489,
+        "status": "present"
+      },
+      {
+        "path": "results/data/cifar10/veg_best_entropy/hub_taxonomy.json",
+        "sha256": "544bcf202a2b334f6e6e1499290bf8124652bc719d6a12166223286805facdda",
+        "bytes": 46416,
+        "status": "present"
+      }
+    ],
+    "random_seed": {
+      "rng": null,
+      "note": "No RNG. Gate collection and every intervention are deterministic passes over an unshuffled test loader; the beta overrides are exact."
+    },
+    "sample_counts": {
+      "max_gate_images_requested": 2000,
+      "gate_observations_per_role": {
+        "Primary Hub": 133120,
+        "Secondary Hub": 501760,
+        "Specialist": 432128,
+        "Generalist": 5754880,
+        "Non-critical": 1566720
+      },
+      "capsules_per_role": {
+        "Primary Hub": 65,
+        "Secondary Hub": 245,
+        "Specialist": 211,
+        "Generalist": 2810,
+        "Non-critical": 765
+      },
+      "n_intervention_conditions": 7
+    },
+    "timestamp_utc": "2026-11-12T19:56:33+00:00",
+    "software": {
+      "python": "3.10.10",
+      "platform": "Linux-6.8.0-106-generic-x86_64-with-glibc2.39",
+      "numpy": "1.25.1",
+      "torch": "2.0.1+cu118",
+      "cuda": "11.8",
+      "gpu": "NVIDIA GeForce RTX 4090"
+    },
+    "statistical_method": "Inference-only on one frozen best-accuracy checkpoint per dataset. (1) Realised gate G_i = exp(-beta_i*H_i) from the final routing iteration, summarised per native role. (2) Cross-model spread of role-mean beta. (3) The unmodified control and six beta overrides, each with full test-set and per-class accuracy; no delta is stored. No hypothesis test and no interval are computed."
+  }
+}

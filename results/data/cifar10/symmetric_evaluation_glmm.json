@@ -1,0 +1,1466 @@
+{
+  "description": "Clustering-aware analysis of symmetric Hub/Specialist routing correctness on CIFAR-10.",
+  "seeds": [
+    42,
+    123,
+    456
+  ],
+  "samples_per_class": 200,
+  "primary_model": {
+    "type": "linear probability model (OLS on binary correct outcome), two-way cluster-robust SEs (capsule, image); test_digit and seed as fixed effects",
+    "note_on_seed_clustering": "seed (trained model) entered as a fixed effect rather than a third cluster dimension because there are too few seed levels for cluster-robust asymptotics. Per-seed breakdowns (below / companion_analysis.per_seed) show the trained-model dimension directly instead.",
+    "formula": "correct ~ C(role) * C(condition) + C(test_digit) + C(seed)",
+    "n_obs": 4006000,
+    "n_capsule_clusters": 2003,
+    "n_image_clusters": 6000,
+    "coefficients": [
+      {
+        "term": "Intercept",
+        "coef": 0.21390708295571403,
+        "cluster_robust_se": 0.007885863363411391,
+        "z": 27.12538540145067,
+        "p_value": 4.942654825813147e-162,
+        "ci_95": [
+          0.1984507907634277,
+          0.22936337514800037
+        ]
+      },
+      {
+        "term": "C(role)[T.specialist]",
+        "coef": 0.05509082103433155,
+        "cluster_robust_se": 0.006014822923939502,
+        "z": 9.15917587782434,
+        "p_value": 5.229515176477101e-20,
+        "ci_95": [
+          0.043301768103410125,
+          0.06687987396525297
+        ]
+      },
+      {
+        "term": "C(role)[T.hub]",
+        "coef": 0.07130345046922483,
+        "cluster_robust_se": 0.00525194117208026,
+        "z": 13.576589709016483,
+        "p_value": 5.51343574306663e-42,
+        "ci_95": [
+          0.06100964577194752,
+          0.08159725516650214
+        ]
+      },
+      {
+        "term": "C(condition)[T.within]",
+        "coef": 0.12375086814498308,
+        "cluster_robust_se": 0.01146527277560847,
+        "z": 10.793538938581035,
+        "p_value": 3.692893240792346e-27,
+        "ci_95": [
+          0.10127893350479047,
+          0.1462228027851757
+        ]
+      },
+      {
+        "term": "C(test_digit)[T.1]",
+        "coef": 0.024615871642138784,
+        "cluster_robust_se": 0.007734626418394347,
+        "z": 3.182554697612514,
+        "p_value": 0.0014598193943455178,
+        "ci_95": [
+          0.009456003862085866,
+          0.0397757394221917
+        ]
+      },
+      {
+        "term": "C(test_digit)[T.2]",
+        "coef": -0.037755314064224235,
+        "cluster_robust_se": 0.008275036584347875,
+        "z": -4.562555546357091,
+        "p_value": 5.05347179692811e-06,
+        "ci_95": [
+          -0.053974385769546065,
+          -0.0215362423589024
+        ]
+      },
+      {
+        "term": "C(test_digit)[T.3]",
+        "coef": -0.021478161911822446,
+        "cluster_robust_se": 0.008608380305745227,
+        "z": -2.495029395656223,
+        "p_value": 0.012594669594280069,
+        "ci_95": [
+          -0.038350587311083095,
+          -0.004605736512561801
+        ]
+      },
+      {
+        "term": "C(test_digit)[T.4]",
+        "coef": 0.02400117432818964,
+        "cluster_robust_se": 0.007963716490488765,
+        "z": 3.013815767657569,
+        "p_value": 0.002579844155605378,
+        "ci_95": [
+          0.008392290006831659,
+          0.03961005864954762
+        ]
+      },
+      {
+        "term": "C(test_digit)[T.5]",
+        "coef": -0.027757930120877593,
+        "cluster_robust_se": 0.00863262436756771,
+        "z": -3.2154683140346743,
+        "p_value": 0.0013023187116029983,
+        "ci_95": [
+          -0.04467787388131031,
+          -0.01083798636044488
+        ]
+      },
+      {
+        "term": "C(test_digit)[T.6]",
+        "coef": 0.04579267277641549,
+        "cluster_robust_se": 0.009137348463543598,
+        "z": 5.011593128917009,
+        "p_value": 5.398124737877639e-07,
+        "ci_95": [
+          0.027883469787870038,
+          0.06370187576496093
+        ]
+      },
+      {
+        "term": "C(test_digit)[T.7]",
+        "coef": 0.040610261735127016,
+        "cluster_robust_se": 0.008541679359880412,
+        "z": 4.754365040424039,
+        "p_value": 1.990710680440662e-06,
+        "ci_95": [
+          0.02386857018976141,
+          0.057351953280492626
+        ]
+      },
+      {
+        "term": "C(test_digit)[T.8]",
+        "coef": 0.03356440273706957,
+        "cluster_robust_se": 0.0082191176531924,
+        "z": 4.083699023828035,
+        "p_value": 4.4324432722206176e-05,
+        "ci_95": [
+          0.01745493213681247,
+          0.049673873337326674
+        ]
+      },
+      {
+        "term": "C(test_digit)[T.9]",
+        "coef": 0.024850864987564704,
+        "cluster_robust_se": 0.007994769305193557,
+        "z": 3.108390503703603,
+        "p_value": 0.0018810933571730155,
+        "ci_95": [
+          0.009181117149385333,
+          0.040520612825744075
+        ]
+      },
+      {
+        "term": "C(seed)[T.123]",
+        "coef": 0.027738239194483764,
+        "cluster_robust_se": 0.0043086867641457536,
+        "z": 6.437747906230818,
+        "p_value": 1.2125917349926255e-10,
+        "ci_95": [
+          0.019293213136758088,
+          0.03618326525220944
+        ]
+      },
+      {
+        "term": "C(seed)[T.456]",
+        "coef": 0.03949209886199017,
+        "cluster_robust_se": 0.0044490598878372915,
+        "z": 8.876504218329922,
+        "p_value": 6.899451913544307e-19,
+        "ci_95": [
+          0.03077194148182908,
+          0.04821225624215126
+        ]
+      },
+      {
+        "term": "C(role)[T.specialist]:C(condition)[T.within]",
+        "coef": 0.03545580994721641,
+        "cluster_robust_se": 0.01581150506285944,
+        "z": 2.242405754939839,
+        "p_value": 0.024935160204474695,
+        "ci_95": [
+          0.004465260024011906,
+          0.06644635987042091
+        ]
+      },
+      {
+        "term": "C(role)[T.hub]:C(condition)[T.within]",
+        "coef": 0.08613870427754704,
+        "cluster_robust_se": 0.012651123704858408,
+        "z": 6.808778910640737,
+        "p_value": 9.843060938180102e-12,
+        "ci_95": [
+          0.06134250181602456,
+          0.11093490673906951
+        ]
+      }
+    ],
+    "predicted_cells": [
+      {
+        "role": "hub",
+        "condition": "within",
+        "cell_mean_unadjusted": 0.5226308900523543,
+        "predicted_prob": 0.5226308900523543,
+        "se": 0.005397972831130026,
+        "ci_95": [
+          0.5120508633033395,
+          0.5332109168013691
+        ],
+        "raw_mean": 0.522630890052356,
+        "n": 305600
+      },
+      {
+        "role": "hub",
+        "condition": "cross",
+        "cell_mean_unadjusted": 0.32100021815008734,
+        "predicted_prob": 0.32100021815008734,
+        "se": 0.002038195595641962,
+        "ci_95": [
+          0.3170053547826291,
+          0.3249950815175456
+        ],
+        "raw_mean": 0.3210002181500873,
+        "n": 2750400
+      },
+      {
+        "role": "specialist",
+        "condition": "within",
+        "cell_mean_unadjusted": 0.4455999999999977,
+        "predicted_prob": 0.4455999999999977,
+        "se": 0.009356772275525537,
+        "ci_95": [
+          0.42726072633996764,
+          0.4639392736600278
+        ],
+        "raw_mean": 0.4456,
+        "n": 65000
+      },
+      {
+        "role": "specialist",
+        "condition": "cross",
+        "cell_mean_unadjusted": 0.2934512820512814,
+        "predicted_prob": 0.2934512820512814,
+        "se": 0.0036155179966234057,
+        "ci_95": [
+          0.2863648667778995,
+          0.3005376973246633
+        ],
+        "raw_mean": 0.29345128205128207,
+        "n": 585000
+      },
+      {
+        "role": "random",
+        "condition": "within",
+        "cell_mean_unadjusted": 0.35593333333332705,
+        "predicted_prob": 0.35593333333332705,
+        "se": 0.011224254874958524,
+        "ci_95": [
+          0.33393379377840837,
+          0.37793287288824573
+        ],
+        "raw_mean": 0.3559333333333333,
+        "n": 30000
+      },
+      {
+        "role": "random",
+        "condition": "cross",
+        "cell_mean_unadjusted": 0.24860370370369891,
+        "predicted_prob": 0.24860370370369891,
+        "se": 0.005010101888933895,
+        "ci_95": [
+          0.2387839040013885,
+          0.25842350340600934
+        ],
+        "raw_mean": 0.24860370370370372,
+        "n": 270000
+      }
+    ],
+    "r_squared": 0.021833154832070156,
+    "se_sensitivity_by_clustering": {
+      "reported": "cluster_two_way_capsule_image",
+      "why": "The primary SEs are two-way cluster-robust by capsule and image; these are the same coefficients under weaker and alternative variance assumptions.",
+      "terms": [
+        {
+          "term": "C(role)[T.specialist]:C(condition)[T.within]",
+          "coef": 0.03545580994721641,
+          "iid_nonrobust": {
+            "se": 0.003424313074427992,
+            "ratio_vs_iid": 1.0,
+            "z": 10.35413794725503,
+            "p_value": 4.0078057114131707e-25
+          },
+          "hc1": {
+            "se": 0.003524615933452199,
+            "ratio_vs_iid": 1.0292913810285766,
+            "z": 10.059481831964902,
+            "p_value": 8.343633389558898e-24
+          },
+          "cluster_capsule": {
+            "se": 0.015696658840737884,
+            "ratio_vs_iid": 4.583885439084715,
+            "z": 2.258812547750427,
+            "p_value": 0.023895047673054923
+          },
+          "cluster_image": {
+            "se": 0.004005185522377153,
+            "ratio_vs_iid": 1.169631816753844,
+            "z": 8.852476308306615,
+            "p_value": 8.559850816709704e-19
+          },
+          "cluster_two_way_capsule_image": {
+            "se": 0.01581150506285944,
+            "ratio_vs_iid": 4.6174239093195775,
+            "z": 2.242405754939839,
+            "p_value": 0.024935160204474695
+          }
+        },
+        {
+          "term": "C(role)[T.hub]:C(condition)[T.within]",
+          "coef": 0.08613870427754704,
+          "iid_nonrobust": {
+            "se": 0.00296964918725794,
+            "ratio_vs_iid": 1.0,
+            "z": 29.006356928336107,
+            "p_value": 5.470552874971515e-185
+          },
+          "hc1": {
+            "se": 0.003033375773045628,
+            "ratio_vs_iid": 1.0214592976372845,
+            "z": 28.396977731202885,
+            "p_value": 2.203570449656025e-177
+          },
+          "cluster_capsule": {
+            "se": 0.012467586656137243,
+            "ratio_vs_iid": 4.198336527301843,
+            "z": 6.909011876419945,
+            "p_value": 4.880411050838607e-12
+          },
+          "cluster_image": {
+            "se": 0.0037163937557582473,
+            "ratio_vs_iid": 1.2514588496528178,
+            "z": 23.178034928102594,
+            "p_value": 7.584640709606605e-119
+          },
+          "cluster_two_way_capsule_image": {
+            "se": 0.012651123704858408,
+            "ratio_vs_iid": 4.260140813649429,
+            "z": 6.808778910640737,
+            "p_value": 9.843060938180102e-12
+          }
+        }
+      ]
+    }
+  },
+  "ceiling_robust_model": {
+    "type": "logistic regression on the binary correct outcome, same design as the linear probability model under primary_model, two-way cluster-robust SEs (Cameron-Gelbach-Miller)",
+    "why": "On the additive scale a role x condition interaction near a ceiling is bounded by the baseline rate; the logit link models log-odds, where it is not.",
+    "role_contrasts_model_based": [
+      {
+        "contrast": "hub vs random (excess domain gap, log-odds)",
+        "estimate_log_odds": 0.29104779971777817,
+        "cluster_robust_se": 0.05611746907412047,
+        "z": 5.1864028175140895,
+        "p_value": 2.1439481938046175e-07,
+        "ci_95": [
+          0.18105756033250203,
+          0.4010380391030543
+        ]
+      },
+      {
+        "contrast": "specialist vs random (excess domain gap, log-odds)",
+        "estimate_log_odds": 0.10434277983203494,
+        "cluster_robust_se": 0.0690862132324559,
+        "z": 1.5103270963911497,
+        "p_value": 0.13095998094256447,
+        "ci_95": [
+          -0.031066198103578607,
+          0.23975175776764848
+        ]
+      },
+      {
+        "contrast": "hub vs specialist (excess domain gap, log-odds)",
+        "estimate_log_odds": 0.18670501988574323,
+        "cluster_robust_se": 0.05095401099474632,
+        "z": 3.6641869058157894,
+        "p_value": 0.00024812555180534125,
+        "ci_95": [
+          0.08683515833604044,
+          0.286574881435446
+        ]
+      }
+    ],
+    "ordering_hub_gt_specialist_gt_random_supported_by_model": false,
+    "ordering_note": "The ordering is evaluated from the three model-based contrasts above, each with a two-way cluster-robust SE. `log_odds_ordering` below is the descriptive ordering of the raw cell rates.",
+    "formula": "correct ~ C(role) * C(condition) + C(test_digit) + C(seed)",
+    "link": "logit",
+    "cluster_robust": "two-way (Cameron-Gelbach-Miller): capsule + image - intersection",
+    "n_obs": 4006000,
+    "coefficients": [
+      {
+        "term": "Intercept",
+        "coef": -1.2713802351480668,
+        "odds_ratio": 0.28044427547929374,
+        "cluster_robust_se": 0.03939687849376075,
+        "z": -32.27109059793695,
+        "p_value": 1.7803962078743737e-228,
+        "ci_95": [
+          -1.3485981169958379,
+          -1.1941623533002956
+        ]
+      },
+      {
+        "term": "C(role)[T.specialist]",
+        "coef": 0.27610839392473574,
+        "odds_ratio": 1.3179907184716269,
+        "cluster_robust_se": 0.031223227446646993,
+        "z": 8.843044633887985,
+        "p_value": 9.314499872128087e-19,
+        "ci_95": [
+          0.21491086812930763,
+          0.3373059197201638
+        ]
+      },
+      {
+        "term": "C(role)[T.hub]",
+        "coef": 0.35340444213928773,
+        "odds_ratio": 1.423906914951451,
+        "cluster_robust_se": 0.027693563863186617,
+        "z": 12.761248205005224,
+        "p_value": 2.698421599834357e-37,
+        "ci_95": [
+          0.29912505696744196,
+          0.4076838273111335
+        ]
+      },
+      {
+        "term": "C(condition)[T.within]",
+        "coef": 0.5919651069082775,
+        "odds_ratio": 1.8075369309597047,
+        "cluster_robust_se": 0.05179026051585257,
+        "z": 11.430046904805238,
+        "p_value": 2.959489186397032e-30,
+        "ci_95": [
+          0.4904561962972065,
+          0.6934740175193486
+        ]
+      },
+      {
+        "term": "C(test_digit)[T.1]",
+        "coef": 0.11392518898095204,
+        "odds_ratio": 1.1206682834117625,
+        "cluster_robust_se": 0.03560798651493612,
+        "z": 3.1994279972321658,
+        "p_value": 0.0013770057834442452,
+        "ci_95": [
+          0.044133535411677235,
+          0.18371684255022686
+        ]
+      },
+      {
+        "term": "C(test_digit)[T.2]",
+        "coef": -0.18209216644752974,
+        "odds_ratio": 0.8335245138820019,
+        "cluster_robust_se": 0.039957343529613255,
+        "z": -4.557163974441326,
+        "p_value": 5.184894601078429e-06,
+        "ci_95": [
+          -0.2604085597655717,
+          -0.10377577312948776
+        ]
+      },
+      {
+        "term": "C(test_digit)[T.3]",
+        "coef": -0.10097961875085368,
+        "odds_ratio": 0.9039514563579649,
+        "cluster_robust_se": 0.040784467644305315,
+        "z": -2.475933231041042,
+        "p_value": 0.013288842743375136,
+        "ci_95": [
+          -0.18091717533369212,
+          -0.021042062168015255
+        ]
+      },
+      {
+        "term": "C(test_digit)[T.4]",
+        "coef": 0.11055388902300364,
+        "odds_ratio": 1.1168965358935141,
+        "cluster_robust_se": 0.0366642204643703,
+        "z": 3.0153072293037875,
+        "p_value": 0.0025671906946430154,
+        "ci_95": [
+          0.03869201691283784,
+          0.18241576113316943
+        ]
+      },
+      {
+        "term": "C(test_digit)[T.5]",
+        "coef": -0.13348642061560795,
+        "odds_ratio": 0.8750393513926493,
+        "cluster_robust_se": 0.041445286736661764,
+        "z": -3.220786514610556,
+        "p_value": 0.0012783933767407478,
+        "ci_95": [
+          -0.214719182619465,
+          -0.052253658611750894
+        ]
+      },
+      {
+        "term": "C(test_digit)[T.6]",
+        "coef": 0.20940939644353287,
+        "odds_ratio": 1.232949660425847,
+        "cluster_robust_se": 0.041351637068996396,
+        "z": 5.064113812329299,
+        "p_value": 4.103044806329648e-07,
+        "ci_95": [
+          0.12836018778829994,
+          0.2904586050987658
+        ]
+      },
+      {
+        "term": "C(test_digit)[T.7]",
+        "coef": 0.18520373860816222,
+        "odds_ratio": 1.2034636071521483,
+        "cluster_robust_se": 0.038783307867155066,
+        "z": 4.775346632178535,
+        "p_value": 1.7939797078872516e-06,
+        "ci_95": [
+          0.1091884551885383,
+          0.26121902202778613
+        ]
+      },
+      {
+        "term": "C(test_digit)[T.8]",
+        "coef": 0.15447454820742876,
+        "odds_ratio": 1.1670445743030626,
+        "cluster_robust_se": 0.03758501573639464,
+        "z": 4.110003552768149,
+        "p_value": 3.9565302997837634e-05,
+        "ci_95": [
+          0.08080791736409526,
+          0.22814117905076226
+        ]
+      },
+      {
+        "term": "C(test_digit)[T.9]",
+        "coef": 0.11515462330684773,
+        "odds_ratio": 1.1220469187644926,
+        "cluster_robust_se": 0.03677762169926148,
+        "z": 3.1311057644915663,
+        "p_value": 0.0017414943003906638,
+        "ci_95": [
+          0.04307048477629523,
+          0.18723876183740024
+        ]
+      },
+      {
+        "term": "C(seed)[T.123]",
+        "coef": 0.13041639828799617,
+        "odds_ratio": 1.1393026882567872,
+        "cluster_robust_se": 0.020235875236960525,
+        "z": 6.4448113442502635,
+        "p_value": 1.1574429867917616e-10,
+        "ci_95": [
+          0.09075408282355354,
+          0.1700787137524388
+        ]
+      },
+      {
+        "term": "C(seed)[T.456]",
+        "coef": 0.18334700471561657,
+        "odds_ratio": 1.2012311686477741,
+        "cluster_robust_se": 0.02068494583291169,
+        "z": 8.863789453288984,
+        "p_value": 7.73397472969774e-19,
+        "ci_95": [
+          0.14280451088310966,
+          0.22388949854812348
+        ]
+      },
+      {
+        "term": "C(role)[T.specialist]:C(condition)[T.within]",
+        "coef": 0.10434277983203494,
+        "odds_ratio": 1.109980868768518,
+        "cluster_robust_se": 0.0690862132324559,
+        "z": 1.5103270963911497,
+        "p_value": 0.13095998094256447,
+        "ci_95": [
+          -0.031066198103578607,
+          0.23975175776764848
+        ]
+      },
+      {
+        "term": "C(role)[T.hub]:C(condition)[T.within]",
+        "coef": 0.29104779971777817,
+        "odds_ratio": 1.337828530247897,
+        "cluster_robust_se": 0.05611746907412047,
+        "z": 5.1864028175140895,
+        "p_value": 2.1439481938046175e-07,
+        "ci_95": [
+          0.18105756033250203,
+          0.4010380391030543
+        ]
+      }
+    ],
+    "role_gaps": [
+      {
+        "role": "hub",
+        "within_rate": 0.522630890052356,
+        "cross_rate": 0.3210002181500873,
+        "additive_gap_pp": 20.16306719022687,
+        "raw_log_odds_gap_descriptive_only": 0.8397644562452121
+      },
+      {
+        "role": "specialist",
+        "within_rate": 0.4456,
+        "cross_rate": 0.29345128205128207,
+        "additive_gap_pp": 15.214871794871792,
+        "raw_log_odds_gap_descriptive_only": 0.6602157613548667
+      },
+      {
+        "role": "random",
+        "within_rate": 0.3559333333333333,
+        "cross_rate": 0.24860370370370372,
+        "additive_gap_pp": 10.732962962962961,
+        "raw_log_odds_gap_descriptive_only": 0.5130143338291044
+      }
+    ],
+    "log_odds_ordering": [
+      "hub",
+      "specialist",
+      "random"
+    ],
+    "ordering_matches_mechanism": true,
+    "pseudo_r_squared": 0.016720577642897694,
+    "seed_fixed_effect_included": true,
+    "psd_projection_applied": false,
+    "psd_negative_eigenvalues": 0,
+    "per_seed_fits": {
+      "42": {
+        "n_obs": 1362000,
+        "formula": "correct ~ C(role) * C(condition) + C(test_digit)",
+        "role_contrasts_model_based": [
+          {
+            "contrast": "hub vs random (excess domain gap, log-odds)",
+            "estimate_log_odds": 0.4466929935363057,
+            "cluster_robust_se": 0.0883935145144456,
+            "z": 5.053458910306202,
+            "p_value": 4.3387969381931063e-07,
+            "ci_95": [
+              0.2734417050879923,
+              0.619944281984619
+            ]
+          },
+          {
+            "contrast": "specialist vs random (excess domain gap, log-odds)",
+            "estimate_log_odds": 0.07794156150825848,
+            "cluster_robust_se": 0.09231325424052897,
+            "z": 0.8443160426906413,
+            "p_value": 0.3984928237441505,
+            "ci_95": [
+              -0.1029924168031783,
+              0.25887553981969524
+            ]
+          },
+          {
+            "contrast": "hub vs specialist (excess domain gap, log-odds)",
+            "estimate_log_odds": 0.3687514320280472,
+            "cluster_robust_se": 0.06493873819260346,
+            "z": 5.678450833682016,
+            "p_value": 1.359200885576682e-08,
+            "ci_95": [
+              0.24147150517054444,
+              0.49603135888555
+            ]
+          }
+        ],
+        "ordering_hub_gt_specialist_gt_random_supported_by_model": false,
+        "psd_projection_applied": false,
+        "psd_negative_eigenvalues": 0
+      },
+      "123": {
+        "n_obs": 1264000,
+        "formula": "correct ~ C(role) * C(condition) + C(test_digit)",
+        "role_contrasts_model_based": [
+          {
+            "contrast": "hub vs random (excess domain gap, log-odds)",
+            "estimate_log_odds": 0.11935045177753514,
+            "cluster_robust_se": 0.11015996773815753,
+            "z": 1.083428528784819,
+            "p_value": 0.27861825844517385,
+            "ci_95": [
+              -0.09656308498925362,
+              0.33526398854432393
+            ]
+          },
+          {
+            "contrast": "specialist vs random (excess domain gap, log-odds)",
+            "estimate_log_odds": 0.12006410826494873,
+            "cluster_robust_se": 0.13957704824613787,
+            "z": 0.8601995082545453,
+            "p_value": 0.3896790757076871,
+            "ci_95": [
+              -0.15350690629748148,
+              0.39363512282737895
+            ]
+          },
+          {
+            "contrast": "hub vs specialist (excess domain gap, log-odds)",
+            "estimate_log_odds": -0.0007136564874135887,
+            "cluster_robust_se": 0.10046004176786504,
+            "z": -0.007103884040409306,
+            "p_value": 0.994331968275493,
+            "ci_95": [
+              -0.19761533835242906,
+              0.19618802537760188
+            ]
+          }
+        ],
+        "ordering_hub_gt_specialist_gt_random_supported_by_model": false,
+        "psd_projection_applied": false,
+        "psd_negative_eigenvalues": 0
+      },
+      "456": {
+        "n_obs": 1380000,
+        "formula": "correct ~ C(role) * C(condition) + C(test_digit)",
+        "role_contrasts_model_based": [
+          {
+            "contrast": "hub vs random (excess domain gap, log-odds)",
+            "estimate_log_odds": 0.29224033191906396,
+            "cluster_robust_se": 0.09851261187230095,
+            "z": 2.9665270909463515,
+            "p_value": 0.003011838257494794,
+            "ci_95": [
+              0.0991556126493541,
+              0.4853250511887738
+            ]
+          },
+          {
+            "contrast": "specialist vs random (excess domain gap, log-odds)",
+            "estimate_log_odds": 0.3395725119505553,
+            "cluster_robust_se": 0.1904120503993655,
+            "z": 1.783356206912033,
+            "p_value": 0.07452833722511405,
+            "ci_95": [
+              -0.033635106832201056,
+              0.7127801307333117
+            ]
+          },
+          {
+            "contrast": "hub vs specialist (excess domain gap, log-odds)",
+            "estimate_log_odds": -0.04733218003149137,
+            "cluster_robust_se": 0.1705761969971319,
+            "z": -0.27748408549809106,
+            "p_value": 0.7814084241626449,
+            "ci_95": [
+              -0.38166152614586984,
+              0.2869971660828871
+            ]
+          }
+        ],
+        "ordering_hub_gt_specialist_gt_random_supported_by_model": false,
+        "psd_projection_applied": false,
+        "psd_negative_eigenvalues": 0
+      }
+    },
+    "between_model_heterogeneity": [
+      {
+        "contrast": "hub vs random (excess domain gap, log-odds)",
+        "pooled_estimate_log_odds": 0.29104779971777817,
+        "per_seed_estimates_log_odds": {
+          "42": 0.4466929935363057,
+          "123": 0.11935045177753514,
+          "456": 0.29224033191906396
+        },
+        "per_seed_significant_at_05": {
+          "42": true,
+          "123": false,
+          "456": true
+        },
+        "n_models_same_sign_as_pooled": 3,
+        "n_models": 3,
+        "unweighted_mean_of_per_seed_estimates": 0.2860945924109683,
+        "pooled_within_per_seed_range": true
+      },
+      {
+        "contrast": "specialist vs random (excess domain gap, log-odds)",
+        "pooled_estimate_log_odds": 0.10434277983203494,
+        "per_seed_estimates_log_odds": {
+          "42": 0.07794156150825848,
+          "123": 0.12006410826494873,
+          "456": 0.3395725119505553
+        },
+        "per_seed_significant_at_05": {
+          "42": false,
+          "123": false,
+          "456": false
+        },
+        "n_models_same_sign_as_pooled": 3,
+        "n_models": 3,
+        "unweighted_mean_of_per_seed_estimates": 0.1791927272412542,
+        "pooled_within_per_seed_range": true
+      },
+      {
+        "contrast": "hub vs specialist (excess domain gap, log-odds)",
+        "pooled_estimate_log_odds": 0.18670501988574323,
+        "per_seed_estimates_log_odds": {
+          "42": 0.3687514320280472,
+          "123": -0.0007136564874135887,
+          "456": -0.04733218003149137
+        },
+        "per_seed_significant_at_05": {
+          "42": true,
+          "123": false,
+          "456": false
+        },
+        "n_models_same_sign_as_pooled": 1,
+        "n_models": 3,
+        "unweighted_mean_of_per_seed_estimates": 0.1069018651697141,
+        "pooled_within_per_seed_range": true
+      }
+    ]
+  },
+  "companion_analysis_method": {
+    "bootstrap": "BCa (bias-corrected and accelerated), resampling capsules",
+    "n_resamples": 10000,
+    "ci_level": 0.95,
+    "rng_seed_pooled": 0,
+    "rng_seed_per_seed": "the seed id itself",
+    "paired_test": "Wilcoxon signed-rank, matched by capsule",
+    "effect_size": "matched-pairs rank-biserial correlation"
+  },
+  "companion_analysis_capsule_level": {
+    "per_seed": {
+      "hub": {
+        "42": {
+          "n_capsules": 443,
+          "within_mean": 0.5157562076749436,
+          "within_sd": 0.18640029949695375,
+          "cross_mean": 0.2936192626034613,
+          "cross_sd": 0.06957542526846182,
+          "domain_gap": 0.2221369450714823,
+          "domain_gap_95ci": [
+            0.201881629187339,
+            0.2416865021470558
+          ],
+          "wilcoxon_stat": 7194.0,
+          "wilcoxon_p": 1.1679086848844337e-54,
+          "rank_biserial_r": 0.8537002013299981
+        },
+        "123": {
+          "n_capsules": 484,
+          "within_mean": 0.4758677685950413,
+          "within_sd": 0.20158885210841745,
+          "cross_mean": 0.32763314967860424,
+          "cross_sd": 0.05517644513846632,
+          "domain_gap": 0.14823461891643708,
+          "domain_gap_95ci": [
+            0.1286344170911794,
+            0.1673638010090835
+          ],
+          "wilcoxon_stat": 20348.0,
+          "wilcoxon_p": 1.349512869786679e-35,
+          "rank_biserial_r": 0.6532674448325807
+        },
+        "456": {
+          "n_capsules": 601,
+          "within_mean": 0.5653577371048253,
+          "within_sd": 0.19489526284016612,
+          "cross_mean": 0.33584119060824547,
+          "cross_sd": 0.056689620123300546,
+          "domain_gap": 0.22951654649657982,
+          "domain_gap_95ci": [
+            0.21257865899107783,
+            0.24656297708021213
+          ],
+          "wilcoxon_stat": 12302.0,
+          "wilcoxon_p": 3.245030552700382e-75,
+          "rank_biserial_r": 0.863991907175748
+        }
+      },
+      "specialist": {
+        "42": {
+          "n_capsules": 188,
+          "within_mean": 0.41428191489361704,
+          "within_sd": 0.13531361983910056,
+          "cross_mean": 0.28611997635933806,
+          "cross_sd": 0.057161617990404014,
+          "domain_gap": 0.12816193853427899,
+          "domain_gap_95ci": [
+            0.10678831151095274,
+            0.15176059070637662
+          ],
+          "wilcoxon_stat": 2054.0,
+          "wilcoxon_p": 1.0165043522933117e-19,
+          "rank_biserial_r": 0.7662987825691205
+        },
+        "123": {
+          "n_capsules": 98,
+          "within_mean": 0.4654081632653061,
+          "within_sd": 0.19718727488347992,
+          "cross_mean": 0.30753968253968256,
+          "cross_sd": 0.060075892777067326,
+          "domain_gap": 0.15786848072562354,
+          "domain_gap_95ci": [
+            0.11219679311915393,
+            0.20607841398909363
+          ],
+          "wilcoxon_stat": 839.5,
+          "wilcoxon_p": 1.908081300559186e-08,
+          "rank_biserial_r": 0.6538857967429396
+        },
+        "456": {
+          "n_capsules": 39,
+          "within_mean": 0.5467948717948717,
+          "within_sd": 0.22951747777585133,
+          "cross_mean": 0.2933903133903134,
+          "cross_sd": 0.07033924049634674,
+          "domain_gap": 0.25340455840455833,
+          "domain_gap_95ci": [
+            0.1710505402164249,
+            0.3412840818384996
+          ],
+          "wilcoxon_stat": 73.0,
+          "wilcoxon_p": 1.4157994883134961e-06,
+          "rank_biserial_r": 0.8128205128205128
+        }
+      },
+      "random": {
+        "42": {
+          "n_capsules": 50,
+          "within_mean": 0.3178,
+          "within_sd": 0.12515361988943255,
+          "cross_mean": 0.2238,
+          "cross_sd": 0.06189808266775366,
+          "domain_gap": 0.09400000000000003,
+          "domain_gap_95ci": [
+            0.06254893309381794,
+            0.12784948788283465
+          ],
+          "wilcoxon_stat": 172.0,
+          "wilcoxon_p": 1.6455253124547653e-06,
+          "rank_biserial_r": 0.7301960784313726
+        },
+        "123": {
+          "n_capsules": 50,
+          "within_mean": 0.36150000000000004,
+          "within_sd": 0.15527871583651356,
+          "cross_mean": 0.27671111111111113,
+          "cross_sd": 0.05219795354461132,
+          "domain_gap": 0.08478888888888891,
+          "domain_gap_95ci": [
+            0.04291710186358963,
+            0.1271670121303426
+          ],
+          "wilcoxon_stat": 276.0,
+          "wilcoxon_p": 0.00032407658280853013,
+          "rank_biserial_r": 0.5670588235294117
+        },
+        "456": {
+          "n_capsules": 50,
+          "within_mean": 0.3885,
+          "within_sd": 0.133333439625808,
+          "cross_mean": 0.24529999999999996,
+          "cross_sd": 0.05369259782994668,
+          "domain_gap": 0.14320000000000005,
+          "domain_gap_95ci": [
+            0.10592424897795717,
+            0.18285333722615768
+          ],
+          "wilcoxon_stat": 90.0,
+          "wilcoxon_p": 3.7055123414120317e-09,
+          "rank_biserial_r": 0.8588235294117647
+        }
+      }
+    },
+    "pooled": {
+      "hub": {
+        "n_capsules_pooled_across_seeds": 1528,
+        "within_mean": 0.522630890052356,
+        "within_sd": 0.19814550133691813,
+        "cross_mean": 0.3210002181500873,
+        "cross_sd": 0.06280963003565734,
+        "domain_gap": 0.2016306719022687,
+        "domain_gap_95ci": [
+          0.19072672704363394,
+          0.21234508518094014
+        ],
+        "wilcoxon_stat": 116053.5,
+        "wilcoxon_p": 4.2772050086943364e-162,
+        "rank_biserial_r": 0.8013047914833292,
+        "note": "Pools capsules across all 3 trained models as additional replicates of the same role; see per_seed for the model-level breakdown."
+      },
+      "specialist": {
+        "n_capsules_pooled_across_seeds": 325,
+        "within_mean": 0.4456,
+        "within_sd": 0.1740898554706097,
+        "cross_mean": 0.29345128205128207,
+        "cross_sd": 0.060314567726753934,
+        "domain_gap": 0.15214871794871793,
+        "domain_gap_95ci": [
+          0.13074526741773085,
+          0.17545809175587945
+        ],
+        "wilcoxon_stat": 7041.0,
+        "wilcoxon_p": 3.0333926279235153e-30,
+        "rank_biserial_r": 0.7325356125356125,
+        "note": "Pools capsules across all 3 trained models as additional replicates of the same role; see per_seed for the model-level breakdown."
+      },
+      "random": {
+        "n_capsules_pooled_across_seeds": 150,
+        "within_mean": 0.3559333333333333,
+        "within_sd": 0.14064495098344793,
+        "cross_mean": 0.24860370370370372,
+        "cross_sd": 0.05982715792485266,
+        "domain_gap": 0.10732962962962961,
+        "domain_gap_95ci": [
+          0.08549610489316872,
+          0.12963703703703705
+        ],
+        "wilcoxon_stat": 1542.5,
+        "wilcoxon_p": 1.0744503463733804e-14,
+        "rank_biserial_r": 0.7275938189845474,
+        "note": "Pools capsules across all 3 trained models as additional replicates of the same role; see per_seed for the model-level breakdown."
+      }
+    },
+    "filtering": {
+      "per_cell": [
+        {
+          "role": "hub",
+          "seed": 42,
+          "n_capsules_before_dropna": 443,
+          "n_capsules_after_dropna": 443,
+          "n_dropped_incomplete": 0
+        },
+        {
+          "role": "hub",
+          "seed": 123,
+          "n_capsules_before_dropna": 484,
+          "n_capsules_after_dropna": 484,
+          "n_dropped_incomplete": 0
+        },
+        {
+          "role": "hub",
+          "seed": 456,
+          "n_capsules_before_dropna": 601,
+          "n_capsules_after_dropna": 601,
+          "n_dropped_incomplete": 0
+        },
+        {
+          "role": "specialist",
+          "seed": 42,
+          "n_capsules_before_dropna": 188,
+          "n_capsules_after_dropna": 188,
+          "n_dropped_incomplete": 0
+        },
+        {
+          "role": "specialist",
+          "seed": 123,
+          "n_capsules_before_dropna": 98,
+          "n_capsules_after_dropna": 98,
+          "n_dropped_incomplete": 0
+        },
+        {
+          "role": "specialist",
+          "seed": 456,
+          "n_capsules_before_dropna": 39,
+          "n_capsules_after_dropna": 39,
+          "n_dropped_incomplete": 0
+        },
+        {
+          "role": "random",
+          "seed": 42,
+          "n_capsules_before_dropna": 50,
+          "n_capsules_after_dropna": 50,
+          "n_dropped_incomplete": 0
+        },
+        {
+          "role": "random",
+          "seed": 123,
+          "n_capsules_before_dropna": 50,
+          "n_capsules_after_dropna": 50,
+          "n_dropped_incomplete": 0
+        },
+        {
+          "role": "random",
+          "seed": 456,
+          "n_capsules_before_dropna": 50,
+          "n_capsules_after_dropna": 50,
+          "n_dropped_incomplete": 0
+        }
+      ],
+      "cells_skipped_min_n": [],
+      "min_paired_capsules": 3
+    },
+    "bca_diagnostics": {
+      "per_seed": {
+        "hub": {
+          "42": {
+            "z0_degenerate": false,
+            "quantile_clipped_low": false,
+            "quantile_clipped_high": false,
+            "acceleration_a": -0.0015259228530593064,
+            "z0": -0.006517279650583849
+          },
+          "123": {
+            "z0_degenerate": false,
+            "quantile_clipped_low": false,
+            "quantile_clipped_high": false,
+            "acceleration_a": -0.0001389788869229352,
+            "z0": -0.0037599512711459344
+          },
+          "456": {
+            "z0_degenerate": false,
+            "quantile_clipped_low": false,
+            "quantile_clipped_high": false,
+            "acceleration_a": -0.0013717227457354009,
+            "z0": 0.006266611701750335
+          }
+        },
+        "specialist": {
+          "42": {
+            "z0_degenerate": false,
+            "quantile_clipped_low": false,
+            "quantile_clipped_high": false,
+            "acceleration_a": 0.004718611815969482,
+            "z0": 0.02356448643428603
+          },
+          "123": {
+            "z0_degenerate": false,
+            "quantile_clipped_low": false,
+            "quantile_clipped_high": false,
+            "acceleration_a": 0.009160787061883174,
+            "z0": -0.0027572945958918454
+          },
+          "456": {
+            "z0_degenerate": false,
+            "quantile_clipped_low": false,
+            "quantile_clipped_high": false,
+            "acceleration_a": 0.008836390374718193,
+            "z0": 0.006015944146675263
+          }
+        },
+        "random": {
+          "42": {
+            "z0_degenerate": false,
+            "quantile_clipped_low": false,
+            "quantile_clipped_high": false,
+            "acceleration_a": 0.006273578121029035,
+            "z0": 0.02080651581056588
+          },
+          "123": {
+            "z0_degenerate": false,
+            "quantile_clipped_low": false,
+            "quantile_clipped_high": false,
+            "acceleration_a": 0.008086090977734965,
+            "z0": -0.015040336678635672
+          },
+          "456": {
+            "z0_degenerate": false,
+            "quantile_clipped_low": false,
+            "quantile_clipped_high": false,
+            "acceleration_a": 0.00620673966223967,
+            "z0": 0.005013277548926657
+          }
+        }
+      },
+      "pooled": {
+        "hub": {
+          "z0_degenerate": false,
+          "quantile_clipped_low": false,
+          "quantile_clipped_high": false,
+          "acceleration_a": -0.0006404711701769578,
+          "z0": -0.013285520672133335
+        },
+        "specialist": {
+          "z0_degenerate": false,
+          "quantile_clipped_low": false,
+          "quantile_clipped_high": false,
+          "acceleration_a": 0.006436237761069902,
+          "z0": 0.013285520672133197
+        },
+        "random": {
+          "z0_degenerate": false,
+          "quantile_clipped_low": false,
+          "quantile_clipped_high": false,
+          "acceleration_a": 0.0038891546217836533,
+          "z0": 0.011781425432631176
+        }
+      }
+    }
+  },
+  "matched_empirical_random_baseline": {
+    "description": "Matched empirical control: the random role uses the identical protocol (same image pools, same routing-correctness definition) as Hub/Specialist, sampled from the taxonomy's non-critical capsules.",
+    "within_domain": {
+      "role": "random",
+      "condition": "within",
+      "cell_mean_unadjusted": 0.35593333333332705,
+      "predicted_prob": 0.35593333333332705,
+      "se": 0.011224254874958524,
+      "ci_95": [
+        0.33393379377840837,
+        0.37793287288824573
+      ],
+      "raw_mean": 0.3559333333333333,
+      "n": 30000
+    },
+    "cross_domain": {
+      "role": "random",
+      "condition": "cross",
+      "cell_mean_unadjusted": 0.24860370370369891,
+      "predicted_prob": 0.24860370370369891,
+      "se": 0.005010101888933895,
+      "ci_95": [
+        0.2387839040013885,
+        0.25842350340600934
+      ],
+      "raw_mean": 0.24860370370370372,
+      "n": 270000
+    }
+  },
+  "_provenance": {
+    "schema": 2,
+    "script": "experiments/symmetric_analysis.py",
+    "argv": [
+      "experiments/symmetric_analysis.py",
+      "--dataset",
+      "cifar10"
+    ],
+    "inputs": [
+      {
+        "path": "results/data/cifar10/symmetric_raw_records.parquet",
+        "sha256": "f352d442eee56517cd88b1c107a8c2f7ab5bd3a44be4f3bac94611fc4464d616",
+        "bytes": 26824713,
+        "status": "present"
+      }
+    ],
+    "random_seed": {
+      "bca_pooled": 0,
+      "bca_per_seed": "the seed id itself",
+      "note": "BCa resampling seeds only; the model fits are deterministic."
+    },
+    "sample_counts": {
+      "n_obs": 4006000,
+      "n_capsule_clusters": 2003,
+      "n_image_clusters": 6000,
+      "capsules_per_role_pooled": {
+        "hub": 1528,
+        "specialist": 325,
+        "random": 150
+      },
+      "complete_case_filtering": {
+        "per_cell": [
+          {
+            "role": "hub",
+            "seed": 42,
+            "n_capsules_before_dropna": 443,
+            "n_capsules_after_dropna": 443,
+            "n_dropped_incomplete": 0
+          },
+          {
+            "role": "hub",
+            "seed": 123,
+            "n_capsules_before_dropna": 484,
+            "n_capsules_after_dropna": 484,
+            "n_dropped_incomplete": 0
+          },
+          {
+            "role": "hub",
+            "seed": 456,
+            "n_capsules_before_dropna": 601,
+            "n_capsules_after_dropna": 601,
+            "n_dropped_incomplete": 0
+          },
+          {
+            "role": "specialist",
+            "seed": 42,
+            "n_capsules_before_dropna": 188,
+            "n_capsules_after_dropna": 188,
+            "n_dropped_incomplete": 0
+          },
+          {
+            "role": "specialist",
+            "seed": 123,
+            "n_capsules_before_dropna": 98,
+            "n_capsules_after_dropna": 98,
+            "n_dropped_incomplete": 0
+          },
+          {
+            "role": "specialist",
+            "seed": 456,
+            "n_capsules_before_dropna": 39,
+            "n_capsules_after_dropna": 39,
+            "n_dropped_incomplete": 0
+          },
+          {
+            "role": "random",
+            "seed": 42,
+            "n_capsules_before_dropna": 50,
+            "n_capsules_after_dropna": 50,
+            "n_dropped_incomplete": 0
+          },
+          {
+            "role": "random",
+            "seed": 123,
+            "n_capsules_before_dropna": 50,
+            "n_capsules_after_dropna": 50,
+            "n_dropped_incomplete": 0
+          },
+          {
+            "role": "random",
+            "seed": 456,
+            "n_capsules_before_dropna": 50,
+            "n_capsules_after_dropna": 50,
+            "n_dropped_incomplete": 0
+          }
+        ],
+        "cells_skipped_min_n": [],
+        "min_paired_capsules": 3
+      }
+    },
+    "timestamp_utc": "2026-11-12T19:52:38+00:00",
+    "software": {
+      "python": "3.10.10",
+      "platform": "Linux-6.8.0-106-generic-x86_64-with-glibc2.39",
+      "numpy": "1.25.1",
+      "scipy": "1.11.1",
+      "statsmodels": "0.14.0",
+      "pandas": "2.0.3",
+      "torch": "2.0.1+cu118",
+      "cuda": "11.8",
+      "gpu": "NVIDIA GeForce RTX 4090"
+    },
+    "statistical_method": "Additive model (artifact key primary_model): OLS linear-probability model correct ~ C(role)*C(condition) + C(test_digit) + C(seed) with two-way cluster-robust SEs (Cameron-Gelbach-Miller: capsule + image - intersection). Logit model (artifact key ceiling_robust_model): clustered logit, same design, plus per-seed refits for between-model heterogeneity. Model-free companion: paired Wilcoxon signed-rank matched by capsule, matched-pairs rank-biserial effect size, and BCa bootstrap 95% CIs resampling CAPSULES over 10000 resamples."
+  },
+  "sensitivity_digit_composition_confound": {
+    "description": "Role x condition interaction with and without a test_digit fixed effect (OLS and logit, two-way clustered).",
+    "scale_note": "OLS and logit fits, each with and without the test_digit control. Read each interaction's sign from its coefficients.",
+    "without_test_digit_control": {
+      "interaction_terms": {
+        "C(role)[T.specialist]:C(condition)[T.within]": {
+          "coef": 0.044819088319089366,
+          "se": 0.0161107438445342,
+          "z": 2.7819378640480887,
+          "p": 0.005403538447238372
+        },
+        "C(role)[T.hub]:C(condition)[T.within]": {
+          "coef": 0.09430104227264238,
+          "se": 0.012815795033374402,
+          "z": 7.35818901808801,
+          "p": 1.8642195493807344e-13
+        }
+      },
+      "joint_wald_chi2": 60.3342260108282,
+      "joint_wald_df": 2,
+      "joint_wald_p": 7.917522145847597e-14
+    },
+    "with_test_digit_control": {
+      "interaction_terms": {
+        "C(role)[T.specialist]:C(condition)[T.within]": {
+          "coef": 0.03545580994721641,
+          "se": 0.01581150506285944,
+          "z": 2.242405754939839,
+          "p": 0.024935160204474695
+        },
+        "C(role)[T.hub]:C(condition)[T.within]": {
+          "coef": 0.08613870427754704,
+          "se": 0.012651123704858408,
+          "z": 6.808778910640737,
+          "p": 9.843060938180102e-12
+        }
+      },
+      "joint_wald_chi2": 54.87933132661094,
+      "joint_wald_df": 2,
+      "joint_wald_p": 1.210889789546432e-12
+    },
+    "without_test_digit_control_logit": {
+      "link": "logit",
+      "interaction_terms": {
+        "C(role)[T.specialist]:C(condition)[T.within]": {
+          "coef": 0.14740000470893408,
+          "se": 0.06987613410872397,
+          "z": 2.109447046391929,
+          "p": 0.034906012236808275
+        },
+        "C(role)[T.hub]:C(condition)[T.within]": {
+          "coef": 0.32726675681613343,
+          "se": 0.056353511587295096,
+          "z": 5.807388884882123,
+          "p": 6.345463567690405e-09
+        }
+      },
+      "joint_wald_chi2": 39.43687362136803,
+      "joint_wald_df": 2,
+      "joint_wald_p": 2.7314402283560106e-09,
+      "psd_projection_applied": false,
+      "psd_negative_eigenvalues": 0
+    },
+    "with_test_digit_control_logit": {
+      "link": "logit",
+      "interaction_terms": {
+        "C(role)[T.specialist]:C(condition)[T.within]": {
+          "coef": 0.10434277983203494,
+          "se": 0.0690862132324559,
+          "z": 1.5103270963911497,
+          "p": 0.13095998094256447
+        },
+        "C(role)[T.hub]:C(condition)[T.within]": {
+          "coef": 0.29104779971777817,
+          "se": 0.05611746907412047,
+          "z": 5.1864028175140895,
+          "p": 2.1439481938046175e-07
+        }
+      },
+      "joint_wald_chi2": 34.869706535039306,
+      "joint_wald_df": 2,
+      "joint_wald_p": 2.6800286276715566e-08,
+      "psd_projection_applied": false,
+      "psd_negative_eigenvalues": 0
+    }
+  },
+  "_provenance_augmentations": [
+    {
+      "schema": 2,
+      "script": "experiments/symmetric_digit_confound.py",
+      "argv": [
+        "experiments/symmetric_digit_confound.py",
+        "--dataset",
+        "cifar10"
+      ],
+      "inputs": [
+        {
+          "path": "results/data/cifar10/symmetric_raw_records.parquet",
+          "sha256": "f352d442eee56517cd88b1c107a8c2f7ab5bd3a44be4f3bac94611fc4464d616",
+          "bytes": 26824713,
+          "status": "present"
+        }
+      ],
+      "random_seed": {
+        "rng": null,
+        "note": "Fully deterministic; no RNG."
+      },
+      "sample_counts": {
+        "n_obs": 4006000
+      },
+      "timestamp_utc": "2026-11-12T19:54:35+00:00",
+      "software": {
+        "python": "3.10.10",
+        "platform": "Linux-6.8.0-106-generic-x86_64-with-glibc2.39",
+        "numpy": "1.25.1",
+        "scipy": "1.11.1",
+        "statsmodels": "0.14.0",
+        "pandas": "2.0.3",
+        "torch": "2.0.1+cu118",
+        "cuda": "11.8",
+        "gpu": "NVIDIA GeForce RTX 4090"
+      },
+      "statistical_method": "Two-way cluster-robust OLS and clustered logit, each fitted with and without a C(test_digit) fixed effect, then a joint Wald test on the two role x condition interaction terms in each fit. Appends sensitivity_digit_composition_confound to the analysis artifact; it does not recompute any other field."
+    }
+  ]
+}

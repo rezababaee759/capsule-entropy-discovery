@@ -1,0 +1,714 @@
+{
+  "description": "Role-level profile of ground-truth single-capsule ablation importance for the primary dynamic-routing and primary per-capsule-beta models: each role's share of the positive importance mass (negative entries set to zero, summed over digits and capsules), how the taxonomy rule sorts capsules critical for one or two digits, and how far each suppression intervention moves beta_i.",
+  "share_definition": "share = sum over the role's capsules and all digits of max(I, 0), divided by the same sum over all capsules",
+  "models": {
+    "mnist_dynamic_primary": {
+      "importance_matrix": "results/data/mnist/importance_matrix.npy",
+      "taxonomy": "results/data/mnist/hub_taxonomy.json",
+      "n_capsules": 1152,
+      "share_of_positive_importance": {
+        "Hub (Primary + Secondary)": {
+          "n_capsules": 97,
+          "share": 0.43594545567554116
+        },
+        "Specialist": {
+          "n_capsules": 102,
+          "share": 0.09639320039021011
+        },
+        "Generalist": {
+          "n_capsules": 751,
+          "share": 0.35601122303055355
+        },
+        "Non-critical": {
+          "n_capsules": 202,
+          "share": 0.11165012090369512
+        }
+      },
+      "taxonomy_rule": {
+        "per_digit_median": [
+          7.149696350097656e-05,
+          0.00010391652584075927,
+          7.703542709350586e-05,
+          1.449406147003174e-05,
+          4.74199652671814e-05,
+          3.070652484893799e-05,
+          6.219685077667236e-05,
+          4.681318998336792e-05,
+          3.8025379180908205e-05,
+          -4.9105584621429444e-05
+        ],
+        "per_digit_p90": [
+          0.0006365698575973512,
+          0.0007790775895118716,
+          0.0007137084007263184,
+          0.0005605133771896366,
+          0.0005397253632545472,
+          0.000634462952613831,
+          0.0006106336116790773,
+          0.0006793925166130067,
+          0.0007368177175521854,
+          0.001213819444179535
+        ],
+        "negative_fraction_of_matrix": 0.42725694444444445,
+        "critical_for_1_or_2_digits": {
+          "n": 352,
+          "by_role": {
+            "Primary Hub": 0,
+            "Secondary Hub": 0,
+            "Generalist": 250,
+            "Specialist": 102,
+            "Non-critical": 0
+          }
+        },
+        "specialists_at_or_above_median_for_7_or_more_digits": 96,
+        "n_specialists": 102,
+        "top_capsule_per_digit": [
+          {
+            "digit": 0,
+            "capsule": 869,
+            "role": "Generalist"
+          },
+          {
+            "digit": 1,
+            "capsule": 117,
+            "role": "Secondary Hub"
+          },
+          {
+            "digit": 2,
+            "capsule": 1139,
+            "role": "Generalist"
+          },
+          {
+            "digit": 3,
+            "capsule": 68,
+            "role": "Secondary Hub"
+          },
+          {
+            "digit": 4,
+            "capsule": 101,
+            "role": "Secondary Hub"
+          },
+          {
+            "digit": 5,
+            "capsule": 374,
+            "role": "Secondary Hub"
+          },
+          {
+            "digit": 6,
+            "capsule": 245,
+            "role": "Generalist"
+          },
+          {
+            "digit": 7,
+            "capsule": 1021,
+            "role": "Primary Hub"
+          },
+          {
+            "digit": 8,
+            "capsule": 1060,
+            "role": "Primary Hub"
+          },
+          {
+            "digit": 9,
+            "capsule": 101,
+            "role": "Secondary Hub"
+          }
+        ],
+        "n_digits_whose_top_capsule_is_a_specialist": 0
+      }
+    },
+    "mnist_veg_primary": {
+      "importance_matrix": "results/data/mnist/veg_best_entropy/importance_matrix.npy",
+      "taxonomy": "results/data/mnist/veg_best_entropy/hub_taxonomy.json",
+      "n_capsules": 1152,
+      "share_of_positive_importance": {
+        "Hub (Primary + Secondary)": {
+          "n_capsules": 98,
+          "share": 0.9106558206901145
+        },
+        "Specialist": {
+          "n_capsules": 83,
+          "share": 0.009996660067990383
+        },
+        "Generalist": {
+          "n_capsules": 845,
+          "share": 0.07163254581252779
+        },
+        "Non-critical": {
+          "n_capsules": 126,
+          "share": 0.007714973429367387
+        }
+      },
+      "taxonomy_rule": {
+        "per_digit_median": [
+          -7.039308547973632e-07,
+          7.557868957519531e-07,
+          -6.49571418762207e-06,
+          -5.466341972351075e-06,
+          2.0384788513183595e-06,
+          -8.468627929687499e-06,
+          2.136826515197754e-06,
+          4.750490188598633e-06,
+          -1.0427236557006836e-05,
+          -1.4692544937133789e-05
+        ],
+        "per_digit_p90": [
+          0.00011285185813903808,
+          8.427488803863541e-05,
+          0.00016225385665893555,
+          0.00014301651716232307,
+          9.493064880371094e-05,
+          0.00010005080699920661,
+          0.00020659708976745612,
+          0.00010872471332550051,
+          9.333658218383792e-05,
+          0.00018549466133117683
+        ],
+        "negative_fraction_of_matrix": 0.5246527777777777,
+        "critical_for_1_or_2_digits": {
+          "n": 373,
+          "by_role": {
+            "Primary Hub": 0,
+            "Secondary Hub": 0,
+            "Generalist": 290,
+            "Specialist": 83,
+            "Non-critical": 0
+          }
+        },
+        "specialists_at_or_above_median_for_7_or_more_digits": 71,
+        "n_specialists": 83,
+        "top_capsule_per_digit": [
+          {
+            "digit": 0,
+            "capsule": 869,
+            "role": "Secondary Hub"
+          },
+          {
+            "digit": 1,
+            "capsule": 117,
+            "role": "Secondary Hub"
+          },
+          {
+            "digit": 2,
+            "capsule": 415,
+            "role": "Primary Hub"
+          },
+          {
+            "digit": 3,
+            "capsule": 1021,
+            "role": "Primary Hub"
+          },
+          {
+            "digit": 4,
+            "capsule": 101,
+            "role": "Primary Hub"
+          },
+          {
+            "digit": 5,
+            "capsule": 374,
+            "role": "Primary Hub"
+          },
+          {
+            "digit": 6,
+            "capsule": 374,
+            "role": "Primary Hub"
+          },
+          {
+            "digit": 7,
+            "capsule": 1021,
+            "role": "Primary Hub"
+          },
+          {
+            "digit": 8,
+            "capsule": 101,
+            "role": "Primary Hub"
+          },
+          {
+            "digit": 9,
+            "capsule": 101,
+            "role": "Primary Hub"
+          }
+        ],
+        "n_digits_whose_top_capsule_is_a_specialist": 0
+      }
+    },
+    "cifar10_dynamic_primary": {
+      "importance_matrix": "results/data/cifar10/importance_matrix.npy",
+      "taxonomy": "results/data/cifar10/hub_taxonomy.json",
+      "n_capsules": 4096,
+      "share_of_positive_importance": {
+        "Hub (Primary + Secondary)": {
+          "n_capsules": 443,
+          "share": 0.7740417307730177
+        },
+        "Specialist": {
+          "n_capsules": 188,
+          "share": 0.02575204588360685
+        },
+        "Generalist": {
+          "n_capsules": 2823,
+          "share": 0.16782896771480105
+        },
+        "Non-critical": {
+          "n_capsules": 642,
+          "share": 0.03237725562857431
+        }
+      },
+      "taxonomy_rule": {
+        "per_digit_median": [
+          -2.0424425601959226e-05,
+          7.842779159545897e-06,
+          8.797645568847658e-06,
+          -4.5061111450195315e-07,
+          -6.760954856872559e-06,
+          1.0788440704345703e-07,
+          -2.4779438972473146e-05,
+          -7.1090459823608405e-06,
+          -9.036064147949218e-06,
+          -1.426994800567627e-05
+        ],
+        "per_digit_p90": [
+          0.00020630300045013428,
+          7.958829402923584e-05,
+          0.00021774470806121827,
+          0.0003144124150276184,
+          0.00017320692539215087,
+          0.00017652750015258788,
+          0.00015040159225463865,
+          0.00018359363079071045,
+          0.0001046586036682129,
+          9.917318820953369e-05
+        ],
+        "negative_fraction_of_matrix": 0.5682373046875,
+        "critical_for_1_or_2_digits": {
+          "n": 751,
+          "by_role": {
+            "Primary Hub": 0,
+            "Secondary Hub": 0,
+            "Generalist": 563,
+            "Specialist": 188,
+            "Non-critical": 0
+          }
+        },
+        "specialists_at_or_above_median_for_7_or_more_digits": 169,
+        "n_specialists": 188,
+        "top_capsule_per_digit": [
+          {
+            "digit": 0,
+            "capsule": 463,
+            "role": "Primary Hub"
+          },
+          {
+            "digit": 1,
+            "capsule": 463,
+            "role": "Primary Hub"
+          },
+          {
+            "digit": 2,
+            "capsule": 463,
+            "role": "Primary Hub"
+          },
+          {
+            "digit": 3,
+            "capsule": 463,
+            "role": "Primary Hub"
+          },
+          {
+            "digit": 4,
+            "capsule": 463,
+            "role": "Primary Hub"
+          },
+          {
+            "digit": 5,
+            "capsule": 463,
+            "role": "Primary Hub"
+          },
+          {
+            "digit": 6,
+            "capsule": 463,
+            "role": "Primary Hub"
+          },
+          {
+            "digit": 7,
+            "capsule": 463,
+            "role": "Primary Hub"
+          },
+          {
+            "digit": 8,
+            "capsule": 463,
+            "role": "Primary Hub"
+          },
+          {
+            "digit": 9,
+            "capsule": 463,
+            "role": "Primary Hub"
+          }
+        ],
+        "n_digits_whose_top_capsule_is_a_specialist": 0
+      }
+    },
+    "cifar10_veg_primary": {
+      "importance_matrix": "results/data/cifar10/veg_best_entropy/importance_matrix.npy",
+      "taxonomy": "results/data/cifar10/veg_best_entropy/hub_taxonomy.json",
+      "n_capsules": 4096,
+      "share_of_positive_importance": {
+        "Hub (Primary + Secondary)": {
+          "n_capsules": 310,
+          "share": 0.7259608835486776
+        },
+        "Specialist": {
+          "n_capsules": 211,
+          "share": 0.025665882266645717
+        },
+        "Generalist": {
+          "n_capsules": 2810,
+          "share": 0.22234597887690083
+        },
+        "Non-critical": {
+          "n_capsules": 765,
+          "share": 0.026027255307775984
+        }
+      },
+      "taxonomy_rule": {
+        "per_digit_median": [
+          -1.7195045948028565e-05,
+          -7.441639900207519e-06,
+          -3.963708877563477e-08,
+          -3.10736894607544e-05,
+          -4.5949220657348635e-06,
+          -3.7075281143188475e-05,
+          -1.3734400272369385e-05,
+          -3.2198429107666013e-06,
+          -4.1186809539794923e-07,
+          -5.079805850982666e-06
+        ],
+        "per_digit_p90": [
+          0.0005479979515075684,
+          0.0003741496801376343,
+          0.000559331476688385,
+          0.0007703718543052673,
+          0.0005195480585098266,
+          0.0006594020128250122,
+          0.0003987497091293335,
+          0.0004036378860473633,
+          0.00024258464574813843,
+          0.00033462226390838627
+        ],
+        "negative_fraction_of_matrix": 0.571923828125,
+        "critical_for_1_or_2_digits": {
+          "n": 1212,
+          "by_role": {
+            "Primary Hub": 0,
+            "Secondary Hub": 0,
+            "Generalist": 1001,
+            "Specialist": 211,
+            "Non-critical": 0
+          }
+        },
+        "specialists_at_or_above_median_for_7_or_more_digits": 127,
+        "n_specialists": 211,
+        "top_capsule_per_digit": [
+          {
+            "digit": 0,
+            "capsule": 4080,
+            "role": "Primary Hub"
+          },
+          {
+            "digit": 1,
+            "capsule": 4080,
+            "role": "Primary Hub"
+          },
+          {
+            "digit": 2,
+            "capsule": 4080,
+            "role": "Primary Hub"
+          },
+          {
+            "digit": 3,
+            "capsule": 4080,
+            "role": "Primary Hub"
+          },
+          {
+            "digit": 4,
+            "capsule": 4080,
+            "role": "Primary Hub"
+          },
+          {
+            "digit": 5,
+            "capsule": 4080,
+            "role": "Primary Hub"
+          },
+          {
+            "digit": 6,
+            "capsule": 4080,
+            "role": "Primary Hub"
+          },
+          {
+            "digit": 7,
+            "capsule": 4080,
+            "role": "Primary Hub"
+          },
+          {
+            "digit": 8,
+            "capsule": 4080,
+            "role": "Primary Hub"
+          },
+          {
+            "digit": 9,
+            "capsule": 4080,
+            "role": "Primary Hub"
+          }
+        ],
+        "n_digits_whose_top_capsule_is_a_specialist": 0
+      }
+    }
+  },
+  "intervention_displacement": {
+    "mnist": {
+      "source": "results/veg_ablation/role_intervention_mnist.json",
+      "target_beta_non_critical_mean": 0.7660240530967712,
+      "hub_mean_beta": 0.39238275093387587,
+      "specialist_mean_beta": 0.6573866605758667,
+      "hub_delta_beta": 0.3736413021628954,
+      "specialist_delta_beta": 0.10863739252090454,
+      "ratio_hub_to_specialist": 3.4393434294826015,
+      "hub_accuracy_change_pp": -36.44,
+      "specialist_accuracy_change_pp": -0.019999999999997797
+    },
+    "cifar10": {
+      "source": "results/veg_ablation/role_intervention_cifar10.json",
+      "target_beta_non_critical_mean": 3.0567190647125244,
+      "hub_mean_beta": 1.4976901335100974,
+      "specialist_mean_beta": 1.7985482215881348,
+      "hub_delta_beta": 1.559028931202427,
+      "specialist_delta_beta": 1.2581708431243896,
+      "ratio_hub_to_specialist": 1.2391233986403012,
+      "hub_accuracy_change_pp": -82.13000000000001,
+      "specialist_accuracy_change_pp": -0.20999999999999908
+    }
+  },
+  "veg_native_agreement_with_primary": {
+    "mnist": {
+      "seed42": {
+        "importance_spearman": 0.02337039539693313,
+        "primary_hubs_primary_model": 9,
+        "primary_hubs_seed_model": 12,
+        "primary_hubs_shared": 0,
+        "hubs_primary_model": 98,
+        "hubs_seed_model": 101,
+        "hubs_shared": 6
+      },
+      "seed123": {
+        "importance_spearman": 0.025965310027780283,
+        "primary_hubs_primary_model": 9,
+        "primary_hubs_seed_model": 10,
+        "primary_hubs_shared": 0,
+        "hubs_primary_model": 98,
+        "hubs_seed_model": 86,
+        "hubs_shared": 12
+      },
+      "seed456": {
+        "importance_spearman": 0.7837990112833684,
+        "primary_hubs_primary_model": 9,
+        "primary_hubs_seed_model": 12,
+        "primary_hubs_shared": 7,
+        "hubs_primary_model": 98,
+        "hubs_seed_model": 90,
+        "hubs_shared": 73
+      }
+    },
+    "cifar10": {
+      "seed42": {
+        "importance_spearman": 0.002647038853240335,
+        "primary_hubs_primary_model": 65,
+        "primary_hubs_seed_model": 25,
+        "primary_hubs_shared": 1,
+        "hubs_primary_model": 310,
+        "hubs_seed_model": 281,
+        "hubs_shared": 18
+      },
+      "seed123": {
+        "importance_spearman": -0.004204965535288478,
+        "primary_hubs_primary_model": 65,
+        "primary_hubs_seed_model": 19,
+        "primary_hubs_shared": 0,
+        "hubs_primary_model": 310,
+        "hubs_seed_model": 286,
+        "hubs_shared": 21
+      },
+      "seed456": {
+        "importance_spearman": -0.0027955840730069254,
+        "primary_hubs_primary_model": 65,
+        "primary_hubs_seed_model": 36,
+        "primary_hubs_shared": 0,
+        "hubs_primary_model": 310,
+        "hubs_seed_model": 340,
+        "hubs_shared": 54
+      }
+    }
+  },
+  "_provenance": {
+    "schema": 2,
+    "script": "experiments/role_importance_profile.py",
+    "argv": [
+      "experiments/role_importance_profile.py",
+      "--output",
+      "results/data/role_importance_profile.json"
+    ],
+    "inputs": [
+      {
+        "path": "results/data/mnist/importance_matrix.npy",
+        "sha256": "e7e8d74e40e315e8bc4acbd34ca6d7d3d469b87d7aa9db1ff2f882d602172b56",
+        "bytes": 92288,
+        "status": "present"
+      },
+      {
+        "path": "results/data/mnist/hub_taxonomy.json",
+        "sha256": "ec35638a39b2dfc3a9c990d00127e057586860035daa25e760905e6b26e94d38",
+        "bytes": 13973,
+        "status": "present"
+      },
+      {
+        "path": "results/data/mnist/veg_best_entropy/importance_matrix.npy",
+        "sha256": "475a79018071e232c6b185056b16bb46d8876229334a7321ab8059b25b616c25",
+        "bytes": 92288,
+        "status": "present"
+      },
+      {
+        "path": "results/data/mnist/veg_best_entropy/hub_taxonomy.json",
+        "sha256": "61340e9fa4ae9b064bbec4f7084b6c833a826de259dff985cbf63b01351325bb",
+        "bytes": 13961,
+        "status": "present"
+      },
+      {
+        "path": "results/data/cifar10/importance_matrix.npy",
+        "sha256": "bf85fc25352acc567a1c00029d1d231904f53d5d37b08619b777fd250db7a661",
+        "bytes": 327808,
+        "status": "present"
+      },
+      {
+        "path": "results/data/cifar10/hub_taxonomy.json",
+        "sha256": "e51fdea15c0b1e4a8b31391f0af85bc9c22b8202f568510e116c3059b14baf09",
+        "bytes": 48259,
+        "status": "present"
+      },
+      {
+        "path": "results/data/cifar10/veg_best_entropy/importance_matrix.npy",
+        "sha256": "c0943b96fd4dbdb91d48153c15caf7f598d2f2571521b902bc589ea1c4053124",
+        "bytes": 327808,
+        "status": "present"
+      },
+      {
+        "path": "results/data/cifar10/veg_best_entropy/hub_taxonomy.json",
+        "sha256": "544bcf202a2b334f6e6e1499290bf8124652bc719d6a12166223286805facdda",
+        "bytes": 46416,
+        "status": "present"
+      },
+      {
+        "path": "results/data/mnist/veg_seed42/importance_matrix.npy",
+        "sha256": "f8df66f509fc4b98689e91b639f100e89949ef2a31140867032669922e97a3ef",
+        "bytes": 92288,
+        "status": "present"
+      },
+      {
+        "path": "results/data/mnist/veg_seed42/hub_taxonomy.json",
+        "sha256": "6da74e91e119379fb6643a8966ea5b5d98df02efdc7ebe8d20e91c91ff0774fb",
+        "bytes": 14032,
+        "status": "present"
+      },
+      {
+        "path": "results/data/mnist/veg_seed123/importance_matrix.npy",
+        "sha256": "01e5342d9142166aba5e1ae0f709cd4efcdc0c0947938d0b69ef22c0c59d0953",
+        "bytes": 92288,
+        "status": "present"
+      },
+      {
+        "path": "results/data/mnist/veg_seed123/hub_taxonomy.json",
+        "sha256": "07fea6420a2531fca3eec5cc3103d37415aea8a5b3e367466302a86b03478ac1",
+        "bytes": 13807,
+        "status": "present"
+      },
+      {
+        "path": "results/data/mnist/veg_seed456/importance_matrix.npy",
+        "sha256": "4bd2214c19ea0314b044a7b89238cc14d95d29d9bbe2e21c164d4f384343e8b3",
+        "bytes": 92288,
+        "status": "present"
+      },
+      {
+        "path": "results/data/mnist/veg_seed456/hub_taxonomy.json",
+        "sha256": "f89ef4355284757befe08c9f84502cdde9b5cea6546fd44954e424f50a6bc52a",
+        "bytes": 13875,
+        "status": "present"
+      },
+      {
+        "path": "results/data/cifar10/veg_seed42/importance_matrix.npy",
+        "sha256": "d9c86ff3250c6316f92b301570c511566b5835977abdb5302a9124d3b1616943",
+        "bytes": 327808,
+        "status": "present"
+      },
+      {
+        "path": "results/data/cifar10/veg_seed42/hub_taxonomy.json",
+        "sha256": "22d59ba157909fedff213970c6cd95504f92917465347ca549478401612608ab",
+        "bytes": 46032,
+        "status": "present"
+      },
+      {
+        "path": "results/data/cifar10/veg_seed123/importance_matrix.npy",
+        "sha256": "9b925f95a7e7afaa97590f1c8e18967fc56511917dc791b6a6cf585115cf8a9c",
+        "bytes": 327808,
+        "status": "present"
+      },
+      {
+        "path": "results/data/cifar10/veg_seed123/hub_taxonomy.json",
+        "sha256": "7390eb8641be4868bb282f9716e3b083f6b5c8a4506a6a0acadd1707b0895efb",
+        "bytes": 46085,
+        "status": "present"
+      },
+      {
+        "path": "results/data/cifar10/veg_seed456/importance_matrix.npy",
+        "sha256": "71a2ca992c3bb72d632047e5b10795e3ee51d35ca8e34c0fcdb00d36be0ad264",
+        "bytes": 327808,
+        "status": "present"
+      },
+      {
+        "path": "results/data/cifar10/veg_seed456/hub_taxonomy.json",
+        "sha256": "a4bda65fa43ece31539d3316cc7c89dae2ec08e08d0bdc374fe01be004c1dc12",
+        "bytes": 46794,
+        "status": "present"
+      },
+      {
+        "path": "results/veg_ablation/role_intervention_mnist.json",
+        "sha256": "1d51fbca9d6bf4041c7459f20ce9ea213da742e78f2c27db9b0e11c1c42b9c66",
+        "bytes": 7715,
+        "status": "present"
+      },
+      {
+        "path": "results/veg_ablation/role_intervention_cifar10.json",
+        "sha256": "e2a2015182856451a967034f362e547b6ba8847754c03ef9ce592cb19cce387c",
+        "bytes": 6849,
+        "status": "present"
+      }
+    ],
+    "random_seed": {
+      "rng": null,
+      "note": "Pure read-and-reduce over saved artifacts."
+    },
+    "sample_counts": {
+      "mnist_dynamic_primary": 1152,
+      "mnist_veg_primary": 1152,
+      "cifar10_dynamic_primary": 4096,
+      "cifar10_veg_primary": 4096
+    },
+    "timestamp_utc": "2026-11-12T19:57:28+00:00",
+    "software": {
+      "python": "3.10.10",
+      "platform": "Linux-6.8.0-106-generic-x86_64-with-glibc2.39",
+      "numpy": "1.25.1",
+      "scipy": "1.11.1",
+      "torch": "2.0.1+cu118",
+      "cuda": "11.8",
+      "gpu": "NVIDIA GeForce RTX 4090"
+    },
+    "statistical_method": "Role shares of clipped importance mass; taxonomy-rule threshold counts re-derived from the saved matrix and checked against hub_taxonomy.json; beta_i displacement of each suppression intervention; Spearman correlation and hub overlap between the primary and seeded VEG models' native importance matrices and taxonomies."
+  }
+}

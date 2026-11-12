@@ -1,0 +1,599 @@
+{
+  "description": "VEG beta-by-role statistics for each trained per-capsule-beta CIFAR-10 VEG model, with roles derived natively on that model by exhaustive single-capsule ablation (ground truth) of its own routing behaviour, on the taxonomy-calibration slice. Capsule indices carry no guaranteed correspondence across separately trained models, so roles are not transferred by index from the dynamic-routing baseline.",
+  "per_model": {
+    "best_entropy_pt": {
+      "model_path": "models/capsule_cifar10_best_entropy.pt",
+      "levene": {
+        "statistic": 609.854670853498,
+        "p_value": 0.0,
+        "center": "median",
+        "note": "Brown-Forsythe variant (median-centred). Welch is used for the pairwise comparisons regardless of this result."
+      },
+      "role_counts": {
+        "Primary Hub": 65,
+        "Secondary Hub": 245,
+        "Specialist": 211,
+        "Generalist": 2810,
+        "Non-critical": 765
+      },
+      "role_means": {
+        "Primary Hub": 1.3475682735443115,
+        "Secondary Hub": 1.5375183820724487,
+        "Specialist": 1.7985482215881348,
+        "Generalist": 1.8853662014007568,
+        "Non-critical": 3.0567190647125244
+      },
+      "anova": {
+        "f_stat": 554.0169500291881,
+        "p_value": 0.0
+      },
+      "welch_anova": {
+        "f_stat": 347.5198198744413,
+        "df_num": 4.0,
+        "df_denom": 346.869552268761,
+        "p_value": 6.41094103896674e-120,
+        "method": "Welch's ANOVA (statsmodels anova_oneway, use_var='unequal', welch_correction=True)",
+        "why": "Sensitivity check for the equal-variance F above, which assumes homoscedasticity; the Levene test rejects it for this model at alpha=0.05. Does not replace it; both are reported."
+      },
+      "effect_size": {
+        "eta_squared": 0.35136260943250525,
+        "eta_squared_ci95": [
+          0.3289389506248012,
+          0.37193591581764457
+        ],
+        "omega_squared": 0.3506728003265613,
+        "omega_squared_ci95": [
+          0.3282289760761281,
+          0.3712648245346477
+        ],
+        "n_total": 4096.0,
+        "k_groups": 5,
+        "df_between": 4.0,
+        "df_within": 4091.0,
+        "method": "eta^2 = F*df_b / (F*df_b + df_w) on the equal-variance decomposition; CI from statsmodels confint_effectsize_oneway (noncentral F)."
+      },
+      "primary_hub_vs_specialist": {
+        "t_statistic": -10.90195309142039,
+        "p_value": 2.6201333913723232e-18,
+        "hub_mean": 1.3475682735443115,
+        "specialist_mean": 1.7985482215881348,
+        "test": "Welch two-sample t-test (unequal variance)",
+        "p_value_bh": 2.6201333913723232e-18,
+        "significant_bh_q05": true,
+        "p_value_holm": 2.6201333913723232e-18,
+        "significant_holm_a05": true
+      },
+      "pairwise_tests_all": {
+        "hub_vs_specialist": {
+          "t_statistic": -10.90195309142039,
+          "p_value": 2.6201333913723232e-18,
+          "hub_mean": 1.3475682735443115,
+          "specialist_mean": 1.7985482215881348,
+          "test": "Welch two-sample t-test (unequal variance)",
+          "p_value_bh": 2.6201333913723232e-18,
+          "significant_bh_q05": true,
+          "p_value_holm": 2.6201333913723232e-18,
+          "significant_holm_a05": true
+        },
+        "all_hubs_vs_specialists": {
+          "t_statistic": -13.736955138474055,
+          "p_value": 7.196412950059253e-36,
+          "hubs_mean": 1.497690200805664,
+          "specialists_mean": 1.7985482215881348,
+          "test": "Welch two-sample t-test (unequal variance)",
+          "p_value_bh": 1.0794619425088881e-35,
+          "significant_bh_q05": true,
+          "p_value_holm": 1.4392825900118507e-35,
+          "significant_holm_a05": true
+        },
+        "hubs_vs_non_critical": {
+          "t_statistic": -30.37257705188898,
+          "p_value": 1.2606697023167067e-138,
+          "hubs_mean": 1.497690200805664,
+          "non_critical_mean": 3.0567190647125244,
+          "test": "Welch two-sample t-test (unequal variance)",
+          "p_value_bh": 3.7820091069501204e-138,
+          "significant_bh_q05": true,
+          "p_value_holm": 3.7820091069501204e-138,
+          "significant_holm_a05": true
+        },
+        "_multiplicity": {
+          "method": "Benjamini-Hochberg (primary) and Holm-Bonferroni (reported alongside)",
+          "implementation": "statsmodels.stats.multitest.multipletests",
+          "q": 0.05,
+          "alpha": 0.05,
+          "family_size": 3,
+          "family": [
+            "all_hubs_vs_specialists",
+            "hub_vs_specialist",
+            "hubs_vs_non_critical"
+          ],
+          "n_significant_bh": 3,
+          "n_significant_holm": 3,
+          "note": "Post-hoc family following the omnibus ANOVA on the same capsules. Note these are capsules from a SINGLE trained model; the cross-model replication is in the per_model block of the native roll-up, not here."
+        }
+      },
+      "pairwise_multiplicity": {
+        "method": "Benjamini-Hochberg (primary) and Holm-Bonferroni (reported alongside)",
+        "implementation": "statsmodels.stats.multitest.multipletests",
+        "q": 0.05,
+        "alpha": 0.05,
+        "family_size": 3,
+        "family": [
+          "all_hubs_vs_specialists",
+          "hub_vs_specialist",
+          "hubs_vs_non_critical"
+        ],
+        "n_significant_bh": 3,
+        "n_significant_holm": 3,
+        "note": "Post-hoc family following the omnibus ANOVA on the same capsules. Note these are capsules from a SINGLE trained model; the cross-model replication is in the per_model block of the native roll-up, not here."
+      },
+      "beta_vs_importance_pearson": {
+        "pearson_r": -0.04007478980368042,
+        "pearson_p": 0.010316567014336739,
+        "spearman_r": 0.08162330188946397,
+        "spearman_p": 1.685710556348629e-07
+      }
+    },
+    "seed42": {
+      "model_path": "models/capsule_cifar10_entropy_seed42.pt",
+      "levene": {
+        "statistic": 476.6205130318708,
+        "p_value": 0.0,
+        "center": "median",
+        "note": "Brown-Forsythe variant (median-centred). Welch is used for the pairwise comparisons regardless of this result."
+      },
+      "role_counts": {
+        "Primary Hub": 25,
+        "Secondary Hub": 256,
+        "Specialist": 206,
+        "Generalist": 2980,
+        "Non-critical": 629
+      },
+      "role_means": {
+        "Primary Hub": 1.0469404458999634,
+        "Secondary Hub": 1.2952752113342285,
+        "Specialist": 1.5645674467086792,
+        "Generalist": 1.7492598295211792,
+        "Non-critical": 2.7039339542388916
+      },
+      "anova": {
+        "f_stat": 481.84410291121804,
+        "p_value": 0.0
+      },
+      "welch_anova": {
+        "f_stat": 509.4359956338682,
+        "df_num": 4.0,
+        "df_denom": 165.27602906388088,
+        "p_value": 8.649852478077195e-92,
+        "method": "Welch's ANOVA (statsmodels anova_oneway, use_var='unequal', welch_correction=True)",
+        "why": "Sensitivity check for the equal-variance F above, which assumes homoscedasticity; the Levene test rejects it for this model at alpha=0.05. Does not replace it; both are reported."
+      },
+      "effect_size": {
+        "eta_squared": 0.3202485653631798,
+        "eta_squared_ci95": [
+          0.2976703145961598,
+          0.34106535704052765
+        ],
+        "omega_squared": 0.3195308417536369,
+        "omega_squared_ci95": [
+          0.2969326310608446,
+          0.3403662571407569
+        ],
+        "n_total": 4096.0,
+        "k_groups": 5,
+        "df_between": 4.0,
+        "df_within": 4091.0,
+        "method": "eta^2 = F*df_b / (F*df_b + df_w) on the equal-variance decomposition; CI from statsmodels confint_effectsize_oneway (noncentral F)."
+      },
+      "primary_hub_vs_specialist": {
+        "t_statistic": -9.540204637345076,
+        "p_value": 4.0343578358461497e-10,
+        "hub_mean": 1.0469404458999634,
+        "specialist_mean": 1.5645674467086792,
+        "test": "Welch two-sample t-test (unequal variance)",
+        "p_value_bh": 4.0343578358461497e-10,
+        "significant_bh_q05": true,
+        "p_value_holm": 4.0343578358461497e-10,
+        "significant_holm_a05": true
+      },
+      "pairwise_tests_all": {
+        "hub_vs_specialist": {
+          "t_statistic": -9.540204637345076,
+          "p_value": 4.0343578358461497e-10,
+          "hub_mean": 1.0469404458999634,
+          "specialist_mean": 1.5645674467086792,
+          "test": "Welch two-sample t-test (unequal variance)",
+          "p_value_bh": 4.0343578358461497e-10,
+          "significant_bh_q05": true,
+          "p_value_holm": 4.0343578358461497e-10,
+          "significant_holm_a05": true
+        },
+        "all_hubs_vs_specialists": {
+          "t_statistic": -17.126071127367005,
+          "p_value": 5.667855650678722e-51,
+          "hubs_mean": 1.273181438446045,
+          "specialists_mean": 1.5645674467086792,
+          "test": "Welch two-sample t-test (unequal variance)",
+          "p_value_bh": 8.501783476018082e-51,
+          "significant_bh_q05": true,
+          "p_value_holm": 1.1335711301357443e-50,
+          "significant_holm_a05": true
+        },
+        "hubs_vs_non_critical": {
+          "t_statistic": -29.181045640448684,
+          "p_value": 7.845003542719387e-123,
+          "hubs_mean": 1.273181438446045,
+          "non_critical_mean": 2.7039339542388916,
+          "test": "Welch two-sample t-test (unequal variance)",
+          "p_value_bh": 2.353501062815816e-122,
+          "significant_bh_q05": true,
+          "p_value_holm": 2.353501062815816e-122,
+          "significant_holm_a05": true
+        },
+        "_multiplicity": {
+          "method": "Benjamini-Hochberg (primary) and Holm-Bonferroni (reported alongside)",
+          "implementation": "statsmodels.stats.multitest.multipletests",
+          "q": 0.05,
+          "alpha": 0.05,
+          "family_size": 3,
+          "family": [
+            "all_hubs_vs_specialists",
+            "hub_vs_specialist",
+            "hubs_vs_non_critical"
+          ],
+          "n_significant_bh": 3,
+          "n_significant_holm": 3,
+          "note": "Post-hoc family following the omnibus ANOVA on the same capsules. Note these are capsules from a SINGLE trained model; the cross-model replication is in the per_model block of the native roll-up, not here."
+        }
+      },
+      "pairwise_multiplicity": {
+        "method": "Benjamini-Hochberg (primary) and Holm-Bonferroni (reported alongside)",
+        "implementation": "statsmodels.stats.multitest.multipletests",
+        "q": 0.05,
+        "alpha": 0.05,
+        "family_size": 3,
+        "family": [
+          "all_hubs_vs_specialists",
+          "hub_vs_specialist",
+          "hubs_vs_non_critical"
+        ],
+        "n_significant_bh": 3,
+        "n_significant_holm": 3,
+        "note": "Post-hoc family following the omnibus ANOVA on the same capsules. Note these are capsules from a SINGLE trained model; the cross-model replication is in the per_model block of the native roll-up, not here."
+      },
+      "beta_vs_importance_pearson": {
+        "pearson_r": -0.04166338892899,
+        "pearson_p": 0.0076577014942814815,
+        "spearman_r": -0.12707923816775724,
+        "spearman_p": 3.249008962145047e-16
+      }
+    },
+    "seed123": {
+      "model_path": "models/capsule_cifar10_entropy_seed123.pt",
+      "levene": {
+        "statistic": 299.59098372499915,
+        "p_value": 2.769267086487703e-226,
+        "center": "median",
+        "note": "Brown-Forsythe variant (median-centred). Welch is used for the pairwise comparisons regardless of this result."
+      },
+      "role_counts": {
+        "Primary Hub": 19,
+        "Secondary Hub": 267,
+        "Specialist": 215,
+        "Generalist": 2954,
+        "Non-critical": 641
+      },
+      "role_means": {
+        "Primary Hub": 1.0999395847320557,
+        "Secondary Hub": 1.311996579170227,
+        "Specialist": 1.576858639717102,
+        "Generalist": 1.987697720527649,
+        "Non-critical": 3.1637985706329346
+      },
+      "anova": {
+        "f_stat": 285.6299163523955,
+        "p_value": 7.164726709909599e-217
+      },
+      "welch_anova": {
+        "f_stat": 528.3915631709484,
+        "df_num": 4.0,
+        "df_denom": 134.76714863496028,
+        "p_value": 2.7998882901797944e-81,
+        "method": "Welch's ANOVA (statsmodels anova_oneway, use_var='unequal', welch_correction=True)",
+        "why": "Sensitivity check for the equal-variance F above, which assumes homoscedasticity; the Levene test rejects it for this model at alpha=0.05. Does not replace it; both are reported."
+      },
+      "effect_size": {
+        "eta_squared": 0.2183080868045553,
+        "eta_squared_ci95": [
+          0.19648760058267442,
+          0.23881770182993348
+        ],
+        "omega_squared": 0.21750222335261724,
+        "omega_squared_ci95": [
+          0.195663531242382,
+          0.23802916289619475
+        ],
+        "n_total": 4096.0,
+        "k_groups": 5,
+        "df_between": 4.0,
+        "df_within": 4091.0,
+        "method": "eta^2 = F*df_b / (F*df_b + df_w) on the equal-variance decomposition; CI from statsmodels confint_effectsize_oneway (noncentral F)."
+      },
+      "primary_hub_vs_specialist": {
+        "t_statistic": -7.474522516817494,
+        "p_value": 4.0227470920153984e-07,
+        "hub_mean": 1.0999395847320557,
+        "specialist_mean": 1.576858639717102,
+        "test": "Welch two-sample t-test (unequal variance)",
+        "p_value_bh": 4.0227470920153984e-07,
+        "significant_bh_q05": true,
+        "p_value_holm": 4.0227470920153984e-07,
+        "significant_holm_a05": true
+      },
+      "pairwise_tests_all": {
+        "hub_vs_specialist": {
+          "t_statistic": -7.474522516817494,
+          "p_value": 4.0227470920153984e-07,
+          "hub_mean": 1.0999395847320557,
+          "specialist_mean": 1.576858639717102,
+          "test": "Welch two-sample t-test (unequal variance)",
+          "p_value_bh": 4.0227470920153984e-07,
+          "significant_bh_q05": true,
+          "p_value_holm": 4.0227470920153984e-07,
+          "significant_holm_a05": true
+        },
+        "all_hubs_vs_specialists": {
+          "t_statistic": -17.35469076083599,
+          "p_value": 2.3164137731607033e-52,
+          "hubs_mean": 1.2979090213775635,
+          "specialists_mean": 1.576858639717102,
+          "test": "Welch two-sample t-test (unequal variance)",
+          "p_value_bh": 3.474620659741055e-52,
+          "significant_bh_q05": true,
+          "p_value_holm": 4.6328275463214065e-52,
+          "significant_holm_a05": true
+        },
+        "hubs_vs_non_critical": {
+          "t_statistic": -28.381838934649885,
+          "p_value": 3.693740033369873e-117,
+          "hubs_mean": 1.2979090213775635,
+          "non_critical_mean": 3.1637985706329346,
+          "test": "Welch two-sample t-test (unequal variance)",
+          "p_value_bh": 1.108122010010962e-116,
+          "significant_bh_q05": true,
+          "p_value_holm": 1.108122010010962e-116,
+          "significant_holm_a05": true
+        },
+        "_multiplicity": {
+          "method": "Benjamini-Hochberg (primary) and Holm-Bonferroni (reported alongside)",
+          "implementation": "statsmodels.stats.multitest.multipletests",
+          "q": 0.05,
+          "alpha": 0.05,
+          "family_size": 3,
+          "family": [
+            "all_hubs_vs_specialists",
+            "hub_vs_specialist",
+            "hubs_vs_non_critical"
+          ],
+          "n_significant_bh": 3,
+          "n_significant_holm": 3,
+          "note": "Post-hoc family following the omnibus ANOVA on the same capsules. Note these are capsules from a SINGLE trained model; the cross-model replication is in the per_model block of the native roll-up, not here."
+        }
+      },
+      "pairwise_multiplicity": {
+        "method": "Benjamini-Hochberg (primary) and Holm-Bonferroni (reported alongside)",
+        "implementation": "statsmodels.stats.multitest.multipletests",
+        "q": 0.05,
+        "alpha": 0.05,
+        "family_size": 3,
+        "family": [
+          "all_hubs_vs_specialists",
+          "hub_vs_specialist",
+          "hubs_vs_non_critical"
+        ],
+        "n_significant_bh": 3,
+        "n_significant_holm": 3,
+        "note": "Post-hoc family following the omnibus ANOVA on the same capsules. Note these are capsules from a SINGLE trained model; the cross-model replication is in the per_model block of the native roll-up, not here."
+      },
+      "beta_vs_importance_pearson": {
+        "pearson_r": -0.029348872965971714,
+        "pearson_p": 0.06035940066559458,
+        "spearman_r": -0.09885937324382406,
+        "spearman_p": 2.2886397533951633e-10
+      }
+    },
+    "seed456": {
+      "model_path": "models/capsule_cifar10_entropy_seed456.pt",
+      "levene": {
+        "statistic": 292.4041805787817,
+        "p_value": 1.8856896607262083e-221,
+        "center": "median",
+        "note": "Brown-Forsythe variant (median-centred). Welch is used for the pairwise comparisons regardless of this result."
+      },
+      "role_counts": {
+        "Primary Hub": 36,
+        "Secondary Hub": 304,
+        "Specialist": 143,
+        "Generalist": 2864,
+        "Non-critical": 749
+      },
+      "role_means": {
+        "Primary Hub": 1.138852596282959,
+        "Secondary Hub": 1.2225537300109863,
+        "Specialist": 1.4865957498550415,
+        "Generalist": 2.005983591079712,
+        "Non-critical": 3.367324113845825
+      },
+      "anova": {
+        "f_stat": 445.77172350628524,
+        "p_value": 2.651e-319
+      },
+      "welch_anova": {
+        "f_stat": 748.9958220369905,
+        "df_num": 4.0,
+        "df_denom": 236.57914567940054,
+        "p_value": 5.220804224947627e-133,
+        "method": "Welch's ANOVA (statsmodels anova_oneway, use_var='unequal', welch_correction=True)",
+        "why": "Sensitivity check for the equal-variance F above, which assumes homoscedasticity; the Levene test rejects it for this model at alpha=0.05. Does not replace it; both are reported."
+      },
+      "effect_size": {
+        "eta_squared": 0.3035513308185511,
+        "eta_squared_ci95": [
+          0.28095480904114417,
+          0.3244419138767318
+        ],
+        "omega_squared": 0.30281882227723994,
+        "omega_squared_ci95": [
+          0.28020250910701966,
+          0.3237279247880524
+        ],
+        "n_total": 4096.0,
+        "k_groups": 5,
+        "df_between": 4.0,
+        "df_within": 4091.0,
+        "method": "eta^2 = F*df_b / (F*df_b + df_w) on the equal-variance decomposition; CI from statsmodels confint_effectsize_oneway (noncentral F)."
+      },
+      "primary_hub_vs_specialist": {
+        "t_statistic": -6.958879052212894,
+        "p_value": 1.2230581118730847e-08,
+        "hub_mean": 1.138852596282959,
+        "specialist_mean": 1.4865957498550415,
+        "test": "Welch two-sample t-test (unequal variance)",
+        "p_value_bh": 1.2230581118730847e-08,
+        "significant_bh_q05": true,
+        "p_value_holm": 1.2230581118730847e-08,
+        "significant_holm_a05": true
+      },
+      "pairwise_tests_all": {
+        "hub_vs_specialist": {
+          "t_statistic": -6.958879052212894,
+          "p_value": 1.2230581118730847e-08,
+          "hub_mean": 1.138852596282959,
+          "specialist_mean": 1.4865957498550415,
+          "test": "Welch two-sample t-test (unequal variance)",
+          "p_value_bh": 1.2230581118730847e-08,
+          "significant_bh_q05": true,
+          "p_value_holm": 1.2230581118730847e-08,
+          "significant_holm_a05": true
+        },
+        "all_hubs_vs_specialists": {
+          "t_statistic": -13.411029347221376,
+          "p_value": 9.780420307128358e-32,
+          "hubs_mean": 1.213691234588623,
+          "specialists_mean": 1.4865957498550415,
+          "test": "Welch two-sample t-test (unequal variance)",
+          "p_value_bh": 1.4670630460692537e-31,
+          "significant_bh_q05": true,
+          "p_value_holm": 1.9560840614256715e-31,
+          "significant_holm_a05": true
+        },
+        "hubs_vs_non_critical": {
+          "t_statistic": -39.81475521669539,
+          "p_value": 4.489185292648359e-193,
+          "hubs_mean": 1.213691234588623,
+          "non_critical_mean": 3.367324113845825,
+          "test": "Welch two-sample t-test (unequal variance)",
+          "p_value_bh": 1.3467555877945078e-192,
+          "significant_bh_q05": true,
+          "p_value_holm": 1.3467555877945078e-192,
+          "significant_holm_a05": true
+        },
+        "_multiplicity": {
+          "method": "Benjamini-Hochberg (primary) and Holm-Bonferroni (reported alongside)",
+          "implementation": "statsmodels.stats.multitest.multipletests",
+          "q": 0.05,
+          "alpha": 0.05,
+          "family_size": 3,
+          "family": [
+            "all_hubs_vs_specialists",
+            "hub_vs_specialist",
+            "hubs_vs_non_critical"
+          ],
+          "n_significant_bh": 3,
+          "n_significant_holm": 3,
+          "note": "Post-hoc family following the omnibus ANOVA on the same capsules. Note these are capsules from a SINGLE trained model; the cross-model replication is in the per_model block of the native roll-up, not here."
+        }
+      },
+      "pairwise_multiplicity": {
+        "method": "Benjamini-Hochberg (primary) and Holm-Bonferroni (reported alongside)",
+        "implementation": "statsmodels.stats.multitest.multipletests",
+        "q": 0.05,
+        "alpha": 0.05,
+        "family_size": 3,
+        "family": [
+          "all_hubs_vs_specialists",
+          "hub_vs_specialist",
+          "hubs_vs_non_critical"
+        ],
+        "n_significant_bh": 3,
+        "n_significant_holm": 3,
+        "note": "Post-hoc family following the omnibus ANOVA on the same capsules. Note these are capsules from a SINGLE trained model; the cross-model replication is in the per_model block of the native roll-up, not here."
+      },
+      "beta_vs_importance_pearson": {
+        "pearson_r": -0.03152898276634894,
+        "pearson_p": 0.04361828272880215,
+        "spearman_r": -0.060089328229816046,
+        "spearman_p": 0.00011907609296458323
+      }
+    }
+  },
+  "_provenance": {
+    "schema": 2,
+    "script": "experiments/veg_beta_aggregate.py",
+    "argv": [
+      "experiments/veg_beta_aggregate.py",
+      "--dataset",
+      "cifar10"
+    ],
+    "inputs": [
+      {
+        "path": "results/beta_values/native_cifar10/veg_beta_analysis_cifar_best_entropy.json",
+        "sha256": "fdff2e042266e41b92cfda39bae0968d7b1c07a3214ebb556b56a8c80003f737",
+        "bytes": 113972,
+        "status": "present"
+      },
+      {
+        "path": "results/beta_values/native_cifar10/veg_beta_analysis_cifar_seed123.json",
+        "sha256": "90c91a52f28c3ed597ecd3afceb3bd0fc1585ed2ae2cfbb42ea9ae4da3f58848",
+        "bytes": 113782,
+        "status": "present"
+      },
+      {
+        "path": "results/beta_values/native_cifar10/veg_beta_analysis_cifar_seed42.json",
+        "sha256": "ada57ddb5aa676ea43e93626dbf0f56dea75811e200f68f96709e02df3074288",
+        "bytes": 113697,
+        "status": "present"
+      },
+      {
+        "path": "results/beta_values/native_cifar10/veg_beta_analysis_cifar_seed456.json",
+        "sha256": "59d9a2d0e7535703c9f0bd60b28db0b8d93e0e63817379e7975ddd91fa9c2557",
+        "bytes": 114111,
+        "status": "present"
+      }
+    ],
+    "random_seed": {
+      "rng": null,
+      "note": "Aggregation only; no randomness."
+    },
+    "sample_counts": {
+      "n_models": 4,
+      "models": [
+        "best_entropy_pt",
+        "seed123",
+        "seed42",
+        "seed456"
+      ]
+    },
+    "timestamp_utc": "2026-11-12T19:56:05+00:00",
+    "software": {
+      "python": "3.10.10",
+      "platform": "Linux-6.8.0-106-generic-x86_64-with-glibc2.39",
+      "numpy": "1.25.1",
+      "torch": "2.0.1+cu118",
+      "cuda": "11.8",
+      "gpu": "NVIDIA GeForce RTX 4090"
+    },
+    "statistical_method": "Rolls the per-model VEG beta analyses into the per_model summary and writes description; the file holds no other key."
+  }
+}
